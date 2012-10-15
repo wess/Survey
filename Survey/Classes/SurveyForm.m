@@ -113,7 +113,7 @@ static NSDictionary *errorListDictionary()
     return form;    
 }
 
-- (NSDictionary *)fields
+- (NSArray *)fields
 {
     if(_instanceFields)
         return _instanceFields;
