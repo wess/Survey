@@ -22,4 +22,9 @@
     return _instanceForm;
 }
 
+- (NSArray *)fields
+{
+    return _instanceForm.fields;
+}
+
 @end

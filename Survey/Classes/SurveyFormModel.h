@@ -12,4 +12,5 @@
 @class SurveyForm;
 @interface SurveyFormModel : NSObject
 @property (readonly, nonatomic) SurveyForm *form;
+@property (readonly, nonatomic) NSArray *fields;
 @end
