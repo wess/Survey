@@ -24,7 +24,11 @@
 
 - (NSArray *)fields
 {
-    return _instanceForm.fields;
+    NSMutableArray *formFields = [[NSMutableArray alloc] init];
+    for(SurveyField *field in _instanceForm.fields)
+        [formFields addObject:field.field];
+    
+    return [NSArray arrayWithArray:formFields];
 }
 
 @end
