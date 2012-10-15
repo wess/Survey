@@ -33,4 +33,10 @@
     return [NSArray arrayWithArray:formFields];
 }
 
+- (BOOL)isValid
+{
+    SurveyForm *form = [self form];
+    return form.isValid;
+}
+
 @end

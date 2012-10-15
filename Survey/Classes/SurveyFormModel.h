@@ -13,4 +13,5 @@
 @interface SurveyFormModel : NSObject
 @property (readonly, nonatomic) SurveyForm *form;
 @property (readonly, nonatomic) NSArray *fields;
+@property (readonly, nonatomic) BOOL isValid;
 @end
