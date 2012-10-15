@@ -205,6 +205,7 @@ static NSDictionary *errorListDictionary()
 
 - (id)valueForField:(NSString *)fieldName
 {
+    // Using a method like this, because I want to add some cleaning, perhaps?
     return [_fieldValues objectForKey:fieldName];
 }
 
