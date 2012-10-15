@@ -174,7 +174,7 @@ static NSDictionary *errorListDictionary()
         SurveyField *fieldObject            = (SurveyField *)[_model valueForKey:key];
         NSString *value                     = fieldObject.value;
         
-        if(fieldObject.isRequired && [value isEqualToString:@""])
+        if(fieldObject.isRequired && ([value isEqualToString:@""] || !value))
         {
             NSString *requiredError = [errorListDictionary() objectForKey:@"required"];
             requiredError           = [requiredError stringByReplacingOccurrencesOfString:@"{{field}}" withString:key];
