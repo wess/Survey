@@ -10,8 +10,6 @@
 #import "SurveyField.h"
 
 @interface SurveyFieldCell()
-@property (strong, nonatomic) UILabel       *label;
-@property (strong, nonatomic) UITextField   *field;
 @end
 
 @implementation SurveyFieldCell
@@ -49,9 +47,6 @@
         _label                  = [[UILabel alloc] initWithFrame:labelFrame];
         _label.backgroundColor  = [UIColor clearColor];
 
-        if(_font)
-            _label.font = _font;
-        
         [self addSubview:_label];
     }
     else

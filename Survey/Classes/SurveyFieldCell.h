@@ -13,6 +13,7 @@
 @interface SurveyFieldCell : UITableViewCell
 @property (strong, nonatomic) id<UITextFieldDelegate> delegate;
 @property (strong, nonatomic) SurveyField *fieldObject;
-@property (strong, nonatomic) UIFont *font;
+@property (strong, nonatomic) UILabel       *label;
+@property (strong, nonatomic) UITextField   *field;
 @property (assign, nonatomic) UIEdgeInsets edgeInset;
 @end
