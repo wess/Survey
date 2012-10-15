@@ -20,6 +20,7 @@
 		082D3981162C859400973067 /* SurveyFormModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3946162C82C200973067 /* SurveyFormModel.h */; };
 		082D3982162C859400973067 /* SurveyValidators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3948162C82C200973067 /* SurveyValidators.h */; };
 		082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D398E162C8F3E00973067 /* SurveyFieldCell.m */; };
+		082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D398D162C8F3E00973067 /* SurveyFieldCell.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */,
 				082D397F162C859400973067 /* SurveyField.h in CopyFiles */,
 				082D3980162C859400973067 /* SurveyForm.h in CopyFiles */,
 				082D3981162C859400973067 /* SurveyFormModel.h in CopyFiles */,
