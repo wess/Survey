@@ -134,7 +134,7 @@ static NSDictionary *errorListDictionary()
         fieldObject.field = field;
         fieldObject.label = (fieldObject.label)? fieldObject.label : key;
         
-        [fieldsDictionary setObject:field forKey:key];
+        [fieldsDictionary setObject:fieldObject forKey:key];
     }];
     
     _instanceFields = [fieldsDictionary copy];

@@ -15,6 +15,10 @@
 		082D394F162C82C200973067 /* SurveyValidators.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D3949162C82C200973067 /* SurveyValidators.m */; };
 		082D3955162C835300973067 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3954162C835300973067 /* UIKit.framework */; };
 		082D3956162C838800973067 /* ErrorMessages.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D394B162C82C200973067 /* ErrorMessages.plist */; };
+		082D397F162C859400973067 /* SurveyField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3942162C82C200973067 /* SurveyField.h */; };
+		082D3980162C859400973067 /* SurveyForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3944162C82C200973067 /* SurveyForm.h */; };
+		082D3981162C859400973067 /* SurveyFormModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3946162C82C200973067 /* SurveyFormModel.h */; };
+		082D3982162C859400973067 /* SurveyValidators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3948162C82C200973067 /* SurveyValidators.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -24,6 +28,10 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				082D397F162C859400973067 /* SurveyField.h in CopyFiles */,
+				082D3980162C859400973067 /* SurveyForm.h in CopyFiles */,
+				082D3981162C859400973067 /* SurveyFormModel.h in CopyFiles */,
+				082D3982162C859400973067 /* SurveyValidators.h in CopyFiles */,
 				082D3956162C838800973067 /* ErrorMessages.plist in CopyFiles */,
 				082D3939162C825A00973067 /* Survey.h in CopyFiles */,
 			);
