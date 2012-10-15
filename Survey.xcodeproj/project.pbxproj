@@ -19,6 +19,7 @@
 		082D3980162C859400973067 /* SurveyForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3944162C82C200973067 /* SurveyForm.h */; };
 		082D3981162C859400973067 /* SurveyFormModel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3946162C82C200973067 /* SurveyFormModel.h */; };
 		082D3982162C859400973067 /* SurveyValidators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3948162C82C200973067 /* SurveyValidators.h */; };
+		082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D398E162C8F3E00973067 /* SurveyFieldCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -54,6 +55,8 @@
 		082D3949162C82C200973067 /* SurveyValidators.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyValidators.m; sourceTree = "<group>"; };
 		082D394B162C82C200973067 /* ErrorMessages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorMessages.plist; sourceTree = "<group>"; };
 		082D3954162C835300973067 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		082D398D162C8F3E00973067 /* SurveyFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldCell.h; sourceTree = "<group>"; };
+		082D398E162C8F3E00973067 /* SurveyFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyFieldCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +120,7 @@
 		082D3941162C82C200973067 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				082D398B162C8EDF00973067 /* Views */,
 				082D3950162C82DF00973067 /* Fields */,
 				082D3951162C82EF00973067 /* Form */,
 				082D3952162C82FC00973067 /* Model */,
@@ -167,6 +171,23 @@
 				082D3949162C82C200973067 /* SurveyValidators.m */,
 			);
 			name = Validators;
+			sourceTree = "<group>";
+		};
+		082D398B162C8EDF00973067 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				082D398C162C8F2C00973067 /* Cell */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		082D398C162C8F2C00973067 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				082D398D162C8F3E00973067 /* SurveyFieldCell.h */,
+				082D398E162C8F3E00973067 /* SurveyFieldCell.m */,
+			);
+			name = Cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -224,6 +245,7 @@
 				082D394D162C82C200973067 /* SurveyForm.m in Sources */,
 				082D394E162C82C200973067 /* SurveyFormModel.m in Sources */,
 				082D394F162C82C200973067 /* SurveyValidators.m in Sources */,
+				082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
