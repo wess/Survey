@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 
 @interface SurveyField : NSObject
+@property (copy, nonatomic)   NSString            *entityName;
 @property (copy, nonatomic)   NSString            *label;
 @property (copy, nonatomic)   NSString            *placeholder;
 @property (copy, nonatomic)   NSString            *value;

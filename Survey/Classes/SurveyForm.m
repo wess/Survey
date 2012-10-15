@@ -68,9 +68,9 @@ static NSDictionary *errorListDictionary()
     return errorDictionary;
 }
 
-
 @interface SurveyForm()
 @property (strong, nonatomic) NSArray *instanceFields;
+@property (strong, nonatomic) NSMutableDictionary *fieldValues;
 @property (readwrite, nonatomic) BOOL fieldsAreValid;
 - (void)validateForm;
 @end
@@ -83,6 +83,7 @@ static NSDictionary *errorListDictionary()
     if(self)
     {
         _fieldsAreValid = YES;
+        _fieldValues = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -133,8 +134,9 @@ static NSDictionary *errorListDictionary()
         field.placeholder       = fieldObject.placeholder;
         field.secureTextEntry   = fieldObject.isSecure;
         
-        fieldObject.field = field;
-        fieldObject.label = (fieldObject.label)? fieldObject.label : key;
+        fieldObject.field       = field;
+        fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
+        fieldObject.entityName  = key;
         
         [fieldsArray addObject:fieldObject];
     }];
@@ -160,41 +162,50 @@ static NSDictionary *errorListDictionary()
 
 - (BOOL)isValid
 {
+    _fieldsAreValid = YES;
+    _fieldErrors    = nil;
+
     [self validateForm];
     return _fieldsAreValid;
 }
 
 - (void)validateForm
 {
-    NSDictionary *modelProperties           = propertiesForClass([_model class]);
     NSMutableDictionary *fieldErrorsDict    = [[NSMutableDictionary alloc] init];
-    
-    [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
+
+    NSArray *fieldArray = [self fields];
+    [fieldArray enumerateObjectsUsingBlock:^(SurveyField *fieldObject, NSUInteger idx, BOOL *stop) {
         NSMutableArray *mutableFieldErrors  = [[NSMutableArray alloc] init];
-        SurveyField *fieldObject            = (SurveyField *)[_model valueForKey:key];
-        NSString *value                     = fieldObject.value;
+        NSString *value                     = fieldObject.field.text;
         
         if(fieldObject.isRequired && ([value isEqualToString:@""] || !value))
         {
-            NSString *requiredError = [errorListDictionary() objectForKey:@"required"];
-            requiredError           = [requiredError stringByReplacingOccurrencesOfString:@"{{field}}" withString:key];
+            NSString *requiredError = @"field is required"; //[errorListDictionary() objectForKey:@"required"];
+            //            requiredError           = [requiredError stringByReplacingOccurrencesOfString:@"{{field}}" withString:key];
             
             [mutableFieldErrors addObject:requiredError];
             
             _fieldsAreValid = NO;
         }
-        
         /** ADD MORE VALIDATORS HERE **/
 
+        [_fieldValues setObject:((value)? value : @"") forKey:fieldObject.entityName];
+        
         if(mutableFieldErrors.count > 0)
         {
-            [fieldErrorsDict setObject:[mutableFieldErrors copy] forKey:key];
+            [fieldErrorsDict setObject:[mutableFieldErrors copy] forKey:fieldObject.entityName];
             [mutableFieldErrors removeAllObjects];
         }
-    }];
     
+    }];
+
     if(fieldErrorsDict.count > 0)
         _fieldErrors = [fieldErrorsDict copy];
+}
+
+- (id)valueForField:(NSString *)fieldName
+{
+    return [_fieldValues objectForKey:fieldName];
 }
 
 @end

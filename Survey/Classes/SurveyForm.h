@@ -12,11 +12,12 @@
 @interface SurveyForm : NSObject
 @property (readonly, nonatomic) NSArray *fields;
 @property (assign, nonatomic) SurveyFormModel *model;
-@property (readonly, nonatomic) NSDictionary *values;
 @property (readonly, nonatomic) NSDictionary *fieldErrors;
 @property (readonly, nonatomic) BOOL isValid;
 
 + (SurveyForm *)formWithSurveyModelName:(NSString *)modelName;
 + (SurveyForm *)formWithSurveyModelClass:(Class)modelClass;
 + (SurveyForm *)formWithSurveyModel:(SurveyFormModel *)modelInstance;
+
+- (id)valueForField:(NSString *)fieldName;
 @end
