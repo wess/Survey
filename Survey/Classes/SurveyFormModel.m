@@ -18,14 +18,16 @@
 {
     if(!_instanceForm)
         _instanceForm = [SurveyForm formWithSurveyModel:self];
-        
+    
     return _instanceForm;
 }
 
 - (NSArray *)fields
 {
+    SurveyForm *form = [self form];
+    
     NSMutableArray *formFields = [[NSMutableArray alloc] init];
-    for(SurveyField *field in _instanceForm.fields)
+    for(SurveyField *field in form.fields)
         [formFields addObject:field.field];
     
     return [NSArray arrayWithArray:formFields];
