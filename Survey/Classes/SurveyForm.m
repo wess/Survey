@@ -70,7 +70,7 @@ static NSDictionary *errorListDictionary()
 
 
 @interface SurveyForm()
-@property (strong, nonatomic) NSDictionary *instanceFields;
+@property (strong, nonatomic) NSArray *instanceFields;
 @property (readwrite, nonatomic) BOOL fieldsAreValid;
 - (void)validateForm;
 @end
@@ -118,13 +118,14 @@ static NSDictionary *errorListDictionary()
     if(_instanceFields)
         return _instanceFields;
     
-    NSDictionary *modelProperties           = propertiesForClass([_model class]);
-    NSMutableDictionary *fieldsDictionary   = [[NSMutableDictionary alloc] init];
+    NSDictionary *modelProperties = propertiesForClass([_model class]);
+    NSMutableArray *fieldsArray   = [[NSMutableArray alloc] init];
     
     [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
         SurveyField *fieldObject = (SurveyField *)[_model valueForKey:key];
 
         UITextField *field = (UITextField *)fieldObject.field;
+        
         if(!field)
             field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
         
@@ -133,11 +134,11 @@ static NSDictionary *errorListDictionary()
         
         fieldObject.field = field;
         fieldObject.label = (fieldObject.label)? fieldObject.label : key;
-        
-        [fieldsDictionary setObject:fieldObject forKey:key];
+
+        [fieldsArray addObject:fieldObject];
     }];
     
-    _instanceFields = [fieldsDictionary copy];
+    _instanceFields = [fieldsArray copy];
     
     return _instanceFields;
 }
