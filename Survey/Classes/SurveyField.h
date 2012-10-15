@@ -12,6 +12,7 @@
 @property (copy, nonatomic)   NSString            *label;
 @property (copy, nonatomic)   NSString            *placeholder;
 @property (copy, nonatomic)   NSString            *value;
+@property (readwrite, nonatomic) BOOL             isSecure;
 @property (strong, nonatomic) Class               fieldClass;
 @property (strong, nonatomic) UITextField         *field;
 @property (strong, nonatomic) NSRegularExpression *expression;

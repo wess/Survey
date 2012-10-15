@@ -129,12 +129,13 @@ static NSDictionary *errorListDictionary()
         if(!field)
             field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
         
-        field.text          = fieldObject.value;
-        field.placeholder   = fieldObject.placeholder;
+        field.text              = fieldObject.value;
+        field.placeholder       = fieldObject.placeholder;
+        field.secureTextEntry   = fieldObject.isSecure;
         
         fieldObject.field = field;
         fieldObject.label = (fieldObject.label)? fieldObject.label : key;
-
+        
         [fieldsArray addObject:fieldObject];
     }];
     
