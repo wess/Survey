@@ -187,7 +187,16 @@ static NSDictionary *errorListDictionary()
             
             _fieldsAreValid = NO;
         }
-        /** ADD MORE VALIDATORS HERE **/
+
+        if(fieldObject.expression)
+        {
+            NSTextCheckingResult *matches = [fieldObject.expression firstMatchInString:value options:0 range:NSMakeRange(0, value.length)];
+
+            if(!matches)
+                _fieldsAreValid = NO;
+            
+            [mutableFieldErrors addObject:@"field did not match pattern"];
+        }
 
         [_fieldValues setObject:((value)? value : @"") forKey:fieldObject.entityName];
         
