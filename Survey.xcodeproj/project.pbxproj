@@ -23,6 +23,16 @@
 		082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D398D162C8F3E00973067 /* SurveyFieldCell.h */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		08C867FC162CE99300B98C14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 08C867D7162CE99200B98C14;
+			remoteInfo = SurveyExample;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		082D392E162C825A00973067 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -59,6 +69,7 @@
 		082D3954162C835300973067 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		082D398D162C8F3E00973067 /* SurveyFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldCell.h; sourceTree = "<group>"; };
 		082D398E162C8F3E00973067 /* SurveyFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyFieldCell.m; sourceTree = "<group>"; };
+		08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SurveyExample.xcodeproj; path = SurveyExample/SurveyExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,6 +88,7 @@
 		082D3925162C825A00973067 = {
 			isa = PBXGroup;
 			children = (
+				08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */,
 				082D3935162C825A00973067 /* Survey */,
 				082D3932162C825A00973067 /* Frameworks */,
 				082D3931162C825A00973067 /* Products */,
@@ -192,6 +204,14 @@
 			name = Cell;
 			sourceTree = "<group>";
 		};
+		08C867F9162CE99200B98C14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08C867FD162CE99300B98C14 /* SurveyExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -231,12 +251,28 @@
 			mainGroup = 082D3925162C825A00973067;
 			productRefGroup = 082D3931162C825A00973067 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = 08C867F9162CE99200B98C14 /* Products */;
+					ProjectRef = 08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				082D392F162C825A00973067 /* Survey */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		08C867FD162CE99300B98C14 /* SurveyExample.app */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.application;
+			path = SurveyExample.app;
+			remoteRef = 08C867FC162CE99300B98C14 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXSourcesBuildPhase section */
 		082D392C162C825A00973067 /* Sources */ = {
@@ -344,6 +380,7 @@
 				082D3940162C825A00973067 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
