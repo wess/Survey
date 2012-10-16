@@ -188,7 +188,7 @@ static NSDictionary *errorListDictionary()
             _fieldsAreValid = NO;
         }
 
-        if(fieldObject.expression)
+        if(fieldObject.expression && value && ![value isEqualToString:@""])
         {
             NSTextCheckingResult *matches = [fieldObject.expression firstMatchInString:value options:0 range:NSMakeRange(0, value.length)];
 
