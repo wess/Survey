@@ -47,6 +47,7 @@
 {
     SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Email"];
     field.isRequired    = YES;
+    field.expression    = [[NSRegularExpression alloc] initWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
     
     return field;
 }

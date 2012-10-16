@@ -12,6 +12,7 @@
 @interface WCRegisterForm : SurveyFormModel
 @property (strong, nonatomic) SurveyField *firstname;
 @property (strong, nonatomic) SurveyField *lastname;
+@property (strong, nonatomic) SurveyField *email;
 @property (strong, nonatomic) SurveyField *city;
 @property (strong, nonatomic) SurveyField *state;
 @property (strong, nonatomic) SurveyField *zipcode;
