@@ -195,7 +195,8 @@ static NSDictionary *errorListDictionary()
             if(!matches)
                 _fieldsAreValid = NO;
             
-            [mutableFieldErrors addObject:@"field did not match pattern"];
+            NSString *matchError = (fieldObject.errorMessage)? fieldObject.errorMessage : @"Field value did not match pattern";
+            [mutableFieldErrors addObject:matchError];
         }
 
         [_fieldValues setObject:((value)? value : @"") forKey:fieldObject.entityName];
