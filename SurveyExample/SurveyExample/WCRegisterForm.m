@@ -22,6 +22,12 @@
     SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Last Name"];
     field.isRequired    = YES;
     field.label         = @"Last Name";
+    field.validationBlock   = ^(id form, id field, id value) {
+        NSString *fieldValue = [(NSString *)value lowercaseString];
+        NSLog(@"FIELD VALUE: %@", fieldValue);
+
+        return [fieldValue isEqualToString:@"cope"];
+    };
     
     return field;
 }

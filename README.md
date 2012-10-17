@@ -27,9 +27,13 @@
 @implementation RegisterForm
 -(SurveyField *)firstname
 {
-    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"First Name"];
-    field.isRequired    = NO;
-    field.label         = @"First Name";
+    SurveyField *field    = [SurveyField fieldWithPlaceholder:@"First Name"];
+    field.isRequired      = NO;
+    field.label           = @"First Name";
+    field.validationBlock = ^(id form, id field, id value) {
+        NSString *fieldValue = [(NSString *)value lowercaseString];
+        return [fieldValue isEqualToString:@"wess"];
+    };
     
     return field;
 }

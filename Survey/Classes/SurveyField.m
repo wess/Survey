@@ -15,7 +15,8 @@
     self = [super init];
     if(self)
     {
-        _isRequired = NO;
+        _isRequired      = NO;
+        _validationBlock = NULL;
     }
     return self;
 }

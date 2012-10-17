@@ -199,6 +199,18 @@ static NSDictionary *errorListDictionary()
             [mutableFieldErrors addObject:matchError];
         }
 
+        if(fieldObject.validationBlock != NULL)
+        {
+            BOOL isValid = fieldObject.validationBlock(self, fieldObject.field, value);
+            if(!isValid)
+            {
+                _fieldsAreValid = NO;
+            
+                NSString *matchError = (fieldObject.errorMessage)? fieldObject.errorMessage : @"Validation failed";
+                [mutableFieldErrors addObject:matchError];
+            }
+        }
+        
         [_fieldValues setObject:((value)? value : @"") forKey:fieldObject.entityName];
         
         if(mutableFieldErrors.count > 0)
