@@ -44,6 +44,19 @@
     field.isRequired    = YES;
     field.label         = @"Last Name";
     
+    field.shouldBeginEditing = ^(id field) {
+        NSLog(@"OH YEAH, WE BE EDITING");
+
+        return YES;
+    };
+    
+    field.didEndEditing = ^(id field) {
+        NSString *value = ((UITextField *)field).text;
+        
+        NSLog(@"Field Value: %@", value);
+    };
+    
+    
     return field;
 }
 

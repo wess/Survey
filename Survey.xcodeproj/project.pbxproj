@@ -88,10 +88,10 @@
 		082D3925162C825A00973067 = {
 			isa = PBXGroup;
 			children = (
-				08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */,
 				082D3935162C825A00973067 /* Survey */,
 				082D3932162C825A00973067 /* Frameworks */,
 				082D3931162C825A00973067 /* Products */,
+				08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */,
 			);
 			sourceTree = "<group>";
 		};

@@ -134,7 +134,7 @@ static NSDictionary *errorListDictionary()
         field.placeholder       = fieldObject.placeholder;
         field.secureTextEntry   = fieldObject.isSecure;
         
-        fieldObject.field       = field;
+        [fieldObject setField:field];
         fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
         fieldObject.entityName  = key;
         
