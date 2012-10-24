@@ -169,7 +169,6 @@ static NSDictionary *errorListDictionary()
     
     [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
         SurveyField *fieldObject = (SurveyField *)[_model valueForKey:key];
-        /Users/wesscope/Dropbox/Camera Uploads
         [valuesDictionary setObject:fieldObject.value forKey:key];
     }];
 
