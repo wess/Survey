@@ -39,4 +39,10 @@
     return form.isValid;
 }
 
++ (NSArray *)fields
+{
+    /* Override in child to ensure field order */
+    return @[];
+}
+
 @end

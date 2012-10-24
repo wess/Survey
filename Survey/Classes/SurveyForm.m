@@ -72,6 +72,7 @@ static NSDictionary *errorListDictionary()
 @property (strong, nonatomic) NSArray *instanceFields;
 @property (strong, nonatomic) NSMutableDictionary *fieldValues;
 @property (readwrite, nonatomic) BOOL fieldsAreValid;
+- (SurveyField *)setupFieldObject:(SurveyField *)fieldObject withKey:(NSString *)key;
 - (void)validateForm;
 @end
 
@@ -114,32 +115,47 @@ static NSDictionary *errorListDictionary()
     return form;    
 }
 
+- (SurveyField *)setupFieldObject:(SurveyField *)fieldObject withKey:(NSString *)key
+{
+    UITextField *field = (UITextField *)fieldObject.field;
+    
+    if(!field)
+        field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
+    
+    field.text              = fieldObject.value;
+    field.placeholder       = fieldObject.placeholder;
+    field.secureTextEntry   = fieldObject.isSecure;
+    
+    [fieldObject setField:field];
+    fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
+    fieldObject.entityName  = key;
+    
+    return fieldObject;
+}
+
 - (NSArray *)fields
 {
     if(_instanceFields)
         return _instanceFields;
     
-    NSDictionary *modelProperties = propertiesForClass([_model class]);
+    NSArray *fieldList            = [[_model class] fields];
     NSMutableArray *fieldsArray   = [[NSMutableArray alloc] init];
-    
-    [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
-        SurveyField *fieldObject = (SurveyField *)[_model valueForKey:key];
 
-        UITextField *field = (UITextField *)fieldObject.field;
-        
-        if(!field)
-            field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
-        
-        field.text              = fieldObject.value;
-        field.placeholder       = fieldObject.placeholder;
-        field.secureTextEntry   = fieldObject.isSecure;
-        
-        [fieldObject setField:field];
-        fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
-        fieldObject.entityName  = key;
-        
-        [fieldsArray addObject:fieldObject];
-    }];
+    if(!fieldList || fieldList.count < 1)
+    {
+        [(propertiesForClass([_model class])) enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
+            SurveyField *fieldObject = [self setupFieldObject:(SurveyField *)[_model valueForKey:key] withKey:key];
+            [fieldsArray addObject:fieldObject];
+        }];
+    }
+    else
+    {
+        [fieldList enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
+
+            SurveyField *prop = (SurveyField *)[_model valueForKey:key];
+            [fieldsArray addObject:[self setupFieldObject:prop withKey:key]];
+        }];
+    }
     
     _instanceFields = [fieldsArray copy];
     
@@ -153,7 +169,7 @@ static NSDictionary *errorListDictionary()
     
     [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
         SurveyField *fieldObject = (SurveyField *)[_model valueForKey:key];
-        
+        /Users/wesscope/Dropbox/Camera Uploads
         [valuesDictionary setObject:fieldObject.value forKey:key];
     }];
 

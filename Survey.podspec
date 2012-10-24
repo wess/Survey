@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "Survey"
-  s.version      = "0.0.2"
+  s.version      = "0.0.3"
   s.summary      = "Survey is a library to simplify the process of creating and validating forms. This library is loosely based on CoreData and Django forms."
   s.homepage     = "http://github.com/wess/Survey"
   s.license      = 'MIT'

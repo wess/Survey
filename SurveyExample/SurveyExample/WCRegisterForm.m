@@ -76,4 +76,9 @@
     return field;    
 }
 
++ (NSArray *)fields
+{
+   return @[@"firstname", @"lastname", @"email", @"city", @"state", @"zipcode"];
+}
+
 @end

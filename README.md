@@ -78,6 +78,16 @@
     return field;
 }
 
+// Due to weird issues with objc runtime not caring about your properties order
+// If you wish to control the order of your fields and/or exclude any fields 
+// add the following method to your form's class.  Don't add it, if the order
+// of your fields doesn't matter, you can leave it out and it will work just fine.
+
++ (NSArray *)fields
+{
+    return @[@"firstname", @"lastname", @"email", @"password"];
+}
+
 
 ```
 

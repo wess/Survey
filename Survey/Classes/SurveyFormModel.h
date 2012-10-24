@@ -14,4 +14,5 @@
 @property (readonly, nonatomic) SurveyForm *form;
 @property (readonly, nonatomic) NSArray *fields;
 @property (readonly, nonatomic) BOOL isValid;
++ (NSArray *)fields;
 @end
