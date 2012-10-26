@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0823592B163AFF8700DBD15E /* SurveyEmailField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0823592A163AFF8700DBD15E /* SurveyEmailField.m */; };
+		0823592C163B013500DBD15E /* SurveyEmailField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08235929163AFF8700DBD15E /* SurveyEmailField.h */; };
 		082D3934162C825A00973067 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3933162C825A00973067 /* Foundation.framework */; };
 		082D3939162C825A00973067 /* Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3938162C825A00973067 /* Survey.h */; };
 		082D394C162C82C200973067 /* SurveyField.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D3943162C82C200973067 /* SurveyField.m */; };
@@ -40,6 +42,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				0823592C163B013500DBD15E /* SurveyEmailField.h in CopyFiles */,
 				082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */,
 				082D397F162C859400973067 /* SurveyField.h in CopyFiles */,
 				082D3980162C859400973067 /* SurveyForm.h in CopyFiles */,
@@ -53,6 +56,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		08235929163AFF8700DBD15E /* SurveyEmailField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyEmailField.h; sourceTree = "<group>"; };
+		0823592A163AFF8700DBD15E /* SurveyEmailField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyEmailField.m; sourceTree = "<group>"; };
 		082D3930162C825A00973067 /* libSurvey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSurvey.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		082D3933162C825A00973067 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		082D3937162C825A00973067 /* Survey-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Survey-Prefix.pch"; sourceTree = "<group>"; };
@@ -85,6 +90,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08235927163AFF6600DBD15E /* SurveyEmailField */ = {
+			isa = PBXGroup;
+			children = (
+				08235929163AFF8700DBD15E /* SurveyEmailField.h */,
+				0823592A163AFF8700DBD15E /* SurveyEmailField.m */,
+			);
+			name = SurveyEmailField;
+			sourceTree = "<group>";
+		};
+		08235928163AFF6F00DBD15E /* SurveyField */ = {
+			isa = PBXGroup;
+			children = (
+				082D3942162C82C200973067 /* SurveyField.h */,
+				082D3943162C82C200973067 /* SurveyField.m */,
+			);
+			name = SurveyField;
+			sourceTree = "<group>";
+		};
 		082D3925162C825A00973067 = {
 			isa = PBXGroup;
 			children = (
@@ -154,8 +177,8 @@
 		082D3950162C82DF00973067 /* Fields */ = {
 			isa = PBXGroup;
 			children = (
-				082D3942162C82C200973067 /* SurveyField.h */,
-				082D3943162C82C200973067 /* SurveyField.m */,
+				08235927163AFF6600DBD15E /* SurveyEmailField */,
+				08235928163AFF6F00DBD15E /* SurveyField */,
 			);
 			name = Fields;
 			sourceTree = "<group>";
@@ -284,6 +307,7 @@
 				082D394E162C82C200973067 /* SurveyFormModel.m in Sources */,
 				082D394F162C82C200973067 /* SurveyValidators.m in Sources */,
 				082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */,
+				0823592B163AFF8700DBD15E /* SurveyEmailField.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

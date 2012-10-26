@@ -46,10 +46,14 @@
 
 - (SurveyField *)email
 {
-    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Email"];
-    field.isRequired    = YES;
-    field.expression    = [[NSRegularExpression alloc] initWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
+//    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Email"];
+//    field.isRequired    = YES;
+//    field.expression    = [[NSRegularExpression alloc] initWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
 
+//  Let's use your custom email field subclass
+    SurveyField *field  = [SurveyEmailField fieldWithPlaceholder:@"Email Address"];
+    field.isRequired    = YES;
+    
     return field;
 }
 

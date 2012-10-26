@@ -13,6 +13,8 @@
 ## Example Form Model:
 > Setting up a form is pretty simple, you just subclass SurveyFormModel and set up properties for the fields you want. Then, in the implementation, set up each field with the properties you want.
 
+> Be sure to checkout SurveyEmailField to see how easy it is to create custom fields to use.  the email field example below has been updated to use that custom field.
+
 ```objectivec
 
 // RegisterForm.h
@@ -60,11 +62,15 @@
     return field;
 }
 
--(SurveyField *)email
+- (SurveyField *)email
 {
-    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Email"];
+//    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Email"];
+//    field.isRequired    = YES;
+//    field.expression    = [[NSRegularExpression alloc] initWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
+
+//  Let's use your custom email field subclass
+    SurveyField *field  = [SurveyEmailField fieldWithPlaceholder:@"Email Address"];
     field.isRequired    = YES;
-    field.expression    = [[NSRegularExpression alloc] initWithPattern:@"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}" options:0 error:nil];
     
     return field;
 }

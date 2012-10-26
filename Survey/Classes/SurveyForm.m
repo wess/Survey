@@ -122,11 +122,14 @@ static NSDictionary *errorListDictionary()
     if(!field)
         field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
     
-    field.text              = fieldObject.value;
-    field.placeholder       = fieldObject.placeholder;
-    field.secureTextEntry   = fieldObject.isSecure;
+    field.text                      = fieldObject.value;
+    field.placeholder               = fieldObject.placeholder;
+    field.secureTextEntry           = fieldObject.isSecure;
+    field.autocapitalizationType    = fieldObject.autocapitalizationType;
+    field.autocorrectionType        = fieldObject.autocorrectionType;
     
     [fieldObject setField:field];
+    
     fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
     fieldObject.entityName  = key;
     

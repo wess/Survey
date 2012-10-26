@@ -8,6 +8,7 @@
 
 #import "SurveyForm.h"
 #import "SurveyField.h"
+#import "SurveyEmailField.h"
 
 @class SurveyForm;
 @interface SurveyFormModel : NSObject

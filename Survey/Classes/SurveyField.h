@@ -20,6 +20,8 @@ typedef BOOL(^SurveyShouldChangeBlock)(id field, NSRange range, NSString *string
 @property (copy, nonatomic)      NSString                       *label;
 @property (copy, nonatomic)      NSString                       *placeholder;
 @property (copy, nonatomic)      NSString                       *value;
+@property (readwrite, nonatomic) UITextAutocapitalizationType   autocapitalizationType;
+@property (readwrite, nonatomic) UITextAutocorrectionType       autocorrectionType;
 @property (strong, nonatomic)    UITextField                    *field;
 @property (strong, nonatomic)    NSRegularExpression            *expression;
 @property (strong, nonatomic)    NSString                       *errorMessage;
