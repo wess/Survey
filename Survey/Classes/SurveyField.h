@@ -7,21 +7,21 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SurveyForm.h"
 
-typedef BOOL(^SurveyValidationBlock)(id form, id field, id value);
-typedef BOOL(^SurveyTextFieldShouldBlock)(id field);
-typedef void(^SurveyTextFieldDidBlock)(id field);
-typedef BOOL(^SurveyShouldChangeBlock)(id field, NSRange range, NSString *string);
+typedef BOOL(^SurveyValidationBlock)(SurveyField *this, id form, id field, id value);
+typedef BOOL(^SurveyTextFieldShouldBlock)(SurveyField *this, id field);
+typedef void(^SurveyTextFieldDidBlock)(SurveyField *this, id field);
+typedef BOOL(^SurveyShouldChangeBlock)(SurveyField *this, id field, NSRange range, NSString *string);
 
 @protocol SurveyFieldDelegate;
 @interface SurveyField : NSObject<UITextFieldDelegate>
 @property (strong, nonatomic)    id<SurveyFieldDelegate>        delegate;
+@property (strong, nonatomic)    SurveyForm                     *form;
 @property (copy, nonatomic)      NSString                       *entityName;
 @property (copy, nonatomic)      NSString                       *label;
 @property (copy, nonatomic)      NSString                       *placeholder;
 @property (copy, nonatomic)      NSString                       *value;
-@property (readwrite, nonatomic) UITextAutocapitalizationType   autocapitalizationType;
-@property (readwrite, nonatomic) UITextAutocorrectionType       autocorrectionType;
 @property (strong, nonatomic)    UITextField                    *field;
 @property (strong, nonatomic)    NSRegularExpression            *expression;
 @property (strong, nonatomic)    NSString                       *errorMessage;
@@ -36,8 +36,27 @@ typedef BOOL(^SurveyShouldChangeBlock)(id field, NSRange range, NSString *string
 @property (copy, nonatomic)      SurveyTextFieldShouldBlock     shouldReturn;
 @property (readwrite, nonatomic) BOOL                           isRequired;
 @property (readwrite, nonatomic) BOOL                           isSecure;
+@property (readonly, nonatomic)  NSUInteger                     tabIndex;
 
+// Proxy Properties
+@property (readwrite, nonatomic) UITextAutocapitalizationType           autocapitalizationType;
+@property (readwrite, nonatomic) UITextAutocorrectionType               autocorrectionType;
+@property (readwrite, nonatomic) UIKeyboardType                         keyboardType;
+@property (readwrite, nonatomic) UIReturnKeyType                        returnKeyType;
+@property (readwrite, nonatomic) UIControlContentVerticalAlignment      contentVerticalAlignment;
+@property (readwrite, nonatomic) UIControlContentHorizontalAlignment    contentHorizontalAlignment;
+@property (copy, nonatomic) UIColor                                     *backgroundColor;
+@property (copy, nonatomic) UIFont                                      *font;
+
+// Proxy Methods
+- (void)becomeFirstResponder;
+- (void)resignFirstResponder;
+
+// Survey Field methods
 + (SurveyField *)fieldWithPlaceholder:(NSString *)placeholder;
+
+- (SurveyField *)getNextField;
+- (SurveyField *)getPreviousField;
 
 @end
 

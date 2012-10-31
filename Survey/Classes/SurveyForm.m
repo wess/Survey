@@ -69,9 +69,10 @@ static NSDictionary *errorListDictionary()
 }
 
 @interface SurveyForm()
-@property (strong, nonatomic) NSArray *instanceFields;
-@property (strong, nonatomic) NSMutableDictionary *fieldValues;
-@property (readwrite, nonatomic) BOOL fieldsAreValid;
+@property (strong, nonatomic) NSArray               *instanceFields;
+@property (strong, nonatomic) NSMutableDictionary   *fieldValues;
+@property (readwrite, nonatomic) BOOL               fieldsAreValid;
+
 - (SurveyField *)setupFieldObject:(SurveyField *)fieldObject withKey:(NSString *)key;
 - (void)validateForm;
 @end
@@ -84,7 +85,7 @@ static NSDictionary *errorListDictionary()
     if(self)
     {
         _fieldsAreValid = YES;
-        _fieldValues = [[NSMutableDictionary alloc] init];
+        _fieldValues    = [[NSMutableDictionary alloc] init];
     }
     return self;
 }
@@ -122,16 +123,23 @@ static NSDictionary *errorListDictionary()
     if(!field)
         field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
     
-    field.text                      = fieldObject.value;
-    field.placeholder               = fieldObject.placeholder;
-    field.secureTextEntry           = fieldObject.isSecure;
-    field.autocapitalizationType    = fieldObject.autocapitalizationType;
-    field.autocorrectionType        = fieldObject.autocorrectionType;
+    field.text                          = fieldObject.value;
+    field.placeholder                   = fieldObject.placeholder;
+    field.secureTextEntry               = fieldObject.isSecure;
+    field.autocapitalizationType        = fieldObject.autocapitalizationType;
+    field.autocorrectionType            = fieldObject.autocorrectionType;
+    field.keyboardType                  = fieldObject.keyboardType;
+    field.returnKeyType                 = fieldObject.returnKeyType;
+    field.contentHorizontalAlignment    = fieldObject.contentHorizontalAlignment;
+    field.contentVerticalAlignment      = fieldObject.contentVerticalAlignment;
+    field.delegate                      = fieldObject;
     
     [fieldObject setField:field];
     
+    fieldObject.form        = self;
     fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
     fieldObject.entityName  = key;
+        
     
     return fieldObject;
 }
@@ -146,9 +154,11 @@ static NSDictionary *errorListDictionary()
 
     if(!fieldList || fieldList.count < 1)
     {
+        __block NSUInteger idx = 0;
         [(propertiesForClass([_model class])) enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
             SurveyField *fieldObject = [self setupFieldObject:(SurveyField *)[_model valueForKey:key] withKey:key];
             [fieldsArray addObject:fieldObject];
+            idx++;
         }];
     }
     else
@@ -167,15 +177,15 @@ static NSDictionary *errorListDictionary()
 
 - (NSDictionary *)values
 {
-    NSDictionary *modelProperties           = propertiesForClass([_model class]);
-    NSMutableDictionary *valuesDictionary   = [[NSMutableDictionary alloc] init];
+    if(_fieldValues && _fieldValues.count > 0)
+        return _fieldValues;
     
-    [modelProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
-        SurveyField *fieldObject = (SurveyField *)[_model valueForKey:key];
-        [valuesDictionary setObject:fieldObject.value forKey:key];
+    NSMutableDictionary *fieldValues = [NSMutableDictionary dictionary];
+    [[self fields] enumerateObjectsUsingBlock:^(SurveyField *fieldObject, NSUInteger idx, BOOL *stop) {
+        [fieldValues setObject:(fieldObject.field.text? fieldObject.field.text : @"") forKey:fieldObject.entityName];
     }];
-
-    return [valuesDictionary copy];
+    
+    return [fieldValues copy];
 }
 
 - (BOOL)isValid
@@ -219,7 +229,7 @@ static NSDictionary *errorListDictionary()
 
         if(fieldObject.validationBlock != NULL)
         {
-            BOOL isValid = fieldObject.validationBlock(self, fieldObject.field, value);
+            BOOL isValid = fieldObject.validationBlock(fieldObject, self, fieldObject.field, value);
             if(!isValid)
             {
                 _fieldsAreValid = NO;
@@ -247,6 +257,20 @@ static NSDictionary *errorListDictionary()
 {
     // Using a method like this, because I want to add some cleaning, perhaps?
     return [_fieldValues objectForKey:fieldName];
+}
+
+- (SurveyField *)getFieldAtTabIndex:(NSUInteger)index
+{
+    NSArray *fields = [self fields];
+    if(index == 0 || index > fields.count)
+        return nil;
+    
+    return ([fields objectAtIndex:index]? [fields objectAtIndex:index] : nil);
+}
+
+- (NSUInteger)getIndexOfField:(SurveyField *)field
+{
+    return [[self fields] indexOfObject:field];
 }
 
 @end

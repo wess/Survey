@@ -37,6 +37,16 @@
         return [fieldValue isEqualToString:@"wess"];
     };
     
+    field.shouldReturn = ^BOOL(SurveyField *this, id field) {
+        SurveyField  *nextField = [this getNextField];
+      
+        [this resignFirstResponder];
+        [nextField becomeFirstResponder];
+        
+        return NO;
+    };
+    
+    
     return field;
 }
 

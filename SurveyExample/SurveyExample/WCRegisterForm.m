@@ -14,16 +14,23 @@
     SurveyField *field  = [SurveyField fieldWithPlaceholder:@"First Name"];
     field.isRequired    = YES;
     field.label         = @"First Name";
-    field.shouldBeginEditing = ^(id field) {
-        NSLog(@"OH YEAH, WE BE EDITING");
-
+    field.shouldBeginEditing = ^(SurveyField *this, id field) {
+        NSLog(@"We should begin editing");
         return YES;
     };
     
-    field.didEndEditing = ^(id field) {
+    field.didEndEditing = ^(SurveyField *this,id field) {
         NSString *value = ((UITextField *)field).text;
+        NSLog(@"Field ended editing with Value: %@", value);
+    };
+    
+    field.shouldReturn = ^BOOL(SurveyField *this, id field) {
+        SurveyField  *nextField = [this getNextField];
+      
+        [this resignFirstResponder];
+        [nextField becomeFirstResponder];
         
-        NSLog(@"Field Value: %@", value);
+        return NO;
     };
     
     return field;
@@ -34,7 +41,7 @@
     SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Last Name"];
     field.isRequired    = YES;
     field.label         = @"Last Name";
-    field.validationBlock   = ^(id form, id field, id value) {
+    field.validationBlock   = ^(SurveyField *this, id form, id field, id value) {
         NSString *fieldValue = [(NSString *)value lowercaseString];
         NSLog(@"FIELD VALUE: %@", fieldValue);
 
