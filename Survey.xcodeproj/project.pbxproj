@@ -9,6 +9,11 @@
 /* Begin PBXBuildFile section */
 		0823592B163AFF8700DBD15E /* SurveyEmailField.m in Sources */ = {isa = PBXBuildFile; fileRef = 0823592A163AFF8700DBD15E /* SurveyEmailField.m */; };
 		0823592C163B013500DBD15E /* SurveyEmailField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08235929163AFF8700DBD15E /* SurveyEmailField.h */; };
+		08296A07167BA06500B4B31E /* SurveyObjectModelForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A06167BA06500B4B31E /* SurveyObjectModelForm.m */; };
+		08296A09167BA0C700B4B31E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08296A08167BA0C700B4B31E /* CoreData.framework */; };
+		08296A6C167BBA3200B4B31E /* SurveyObjectModelForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08296A05167BA06500B4B31E /* SurveyObjectModelForm.h */; };
+		08296A70167BC1BC00B4B31E /* SurveyDynamicObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A6F167BC1BC00B4B31E /* SurveyDynamicObject.m */; };
+		08296A71167BC1EF00B4B31E /* SurveyDynamicObject.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08296A6E167BC1BC00B4B31E /* SurveyDynamicObject.h */; };
 		082D3934162C825A00973067 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3933162C825A00973067 /* Foundation.framework */; };
 		082D3939162C825A00973067 /* Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3938162C825A00973067 /* Survey.h */; };
 		082D394C162C82C200973067 /* SurveyField.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D3943162C82C200973067 /* SurveyField.m */; };
@@ -42,6 +47,8 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				08296A71167BC1EF00B4B31E /* SurveyDynamicObject.h in CopyFiles */,
+				08296A6C167BBA3200B4B31E /* SurveyObjectModelForm.h in CopyFiles */,
 				0823592C163B013500DBD15E /* SurveyEmailField.h in CopyFiles */,
 				082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */,
 				082D397F162C859400973067 /* SurveyField.h in CopyFiles */,
@@ -58,6 +65,11 @@
 /* Begin PBXFileReference section */
 		08235929163AFF8700DBD15E /* SurveyEmailField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyEmailField.h; sourceTree = "<group>"; };
 		0823592A163AFF8700DBD15E /* SurveyEmailField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyEmailField.m; sourceTree = "<group>"; };
+		08296A05167BA06500B4B31E /* SurveyObjectModelForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyObjectModelForm.h; sourceTree = "<group>"; };
+		08296A06167BA06500B4B31E /* SurveyObjectModelForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyObjectModelForm.m; sourceTree = "<group>"; };
+		08296A08167BA0C700B4B31E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		08296A6E167BC1BC00B4B31E /* SurveyDynamicObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDynamicObject.h; sourceTree = "<group>"; };
+		08296A6F167BC1BC00B4B31E /* SurveyDynamicObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDynamicObject.m; sourceTree = "<group>"; };
 		082D3930162C825A00973067 /* libSurvey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSurvey.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		082D3933162C825A00973067 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		082D3937162C825A00973067 /* Survey-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Survey-Prefix.pch"; sourceTree = "<group>"; };
@@ -82,6 +94,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08296A09167BA0C700B4B31E /* CoreData.framework in Frameworks */,
 				082D3955162C835300973067 /* UIKit.framework in Frameworks */,
 				082D3934162C825A00973067 /* Foundation.framework in Frameworks */,
 			);
@@ -108,6 +121,33 @@
 			name = SurveyField;
 			sourceTree = "<group>";
 		};
+		08296A03167BA03800B4B31E /* FormModel */ = {
+			isa = PBXGroup;
+			children = (
+				082D3946162C82C200973067 /* SurveyFormModel.h */,
+				082D3947162C82C200973067 /* SurveyFormModel.m */,
+			);
+			name = FormModel;
+			sourceTree = "<group>";
+		};
+		08296A04167BA03E00B4B31E /* ObjectModelForm */ = {
+			isa = PBXGroup;
+			children = (
+				08296A05167BA06500B4B31E /* SurveyObjectModelForm.h */,
+				08296A06167BA06500B4B31E /* SurveyObjectModelForm.m */,
+			);
+			name = ObjectModelForm;
+			sourceTree = "<group>";
+		};
+		08296A6D167BC1A700B4B31E /* DynamicObject */ = {
+			isa = PBXGroup;
+			children = (
+				08296A6E167BC1BC00B4B31E /* SurveyDynamicObject.h */,
+				08296A6F167BC1BC00B4B31E /* SurveyDynamicObject.m */,
+			);
+			name = DynamicObject;
+			sourceTree = "<group>";
+		};
 		082D3925162C825A00973067 = {
 			isa = PBXGroup;
 			children = (
@@ -129,6 +169,7 @@
 		082D3932162C825A00973067 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08296A08167BA0C700B4B31E /* CoreData.framework */,
 				082D3954162C835300973067 /* UIKit.framework */,
 				082D3933162C825A00973067 /* Foundation.framework */,
 			);
@@ -157,6 +198,7 @@
 		082D3941162C82C200973067 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				08296A6D167BC1A700B4B31E /* DynamicObject */,
 				082D398B162C8EDF00973067 /* Views */,
 				082D3950162C82DF00973067 /* Fields */,
 				082D3951162C82EF00973067 /* Form */,
@@ -195,8 +237,8 @@
 		082D3952162C82FC00973067 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				082D3946162C82C200973067 /* SurveyFormModel.h */,
-				082D3947162C82C200973067 /* SurveyFormModel.m */,
+				08296A04167BA03E00B4B31E /* ObjectModelForm */,
+				08296A03167BA03800B4B31E /* FormModel */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -308,6 +350,8 @@
 				082D394F162C82C200973067 /* SurveyValidators.m in Sources */,
 				082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */,
 				0823592B163AFF8700DBD15E /* SurveyEmailField.m in Sources */,
+				08296A07167BA06500B4B31E /* SurveyObjectModelForm.m in Sources */,
+				08296A70167BC1BC00B4B31E /* SurveyDynamicObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,7 @@
 
 @interface SurveyFormModel()
 @property (strong, nonatomic) SurveyForm *instanceForm;
+@property (strong, nonatomic) NSArray *instanceFields;
 @end
 
 @implementation SurveyFormModel
@@ -24,13 +25,17 @@
 
 - (NSArray *)fields
 {
+    if(_instanceFields)
+        return _instanceFields;
+    
     SurveyForm *form = [self form];
     
     NSMutableArray *formFields = [[NSMutableArray alloc] init];
     for(SurveyField *field in form.fields)
         [formFields addObject:field.field];
     
-    return [NSArray arrayWithArray:formFields];
+    _instanceFields = [NSArray arrayWithArray:formFields];
+    return _instanceFields;
 }
 
 - (BOOL)isValid

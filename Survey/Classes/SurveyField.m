@@ -25,6 +25,7 @@
         _contentHorizontalAlignment = UIControlContentHorizontalAlignmentLeft;
         _backgroundColor            = [UIColor whiteColor];
         _font                       = [UIFont systemFontOfSize:[UIFont systemFontSize]];
+        _clearButtonMode            = UITextFieldViewModeNever;
     }
     return self;
 }
@@ -124,7 +125,7 @@
     else if(self.shouldClear != nil)
         return self.shouldClear(self, textField);
     
-    return NO;
+    return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField

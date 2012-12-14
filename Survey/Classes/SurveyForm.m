@@ -8,10 +8,10 @@
 
 #import "SurveyForm.h"
 #import "SurveyFormModel.h"
+#import "SurveyObjectModelForm.h"
 #import "SurveyField.h"
-#import <objc/runtime.h>
 
-static const char * getPropertyType(objc_property_t property)
+static const char *getPropertyType(objc_property_t property)
 {
     const char *attributes = property_getAttributes(property);
     
@@ -132,8 +132,10 @@ static NSDictionary *errorListDictionary()
     field.returnKeyType                 = fieldObject.returnKeyType;
     field.contentHorizontalAlignment    = fieldObject.contentHorizontalAlignment;
     field.contentVerticalAlignment      = fieldObject.contentVerticalAlignment;
+    field.clearButtonMode               = fieldObject.clearButtonMode;
+
     field.delegate                      = fieldObject;
-    
+
     [fieldObject setField:field];
     
     fieldObject.form        = self;
@@ -154,8 +156,16 @@ static NSDictionary *errorListDictionary()
 
     if(!fieldList || fieldList.count < 1)
     {
+        __block NSDictionary *properties = (propertiesForClass([_model class]));
         __block NSUInteger idx = 0;
-        [(propertiesForClass([_model class])) enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
+        
+        if([properties objectForKey:@"entityDescription"])
+        {
+            SurveyObjectModelForm *formInstance = (SurveyObjectModelForm *)_model;
+            properties = formInstance.properties;
+        }
+        
+        [properties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
             SurveyField *fieldObject = [self setupFieldObject:(SurveyField *)[_model valueForKey:key] withKey:key];
             [fieldsArray addObject:fieldObject];
             idx++;
@@ -164,7 +174,6 @@ static NSDictionary *errorListDictionary()
     else
     {
         [fieldList enumerateObjectsUsingBlock:^(NSString *key, NSUInteger idx, BOOL *stop) {
-
             SurveyField *prop = (SurveyField *)[_model valueForKey:key];
             [fieldsArray addObject:[self setupFieldObject:prop withKey:key]];
         }];

@@ -11,9 +11,11 @@
 @implementation WCRegisterForm
 - (SurveyField *)firstname
 {
-    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"First Name"];
-    field.isRequired    = YES;
-    field.label         = @"First Name";
+    SurveyField *field      = [SurveyField fieldWithPlaceholder:@"First Name"];
+    field.isRequired        = YES;
+    field.label             = @"First Name";
+    field.clearButtonMode   = UITextFieldViewModeWhileEditing;
+    
     field.shouldBeginEditing = ^(SurveyField *this, id field) {
         NSLog(@"We should begin editing");
         return YES;
@@ -21,6 +23,7 @@
     
     field.didEndEditing = ^(SurveyField *this,id field) {
         NSString *value = ((UITextField *)field).text;
+        
         NSLog(@"Field ended editing with Value: %@", value);
     };
     

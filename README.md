@@ -125,6 +125,40 @@ if(registerForm.isValid)
 
 ```
 
+## Example Object Model Form
+
+
+```objectivec
+
+// WCModelForm.h
+@interface WCModelForm : SurveyObjectModelForm
+@end
+
+
+// WCModelForm.m
+@implementation WCModelForm
+
++ (NSArray *)fields
+{
+    // Control field order.
+    return @[@"lastname", @"firstname"];
+}
+
+@end
+
+```
+
+## Using the object form
+> Using an object form model is exactly like using a regular form model. The only difference is when you create a new 
+instance you will provide it with an NSEntityDescription.
+
+``` objectivec 
+
+NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[WCCoreData instance].managedObjectContext];
+WCModelForm *form = [[WCModelForm alloc] initWithEntityDescription:entityDescription];
+
+```
+
 ## If you need me
 * [Github](http://www.github.com/wess)
 * [@WessCope](http://www.twitter.com/wesscope)

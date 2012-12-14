@@ -43,6 +43,7 @@ typedef BOOL(^SurveyShouldChangeBlock)(SurveyField *this, id field, NSRange rang
 @property (readwrite, nonatomic) UITextAutocorrectionType               autocorrectionType;
 @property (readwrite, nonatomic) UIKeyboardType                         keyboardType;
 @property (readwrite, nonatomic) UIReturnKeyType                        returnKeyType;
+@property (readwrite, nonatomic) UITextFieldViewMode                    clearButtonMode;
 @property (readwrite, nonatomic) UIControlContentVerticalAlignment      contentVerticalAlignment;
 @property (readwrite, nonatomic) UIControlContentHorizontalAlignment    contentHorizontalAlignment;
 @property (copy, nonatomic) UIColor                                     *backgroundColor;

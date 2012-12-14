@@ -7,6 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <objc/runtime.h>
+
+static const char *getPropertyType(objc_property_t property);
+NSDictionary *propertiesForClass(Class klass);
 
 @class SurveyField;
 @class SurveyFormModel;
@@ -19,7 +23,7 @@
 
 + (SurveyForm *)formWithSurveyModelName:(NSString *)modelName;
 + (SurveyForm *)formWithSurveyModelClass:(Class)modelClass;
-+ (SurveyForm *)formWithSurveyModel:(SurveyFormModel *)modelInstance;
++ (SurveyForm *)formWithSurveyModel:(id)modelInstance;
 
 - (NSUInteger)getIndexOfField:(SurveyField *)field;
 - (SurveyField *)getFieldAtTabIndex:(NSUInteger)index;

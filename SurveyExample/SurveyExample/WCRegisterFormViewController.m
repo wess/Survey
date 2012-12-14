@@ -7,10 +7,12 @@
 //
 
 #import "WCRegisterFormViewController.h"
-#import "WCRegisterForm.h"
+#import "WCCoreData.h"
+#import "WCModelForm.h"
 
 @interface WCRegisterFormViewController ()
-@property (strong, nonatomic) WCRegisterForm *registerForm;
+//@property (strong, nonatomic) WCRegisterForm *registerForm;
+@property (strong, nonatomic) WCModelForm *registerForm;
 - (void)buttonAction:(id)sender;
 @end
 
@@ -21,7 +23,10 @@
     self = [super initWithStyle:UITableViewStyleGrouped];
     if (self)
     {
-        _registerForm = [[WCRegisterForm alloc] init];
+//        _registerForm = [[WCRegisterForm alloc] init];
+        
+        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[WCCoreData instance].managedObjectContext];
+        _registerForm = [[WCModelForm alloc] initWithEntityDescription:entityDescription];
     }
     return self;
 }

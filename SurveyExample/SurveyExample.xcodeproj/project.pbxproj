@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08296A1B167BB7C100B4B31E /* SurveyExample.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 08296A19167BB7C100B4B31E /* SurveyExample.xcdatamodeld */; };
+		08296A22167BB7FB00B4B31E /* WCCoreData.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A21167BB7FB00B4B31E /* WCCoreData.m */; };
+		08296A65167BB93D00B4B31E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08296A64167BB93D00B4B31E /* CoreData.framework */; };
+		08296A68167BB99B00B4B31E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A67167BB99A00B4B31E /* Person.m */; };
+		08296A75167BC6A000B4B31E /* WCModelForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A74167BC6A000B4B31E /* WCModelForm.m */; };
 		08C867DC162CE99200B98C14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DB162CE99200B98C14 /* UIKit.framework */; };
 		08C867DE162CE99200B98C14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DD162CE99200B98C14 /* Foundation.framework */; };
 		08C867E0162CE99200B98C14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DF162CE99200B98C14 /* CoreGraphics.framework */; };
@@ -23,6 +28,14 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		08296A1A167BB7C100B4B31E /* SurveyExample.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SurveyExample.xcdatamodel; sourceTree = "<group>"; };
+		08296A20167BB7FB00B4B31E /* WCCoreData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCCoreData.h; sourceTree = "<group>"; };
+		08296A21167BB7FB00B4B31E /* WCCoreData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCCoreData.m; sourceTree = "<group>"; };
+		08296A64167BB93D00B4B31E /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		08296A66167BB99A00B4B31E /* Person.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Person.h; sourceTree = "<group>"; };
+		08296A67167BB99A00B4B31E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
+		08296A73167BC6A000B4B31E /* WCModelForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCModelForm.h; sourceTree = "<group>"; };
+		08296A74167BC6A000B4B31E /* WCModelForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCModelForm.m; sourceTree = "<group>"; };
 		08C867D7162CE99200B98C14 /* SurveyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C867DB162CE99200B98C14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08C867DD162CE99200B98C14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -49,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				08296A65167BB93D00B4B31E /* CoreData.framework in Frameworks */,
 				08C8680B162CF12F00B98C14 /* QuartzCore.framework in Frameworks */,
 				08C86803162CE9D700B98C14 /* libSurvey.a in Frameworks */,
 				08C867DC162CE99200B98C14 /* UIKit.framework in Frameworks */,
@@ -60,6 +74,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		08296A17167BB7AB00B4B31E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				08296A69167BB9A100B4B31E /* Person */,
+				08296A1C167BB7CC00B4B31E /* CoreData */,
+				08296A19167BB7C100B4B31E /* SurveyExample.xcdatamodeld */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		08296A1C167BB7CC00B4B31E /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				08296A20167BB7FB00B4B31E /* WCCoreData.h */,
+				08296A21167BB7FB00B4B31E /* WCCoreData.m */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		08296A69167BB9A100B4B31E /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				08296A66167BB99A00B4B31E /* Person.h */,
+				08296A67167BB99A00B4B31E /* Person.m */,
+			);
+			name = Person;
+			sourceTree = "<group>";
+		};
+		08296A6A167BB9CF00B4B31E /* RegisterForm */ = {
+			isa = PBXGroup;
+			children = (
+				08C86804162CEA1700B98C14 /* WCRegisterForm.h */,
+				08C86805162CEA1700B98C14 /* WCRegisterForm.m */,
+			);
+			name = RegisterForm;
+			sourceTree = "<group>";
+		};
+		08296A72167BC69400B4B31E /* ModelForm */ = {
+			isa = PBXGroup;
+			children = (
+				08296A73167BC6A000B4B31E /* WCModelForm.h */,
+				08296A74167BC6A000B4B31E /* WCModelForm.m */,
+			);
+			name = ModelForm;
+			sourceTree = "<group>";
+		};
 		08C867CC162CE99200B98C14 = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +140,7 @@
 		08C867DA162CE99200B98C14 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				08296A64167BB93D00B4B31E /* CoreData.framework */,
 				08C8680A162CF12F00B98C14 /* QuartzCore.framework */,
 				08C86802162CE9D700B98C14 /* libSurvey.a */,
 				08C867DB162CE99200B98C14 /* UIKit.framework */,
@@ -93,6 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				08C86801162CE9B700B98C14 /* Controller */,
+				08296A17167BB7AB00B4B31E /* Models */,
 				08C86800162CE9B400B98C14 /* Form */,
 				08C867FF162CE9B100B98C14 /* AppDelegate */,
 				08C867E2162CE99200B98C14 /* Supporting Files */,
@@ -126,8 +188,8 @@
 		08C86800162CE9B400B98C14 /* Form */ = {
 			isa = PBXGroup;
 			children = (
-				08C86804162CEA1700B98C14 /* WCRegisterForm.h */,
-				08C86805162CEA1700B98C14 /* WCRegisterForm.m */,
+				08296A72167BC69400B4B31E /* ModelForm */,
+				08296A6A167BB9CF00B4B31E /* RegisterForm */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -211,6 +273,10 @@
 				08C867EC162CE99200B98C14 /* WCAppDelegate.m in Sources */,
 				08C86806162CEA1700B98C14 /* WCRegisterForm.m in Sources */,
 				08C86809162CEDAF00B98C14 /* WCRegisterFormViewController.m in Sources */,
+				08296A1B167BB7C100B4B31E /* SurveyExample.xcdatamodeld in Sources */,
+				08296A22167BB7FB00B4B31E /* WCCoreData.m in Sources */,
+				08296A68167BB99B00B4B31E /* Person.m in Sources */,
+				08296A75167BC6A000B4B31E /* WCModelForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -324,6 +390,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		08296A19167BB7C100B4B31E /* SurveyExample.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				08296A1A167BB7C100B4B31E /* SurveyExample.xcdatamodel */,
+			);
+			currentVersion = 08296A1A167BB7C100B4B31E /* SurveyExample.xcdatamodel */;
+			path = SurveyExample.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 08C867CE162CE99200B98C14 /* Project object */;
 }
