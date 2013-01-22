@@ -28,6 +28,8 @@
 		082D3982162C859400973067 /* SurveyValidators.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3948162C82C200973067 /* SurveyValidators.h */; };
 		082D398F162C8F3E00973067 /* SurveyFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 082D398E162C8F3E00973067 /* SurveyFieldCell.m */; };
 		082D3993162C97A100973067 /* SurveyFieldCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D398D162C8F3E00973067 /* SurveyFieldCell.h */; };
+		08C0C07A16AEE89F0001CBE8 /* SurveyModelForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0C07916AEE89F0001CBE8 /* SurveyModelForm.m */; };
+		08C0C08016AEED830001CBE8 /* SurveyModelForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08C0C07816AEE89F0001CBE8 /* SurveyModelForm.h */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,7 @@
 			dstPath = "include/${PRODUCT_NAME}";
 			dstSubfolderSpec = 16;
 			files = (
+				08C0C08016AEED830001CBE8 /* SurveyModelForm.h in CopyFiles */,
 				08296A71167BC1EF00B4B31E /* SurveyDynamicObject.h in CopyFiles */,
 				08296A6C167BBA3200B4B31E /* SurveyObjectModelForm.h in CopyFiles */,
 				0823592C163B013500DBD15E /* SurveyEmailField.h in CopyFiles */,
@@ -86,6 +89,8 @@
 		082D3954162C835300973067 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		082D398D162C8F3E00973067 /* SurveyFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldCell.h; sourceTree = "<group>"; };
 		082D398E162C8F3E00973067 /* SurveyFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyFieldCell.m; sourceTree = "<group>"; };
+		08C0C07816AEE89F0001CBE8 /* SurveyModelForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyModelForm.h; sourceTree = "<group>"; };
+		08C0C07916AEE89F0001CBE8 /* SurveyModelForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyModelForm.m; sourceTree = "<group>"; };
 		08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SurveyExample.xcodeproj; path = SurveyExample/SurveyExample.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -230,6 +235,8 @@
 			children = (
 				082D3944162C82C200973067 /* SurveyForm.h */,
 				082D3945162C82C200973067 /* SurveyForm.m */,
+				08C0C07816AEE89F0001CBE8 /* SurveyModelForm.h */,
+				08C0C07916AEE89F0001CBE8 /* SurveyModelForm.m */,
 			);
 			name = Form;
 			sourceTree = "<group>";
@@ -352,6 +359,7 @@
 				0823592B163AFF8700DBD15E /* SurveyEmailField.m in Sources */,
 				08296A07167BA06500B4B31E /* SurveyObjectModelForm.m in Sources */,
 				08296A70167BC1BC00B4B31E /* SurveyDynamicObject.m in Sources */,
+				08C0C07A16AEE89F0001CBE8 /* SurveyModelForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

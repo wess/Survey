@@ -1,19 +1,19 @@
 # Survey
 
-> Survey is a library to simplify the process of creating and validating forms.  This library is loosely based on CoreData and Django forms.
+Survey is a library to simplify the process of creating and validating forms.  This library is loosely based on CoreData and Django forms.
 
-## To-do: (Just starting development, much more to come)
+## TODO: (Just starting development, much more to come)
 * More Validators
-* Generate forms from ManagedObject models
-* Block based form actions.
+* Create save/update methods on forms generated from managedObjectModels
+* Create ability to attach UIView to a field to show error messages.
 
 ## Setting up
-> To set up, place the Survey project file into your project, link to the libSurvey.a framework and add it as a target dependency, then just #import <Survey/Survey.h> and go to town!
+To set up, place the Survey project file into your project, add it as a target dependency, link to the libSurvey.a framework, then just #import <Survey/Survey.h> and go to town!
 
 ## Example Form Model:
-> Setting up a form is pretty simple, you just subclass SurveyFormModel and set up properties for the fields you want. Then, in the implementation, set up each field with the properties you want.
+Setting up a form is pretty simple, you just subclass SurveyFormModel and set up properties for the fields you want. Then, in the implementation, set up each field with the properties you want.
 
-> Be sure to checkout SurveyEmailField to see how easy it is to create custom fields to use.  the email field example below has been updated to use that custom field.
+Be sure to checkout SurveyEmailField to see how easy it is to create custom fields to use.  the email field example below has been updated to use that custom field.
 
 ```objectivec
 
@@ -108,7 +108,7 @@
 ```
 
 ## Using the form
-> Using the form is also pretty simple, you just init the form and then when you want to use it, you just check that it's valid then grab the values you need.
+Using the form is also pretty simple, you just init the form and then when you want to use it, you just check that it's valid then grab the values you need.
 
 ```objectivec
 
@@ -149,13 +149,63 @@ if(registerForm.isValid)
 ```
 
 ## Using the object form
-> Using an object form model is exactly like using a regular form model. The only difference is when you create a new 
+Using an object form model is exactly like using a regular form model. The only difference is when you create a new 
 instance you will provide it with an NSEntityDescription.
 
 ``` objectivec 
 
 NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[WCCoreData instance].managedObjectContext];
 WCModelForm *form = [[WCModelForm alloc] initWithEntityDescription:entityDescription];
+
+```
+
+### Simplified Object Form
+You can now use SurveyModelForm to create forms, even easier than SurveyObjectModelForm, just by subclassing and little setup. You don't have to override any fields if you don't want to, Survey will do it's best to create the form straight from the object model.  We still have the weird ordering issue so be sure to use +(NSArray *)fields if you want to order the fields yourself.  You can pick and chose which fields to override, or all, or none.  The form then works just like a regular form would, with isValid, etc..
+
+``` objectivec
+//  WCEasyModelForm.h
+
+#import <Survey/SurveyModelForm.h>
+#import <Survey/SurveyField.h>
+
+@interface WCEasyModelForm : SurveyModelForm
+@property (strong, nonatomic) SurveyField *lastname;
+@end
+
+
+// WCEasyModelForm.m
+
+#import "WCEasyModelForm.h"
+#import "WCCoreData.h"
+#import "Person.h"
+
+@implementation WCEasyModelForm
+
++ (Class)managedObjectClass
+{
+    return [Person class];
+}
+
++ (NSManagedObjectContext *)managedObjectContext
+{
+    return [[WCCoreData instance] managedObjectContext];
+}
+
+- (SurveyField *)lastname
+{
+    SurveyField *field  = [SurveyField fieldWithPlaceholder:@"Wooooyaaa"];
+    field.isRequired    = YES;
+    
+    return field;
+}
+
++ (NSArray *)fields
+{
+    return @[@"firstname", @"lastname"];
+}
+
+@end
+
 
 ```
 

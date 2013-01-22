@@ -11,4 +11,5 @@
 #import <Survey/SurveyField.h>
 
 @interface WCModelForm : SurveyObjectModelForm
+@property (strong, nonatomic) SurveyField *lastname;
 @end

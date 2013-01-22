@@ -31,6 +31,20 @@
         self.entityDescription  = entityDescription;
         
         [self processEntityDescription];
+        
+        NSDictionary *classProperties = propertiesForClass([self class]);
+
+        [classProperties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propertyType, BOOL *stop) {
+            if([[propertyType lowercaseString] isEqualToString:@"surveyfield"])
+            {
+                SEL selector = NSSelectorFromString(key);
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+                [self setValue:[self performSelector:selector] forKey:key];
+#pragma clang diagnostic pop
+            }
+        }];
+        
     }
     return self;
 }
@@ -38,14 +52,17 @@
 - (void)processEntityDescription
 {
     NSArray *properties = [self.entityDescription properties];
+    
     [properties enumerateObjectsUsingBlock:^(NSAttributeDescription *attribute, NSUInteger idx, BOOL *stop) {
-        NSString *name          = [attribute.name copy];
         NSInteger isOptional    = attribute.isOptional;
 
-        SurveyField *field  = [SurveyField fieldWithPlaceholder:[name capitalizedString]];
-        field.isRequired    = ![@(isOptional) boolValue];
-        
-        [self setValue:field forKey:name];
+        if(![self getObjectForKey:attribute.name])
+        {
+            SurveyField *field  = [SurveyField fieldWithPlaceholder:[attribute.name capitalizedString]];
+            field.isRequired    = ![@(isOptional) boolValue];
+
+            [self setValue:field forKey:attribute.name];
+        }
     }];
 }
 
@@ -79,14 +96,7 @@
 
 - (NSArray *)fields
 {
-    SurveyForm *form = [self form];
-    
-    NSMutableArray *formFields = [[NSMutableArray alloc] init];
-    
-    for(SurveyField *field in form.fields)
-        [formFields addObject:field.field];
-    
-    return [NSArray arrayWithArray:formFields];
+    return [[[self form] fields] valueForKeyPath:@"field"]; //;[NSArray arrayWithArray:formFields];
 }
 
 - (BOOL)isValid

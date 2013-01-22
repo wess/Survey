@@ -158,13 +158,7 @@ static NSDictionary *errorListDictionary()
     {
         __block NSDictionary *properties = (propertiesForClass([_model class]));
         __block NSUInteger idx = 0;
-        
-        if([properties objectForKey:@"entityDescription"])
-        {
-            SurveyObjectModelForm *formInstance = (SurveyObjectModelForm *)_model;
-            properties = formInstance.properties;
-        }
-        
+
         [properties enumerateKeysAndObjectsUsingBlock:^(NSString *key, NSString *propType, BOOL *stop) {
             SurveyField *fieldObject = [self setupFieldObject:(SurveyField *)[_model valueForKey:key] withKey:key];
             [fieldsArray addObject:fieldObject];

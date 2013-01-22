@@ -12,6 +12,7 @@
 		08296A65167BB93D00B4B31E /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08296A64167BB93D00B4B31E /* CoreData.framework */; };
 		08296A68167BB99B00B4B31E /* Person.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A67167BB99A00B4B31E /* Person.m */; };
 		08296A75167BC6A000B4B31E /* WCModelForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08296A74167BC6A000B4B31E /* WCModelForm.m */; };
+		08C0C07F16AEED360001CBE8 /* WCEasyModelForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08C0C07E16AEED360001CBE8 /* WCEasyModelForm.m */; };
 		08C867DC162CE99200B98C14 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DB162CE99200B98C14 /* UIKit.framework */; };
 		08C867DE162CE99200B98C14 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DD162CE99200B98C14 /* Foundation.framework */; };
 		08C867E0162CE99200B98C14 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08C867DF162CE99200B98C14 /* CoreGraphics.framework */; };
@@ -36,6 +37,8 @@
 		08296A67167BB99A00B4B31E /* Person.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Person.m; sourceTree = "<group>"; };
 		08296A73167BC6A000B4B31E /* WCModelForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCModelForm.h; sourceTree = "<group>"; };
 		08296A74167BC6A000B4B31E /* WCModelForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCModelForm.m; sourceTree = "<group>"; };
+		08C0C07D16AEED360001CBE8 /* WCEasyModelForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WCEasyModelForm.h; sourceTree = "<group>"; };
+		08C0C07E16AEED360001CBE8 /* WCEasyModelForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WCEasyModelForm.m; sourceTree = "<group>"; };
 		08C867D7162CE99200B98C14 /* SurveyExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SurveyExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08C867DB162CE99200B98C14 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08C867DD162CE99200B98C14 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,15 @@
 			name = ModelForm;
 			sourceTree = "<group>";
 		};
+		08C0C07B16AEED290001CBE8 /* EasyModelForm */ = {
+			isa = PBXGroup;
+			children = (
+				08C0C07D16AEED360001CBE8 /* WCEasyModelForm.h */,
+				08C0C07E16AEED360001CBE8 /* WCEasyModelForm.m */,
+			);
+			name = EasyModelForm;
+			sourceTree = "<group>";
+		};
 		08C867CC162CE99200B98C14 = {
 			isa = PBXGroup;
 			children = (
@@ -188,6 +200,7 @@
 		08C86800162CE9B400B98C14 /* Form */ = {
 			isa = PBXGroup;
 			children = (
+				08C0C07B16AEED290001CBE8 /* EasyModelForm */,
 				08296A72167BC69400B4B31E /* ModelForm */,
 				08296A6A167BB9CF00B4B31E /* RegisterForm */,
 			);
@@ -277,6 +290,7 @@
 				08296A22167BB7FB00B4B31E /* WCCoreData.m in Sources */,
 				08296A68167BB99B00B4B31E /* Person.m in Sources */,
 				08296A75167BC6A000B4B31E /* WCModelForm.m in Sources */,
+				08C0C07F16AEED360001CBE8 /* WCEasyModelForm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
