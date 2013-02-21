@@ -15,14 +15,14 @@ typedef void(^SurveyTextFieldDidBlock)(SurveyField *this, id field);
 typedef BOOL(^SurveyShouldChangeBlock)(SurveyField *this, id field, NSRange range, NSString *string);
 
 @protocol SurveyFieldDelegate;
-@interface SurveyField : NSObject<UITextFieldDelegate>
+@interface SurveyField : NSObject<UITextFieldDelegate, UITextViewDelegate>
 @property (strong, nonatomic)    id<SurveyFieldDelegate>        delegate;
 @property (strong, nonatomic)    SurveyForm                     *form;
 @property (copy, nonatomic)      NSString                       *entityName;
 @property (copy, nonatomic)      NSString                       *label;
 @property (copy, nonatomic)      NSString                       *placeholder;
 @property (copy, nonatomic)      NSString                       *value;
-@property (strong, nonatomic)    UITextField                    *field;
+@property (strong, nonatomic)    id                             field;
 @property (strong, nonatomic)    NSRegularExpression            *expression;
 @property (strong, nonatomic)    NSString                       *errorMessage;
 @property (strong, nonatomic)    Class                          fieldClass;
@@ -34,6 +34,7 @@ typedef BOOL(^SurveyShouldChangeBlock)(SurveyField *this, id field, NSRange rang
 @property (copy, nonatomic)      SurveyShouldChangeBlock        shouldChangeCharactersInRange;
 @property (copy, nonatomic)      SurveyTextFieldShouldBlock     shouldClear;
 @property (copy, nonatomic)      SurveyTextFieldShouldBlock     shouldReturn;
+@property (copy, nonatomic)      SurveyShouldChangeBlock        shouldChangeTextInRange;
 @property (readwrite, nonatomic) BOOL                           isRequired;
 @property (readwrite, nonatomic) BOOL                           isSecure;
 @property (readonly, nonatomic)  NSUInteger                     tabIndex;
@@ -71,4 +72,7 @@ typedef BOOL(^SurveyShouldChangeBlock)(SurveyField *this, id field, NSRange rang
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string;
 - (BOOL)textFieldShouldClear:(UITextField *)textField;
 - (BOOL)textFieldShouldReturn:(UITextField *)textField;
+- (void)textViewDidBeginEditing:(UITextView *)textView;
+- (void)textViewDidEndEditing:(UITextView *)textView;
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text;
 @end

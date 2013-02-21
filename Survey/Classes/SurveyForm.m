@@ -118,25 +118,25 @@ static NSDictionary *errorListDictionary()
 
 - (SurveyField *)setupFieldObject:(SurveyField *)fieldObject withKey:(NSString *)key
 {
-    UITextField *field = (UITextField *)fieldObject.field;
+//    UITextField *field = (UITextField *)fieldObject.field;
+//    id field = fieldObject.field;
+//
+//    if(!field)
+//        field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
     
-    if(!field)
-        field = (fieldObject.fieldClass)? [[fieldObject.fieldClass alloc] initWithFrame:CGRectZero] : [[UITextField alloc] initWithFrame:CGRectZero];
-    
-    field.text                          = fieldObject.value;
-    field.placeholder                   = fieldObject.placeholder;
-    field.secureTextEntry               = fieldObject.isSecure;
-    field.autocapitalizationType        = fieldObject.autocapitalizationType;
-    field.autocorrectionType            = fieldObject.autocorrectionType;
-    field.keyboardType                  = fieldObject.keyboardType;
-    field.returnKeyType                 = fieldObject.returnKeyType;
-    field.contentHorizontalAlignment    = fieldObject.contentHorizontalAlignment;
-    field.contentVerticalAlignment      = fieldObject.contentVerticalAlignment;
-    field.clearButtonMode               = fieldObject.clearButtonMode;
-
-    field.delegate                      = fieldObject;
-
-    [fieldObject setField:field];
+//    [field setText:fieldObject.value];
+//    [field setSecureTextEntry:fieldObject.isSecure];
+//    [field setAutocapitalizationType:fieldObject.autocapitalizationType];
+//    [field setAutocorrectionType:fieldObject.autocorrectionType];
+//    [field setKeyboardType:fieldObject.keyboardType];
+//    [field setReturnKeyType:fieldObject.returnKeyType];
+//    [field setContentHorizontalAlignment:fieldObject.contentHorizontalAlignment];
+//    [field setContentVerticalAlignment:fieldObject.contentVerticalAlignment];
+//    [field setClearButtonMode:fieldObject.clearButtonMode];
+//    [field setDelegate:fieldObject];
+//    [field setPlaceholder:fieldObject.placeholder];
+//    
+//    [fieldObject setField:field];
     
     fieldObject.form        = self;
     fieldObject.label       = (fieldObject.label)? fieldObject.label : key;
@@ -185,7 +185,7 @@ static NSDictionary *errorListDictionary()
     
     NSMutableDictionary *fieldValues = [NSMutableDictionary dictionary];
     [[self fields] enumerateObjectsUsingBlock:^(SurveyField *fieldObject, NSUInteger idx, BOOL *stop) {
-        [fieldValues setObject:(fieldObject.field.text? fieldObject.field.text : @"") forKey:fieldObject.entityName];
+        [fieldValues setObject:([fieldObject.field text]? [fieldObject.field text] : @"") forKey:fieldObject.entityName];
     }];
     
     return [fieldValues copy];
@@ -207,7 +207,7 @@ static NSDictionary *errorListDictionary()
     NSArray *fieldArray = [self fields];
     [fieldArray enumerateObjectsUsingBlock:^(SurveyField *fieldObject, NSUInteger idx, BOOL *stop) {
         NSMutableArray *mutableFieldErrors  = [[NSMutableArray alloc] init];
-        NSString *value                     = fieldObject.field.text;
+        NSString *value                     = [fieldObject.field text];
         
         if(fieldObject.isRequired && ([value isEqualToString:@""] || !value))
         {
