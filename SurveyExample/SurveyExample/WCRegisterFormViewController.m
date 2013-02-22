@@ -7,14 +7,10 @@
 //
 
 #import "WCRegisterFormViewController.h"
-#import "WCCoreData.h"
-#import "WCModelForm.h"
-#import "WCEasyModelForm.h"
+#import "WCRegisterForm.h"
 
 @interface WCRegisterFormViewController ()
-//@property (strong, nonatomic) WCRegisterForm *registerForm;
-//@property (strong, nonatomic) WCModelForm *registerForm;
-@property (strong, nonatomic) WCEasyModelForm *registerForm;
+@property (strong, nonatomic) WCRegisterForm *registerForm;
 - (void)buttonAction:(id)sender;
 @end
 
@@ -30,7 +26,7 @@
 //        NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"Person" inManagedObjectContext:[WCCoreData instance].managedObjectContext];
 //        _registerForm = [[WCModelForm alloc] initWithEntityDescription:entityDescription];
         
-        _registerForm = [[WCEasyModelForm alloc] init];
+        _registerForm = [[WCRegisterForm alloc] init];
     }
     return self;
 }
@@ -54,10 +50,10 @@
 
 - (void)buttonAction:(id)sender
 {
-    if(_registerForm.isValid)
+    if([_registerForm isValid])
         NSLog(@"FORM IS VALID");
     else
-        NSLog(@"FIELD ERRORS: %@", _registerForm.form.fieldErrors);
+        NSLog(@"FIELD ERRORS: %@", _registerForm.errors);
 }
 
 #pragma mark - Table view data source
@@ -84,11 +80,11 @@
         
     }
     
-    UITextField *field              = [_registerForm.fields objectAtIndex:indexPath.row];
-    field.frame                     = CGRectInset(cell.bounds, 30.0f, 5.0f);
-    field.contentVerticalAlignment  = UIControlContentVerticalAlignmentCenter;
-
-    [cell addSubview:field];
+//    UITextField *field              = [_registerForm.fields objectAtIndex:indexPath.row];
+//    field.frame                     = CGRectInset(cell.bounds, 30.0f, 5.0f);
+//    field.contentVerticalAlignment  = UIControlContentVerticalAlignmentCenter;
+//
+//    [cell addSubview:field];
     
     return cell;
 }

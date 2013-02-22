@@ -9,11 +9,11 @@
 #import <Foundation/Foundation.h>
 #import <Survey/Survey.h>
 
-@interface WCRegisterForm : SurveyFormModel
-@property (strong, nonatomic) SurveyField *firstname;
-@property (strong, nonatomic) SurveyField *lastname;
-@property (strong, nonatomic) SurveyField *email;
-@property (strong, nonatomic) SurveyField *city;
-@property (strong, nonatomic) SurveyField *state;
-@property (strong, nonatomic) SurveyField *zipcode;
+@interface WCRegisterForm : SurveyForm
+@property (strong, nonatomic) SurveyTextField *firstname;
+@property (strong, nonatomic) SurveyTextField *lastname;
+@property (strong, nonatomic) SurveyTextField *email;
+@property (strong, nonatomic) SurveyTextField *city;
+@property (strong, nonatomic) SurveyTextField *state;
+@property (strong, nonatomic) SurveyTextField *zipcode;
 @end
