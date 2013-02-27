@@ -75,12 +75,16 @@ NSDictionary *propertiesForClass(Class klass);
 /**
  Returns the index of passed field.
  
+ @param field field to find index of.
+ 
  @return the index of passed field.
  **/
 - (NSUInteger)indexOfField:(id)field;
 
 /**
  Returns the index of a field.
+ 
+ @param index tab location for desired field.
  
  @return the index of a field.
  **/

@@ -30,6 +30,7 @@
  Returns an instance of `SurveyModelForm` using the name of a CoreData entity.
  
  @param entityName The name of a CoreData entity you want `SurveyModelForm` to use to create the form fields.
+
  @return New instance of SurveyModelForm.
  */
 - (id)initWithEntityName:(NSString *)entityName;
@@ -37,7 +38,8 @@
 /**
  Returns an instance of `SurveyModelForm` using an entity description.
  
- @param entityDesctription An entity description created from a CoreData entity.
+ @param entityDescription An entity description created from a CoreData entity.
+
  @return New instance of SurveyModelForm.
 */
 - (id)initWithEntityDescription:(NSEntityDescription *)entityDescription;

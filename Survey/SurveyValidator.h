@@ -25,6 +25,10 @@ typedef BOOL(^SurveyValidationBlock)(NSString *value);
  Registers validation block methods with a given name.
  
  @discussion The block passes the value of the field to the provided block which will return a true or false response, validationName can be anything, see SurveyDefines.h for predefined validators.
+
+ @param validationName Name for the validation block
+
+ @param block Callback used to validate given value.
  */
 - (void)registerValidation:(NSString *)validationName withBlock:(SurveyValidationBlock)block;
 
@@ -36,6 +40,10 @@ typedef BOOL(^SurveyValidationBlock)(NSString *value);
 /**
  Returns a YES/NO if string value validates against validator with provided name.
 
+ @param value String to validate
+
+ @param validatorName Validator to use to validate value.
+ 
  @returns a YES/NO if string value validates against validator with provided name.
  */
 - (BOOL)validateString:(NSString *)value withValidator:(NSString *)validatorName;
@@ -50,14 +58,21 @@ typedef BOOL(^SurveyValidationBlock)(NSString *value);
 /**
  Shortcut method to register validators
  
- @see -(void)registerValidation:(NSString *)validationName withBlock:(SurveyValidationBlock)block;
+ @param validationName Name for the validation block
+ 
+ @param block Callback used to validate given value.
  */
 + (void)registerValidation:(NSString *)validationName withBlock:(SurveyValidationBlock)block;
 
 /**
  Shortcut method to validate provided string.
  
- @see - (BOOL)validateString:(NSString *)value withValidator:(NSString *)validatorName.
+ @param value String to validate
+ 
+ @param validatorName Validator to use to validate value.
+ 
+ @returns a YES/NO if string value validates against validator with provided name.
+
  */
 + (BOOL)validateString:(NSString *)value withValidator:(NSString *)validatorName;
 
