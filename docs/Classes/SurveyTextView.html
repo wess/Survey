@@ -1,0 +1,1236 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="html/html; charset=utf-8" />
+		<title>SurveyTextView Class Reference</title>
+		<meta id="xcode-display" name="xcode-display" content="render"/>
+		<meta name="viewport" content="width=550" />
+		<link rel="stylesheet" type="text/css" href="../css/styles.css" media="all" />
+		<link rel="stylesheet" type="text/css" media="print" href="../css/stylesPrint.css" />
+		<meta name="generator" content="appledoc 2.1 (build 840)" />
+	</head>
+	<body>
+		<header id="top_header">
+			<div id="library" class="hideInXcode">
+				<h1><a id="libraryTitle" href="../index.html">Survey </a></h1>
+				<a id="developerHome" href="../index.html">Wess Cope</a>
+			</div>
+			
+			<div id="title" role="banner">
+				<h1 class="hideInXcode">SurveyTextView Class Reference</h1>
+			</div>
+			<ul id="headerButtons" role="toolbar">
+				<li id="toc_button">
+					<button aria-label="Show Table of Contents" role="checkbox" class="open" id="table_of_contents"><span class="disclosure"></span>Table of Contents</button>
+				</li>
+				<li id="jumpto_button" role="navigation">
+					<select id="jumpTo">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+	
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+	
+	
+	
+	<option value="properties">Properties</option>
+	
+	<option value="//api/name/didBeginEditing">&nbsp;&nbsp;&nbsp;&nbsp;didBeginEditing</option>
+	
+	<option value="//api/name/didChange">&nbsp;&nbsp;&nbsp;&nbsp;didChange</option>
+	
+	<option value="//api/name/didChangeSelection">&nbsp;&nbsp;&nbsp;&nbsp;didChangeSelection</option>
+	
+	<option value="//api/name/didEndEditing">&nbsp;&nbsp;&nbsp;&nbsp;didEndEditing</option>
+	
+	<option value="//api/name/errorMessages">&nbsp;&nbsp;&nbsp;&nbsp;errorMessages</option>
+	
+	<option value="//api/name/errors">&nbsp;&nbsp;&nbsp;&nbsp;errors</option>
+	
+	<option value="//api/name/form">&nbsp;&nbsp;&nbsp;&nbsp;form</option>
+	
+	<option value="//api/name/onError">&nbsp;&nbsp;&nbsp;&nbsp;onError</option>
+	
+	<option value="//api/name/placeholder">&nbsp;&nbsp;&nbsp;&nbsp;placeholder</option>
+	
+	<option value="//api/name/shouldBeginEditing">&nbsp;&nbsp;&nbsp;&nbsp;shouldBeginEditing</option>
+	
+	<option value="//api/name/shouldChangeCharactersInRange">&nbsp;&nbsp;&nbsp;&nbsp;shouldChangeCharactersInRange</option>
+	
+	<option value="//api/name/shouldClear">&nbsp;&nbsp;&nbsp;&nbsp;shouldClear</option>
+	
+	<option value="//api/name/shouldEndEditing">&nbsp;&nbsp;&nbsp;&nbsp;shouldEndEditing</option>
+	
+	<option value="//api/name/shouldReturn">&nbsp;&nbsp;&nbsp;&nbsp;shouldReturn</option>
+	
+	<option value="//api/name/title">&nbsp;&nbsp;&nbsp;&nbsp;title</option>
+	
+	<option value="//api/name/validationBlock">&nbsp;&nbsp;&nbsp;&nbsp;validationBlock</option>
+	
+	<option value="//api/name/validationOptions">&nbsp;&nbsp;&nbsp;&nbsp;validationOptions</option>
+	
+	
+	
+	
+	
+	
+	<option value="instance_methods">Instance Methods</option>
+	
+	<option value="//api/name/isValid">&nbsp;&nbsp;&nbsp;&nbsp;- isValid</option>
+	
+	
+	
+</select>
+				</li>
+			</ul>
+		</header>
+		<nav id="tocContainer" class="isShowingTOC">
+			<ul id="toc" role="tree">
+				
+<li role="treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#overview">Overview</a></span></li>
+
+
+
+
+<li role="treeitem" id="task_treeitem"><span class="nodisclosure"></span><span class="sectionName"><a href="#tasks">Tasks</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#task_TextField for use with Survey forms.">TextField for use with Survey forms.</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#properties">Properties</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didBeginEditing">didBeginEditing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didChange">didChange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didChangeSelection">didChangeSelection</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/didEndEditing">didEndEditing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errorMessages">errorMessages</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/errors">errors</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/form">form</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/onError">onError</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/placeholder">placeholder</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldBeginEditing">shouldBeginEditing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldChangeCharactersInRange">shouldChangeCharactersInRange</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldClear">shouldClear</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldEndEditing">shouldEndEditing</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/shouldReturn">shouldReturn</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/title">title</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validationBlock">validationBlock</a></span></li>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/validationOptions">validationOptions</a></span></li>
+	
+</ul></li>
+
+
+
+
+
+<li role="treeitem" class="children"><span class="disclosure"></span><span class="sectionName"><a href="#instance_methods">Instance Methods</a></span><ul>
+	
+	<li><span class="nodisclosure"></span><span class="sectionName"><a href="#//api/name/isValid">isValid</a></span></li>
+	
+</ul></li>
+
+
+			</ul>
+		</nav>
+		<article>
+			<div id="contents" class="isShowingTOC" role="main">
+				<a title="SurveyTextView Class Reference" name="top"></a>
+				<div class="main-navigation navigation-top">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="header">
+					<div class="section-header">
+						<h1 class="title title-header">SurveyTextView Class Reference</h1>
+					</div>		
+				</div>
+				<div id="container">	
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<td class="specification-title">Inherits from</td>
+	<td class="specification-value">UITextView</td>
+</tr><tr>
+	<td class="specification-title">Declared in</td>
+	<td class="specification-value">SurveyTextView.h</td>
+</tr>
+						</tbody></table></div>
+					
+					
+					
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>SurveyTextView</code> is a subclass of <code>UITextView</code>, designed to work with SurveyForms and provide block based delegate methods.</p>
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						<h2 class="subtitle subtitle-tasks">Tasks</h2>
+						
+						
+						<a title="TextField for use with Survey forms." name="task_TextField for use with Survey forms."></a>
+						
+<h3 class="subsubtitle task-title">TextField for use with Survey forms.</h3>
+						<ul class="task-list">
+							<li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validationBlock">&nbsp;&nbsp;validationBlock</a></code>
+		<span class="tooltip"><p>The block used to validate the value of a field, when defined in a subclass.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didBeginEditing">&nbsp;&nbsp;didBeginEditing</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>begin editing</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didEndEditing">&nbsp;&nbsp;didEndEditing</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>end editing</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldBeginEditing">&nbsp;&nbsp;shouldBeginEditing</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>should begin editing</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldEndEditing">&nbsp;&nbsp;shouldEndEditing</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>should end editing</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldChangeCharactersInRange">&nbsp;&nbsp;shouldChangeCharactersInRange</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>should change characters in range</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldClear">&nbsp;&nbsp;shouldClear</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>should clear</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/shouldReturn">&nbsp;&nbsp;shouldReturn</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>should return</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/onError">&nbsp;&nbsp;onError</a></code>
+		<span class="tooltip"><p>Callback that is triggered when the field fails validation.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didChange">&nbsp;&nbsp;didChange</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>did change</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/didChangeSelection">&nbsp;&nbsp;didChangeSelection</a></code>
+		<span class="tooltip"><p>Callback when a fields <code>did change selection</code> delegate is triggered.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/form">&nbsp;&nbsp;form</a></code>
+		<span class="tooltip"><p>Access to the fields parent form.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/placeholder">&nbsp;&nbsp;placeholder</a></code>
+		<span class="tooltip"><p>The placeholder value used when the TextView is empty.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/title">&nbsp;&nbsp;title</a></code>
+		<span class="tooltip"><p>Field title</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/validationOptions">&nbsp;&nbsp;validationOptions</a></code>
+		<span class="tooltip"><p>Array of strings that define what validation to use on the field&rsquo;s value.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errorMessages">&nbsp;&nbsp;errorMessages</a></code>
+		<span class="tooltip"><p>Dictionary of messages to use with specific validation types.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/errors">&nbsp;&nbsp;errors</a></code>
+		<span class="tooltip"><p>A list of errors the field has.</p></span>
+	</span>
+	<span class="task-item-suffix">property</span>
+	
+</li><li>
+	<span class="tooltip">
+		<code><a href="#//api/name/isValid">&ndash;&nbsp;isValid</a></code>
+		<span class="tooltip"><p>Checks and returns if the field&rsquo;s value passes it&rsquo;s provided validation types.</p></span>
+	</span>
+	
+	
+</li>
+						</ul>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Properties" name="properties"></a>
+						<h2 class="subtitle subtitle-methods">Properties</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/didBeginEditing" title="didBeginEditing"></a>
+	<h3 class="subsubtitle method-title">didBeginEditing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>begin editing</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldDidBlock didBeginEditing</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>begin editing</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didChange" title="didChange"></a>
+	<h3 class="subsubtitle method-title">didChange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>did change</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldDidBlock didChange</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>did change</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didChangeSelection" title="didChangeSelection"></a>
+	<h3 class="subsubtitle method-title">didChangeSelection</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>did change selection</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldDidBlock didChangeSelection</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>did change selection</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/didEndEditing" title="didEndEditing"></a>
+	<h3 class="subsubtitle method-title">didEndEditing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>end editing</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldDidBlock didEndEditing</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>end editing</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errorMessages" title="errorMessages"></a>
+	<h3 class="subsubtitle method-title">errorMessages</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Dictionary of messages to use with specific validation types.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSMutableDictionary *errorMessages</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Dictionary of messages to use with specific validation types.</p>
+
+<p>@discussion Uses the format: @{SurveyValidationRequired : @&ldquo;Oh, this field is required&rdquo;}</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/errors" title="errors"></a>
+	<h3 class="subsubtitle method-title">errors</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>A list of errors the field has.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (readonly, nonatomic) NSDictionary *errors</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>A list of errors the field has.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/form" title="form"></a>
+	<h3 class="subsubtitle method-title">form</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Access to the fields parent form.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) SurveyForm *form</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Access to the fields parent form.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/onError" title="onError"></a>
+	<h3 class="subsubtitle method-title">onError</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback that is triggered when the field fails validation.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyOnFieldErrorBlock onError</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback that is triggered when the field fails validation.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/placeholder" title="placeholder"></a>
+	<h3 class="subsubtitle method-title">placeholder</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The placeholder value used when the TextView is empty.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *placeholder</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The placeholder value used when the TextView is empty.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldBeginEditing" title="shouldBeginEditing"></a>
+	<h3 class="subsubtitle method-title">shouldBeginEditing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>should begin editing</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldShouldBlock shouldBeginEditing</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>should begin editing</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldChangeCharactersInRange" title="shouldChangeCharactersInRange"></a>
+	<h3 class="subsubtitle method-title">shouldChangeCharactersInRange</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>should change characters in range</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyShouldChangeBlock shouldChangeCharactersInRange</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>should change characters in range</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldClear" title="shouldClear"></a>
+	<h3 class="subsubtitle method-title">shouldClear</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>should clear</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldShouldBlock shouldClear</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>should clear</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldEndEditing" title="shouldEndEditing"></a>
+	<h3 class="subsubtitle method-title">shouldEndEditing</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>should end editing</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldShouldBlock shouldEndEditing</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>should end editing</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/shouldReturn" title="shouldReturn"></a>
+	<h3 class="subsubtitle method-title">shouldReturn</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Callback when a fields <code>should return</code> delegate is triggered.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyTextFieldShouldBlock shouldReturn</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Callback when a fields <code>should return</code> delegate is triggered.</p>
+
+<p>@discussion Block based version of the delegate with the same name.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/title" title="title"></a>
+	<h3 class="subsubtitle method-title">title</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Field title</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) NSString *title</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Field title</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validationBlock" title="validationBlock"></a>
+	<h3 class="subsubtitle method-title">validationBlock</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>The block used to validate the value of a field, when defined in a subclass.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (copy, nonatomic) SurveyValidateFieldBlock validationBlock</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>The block used to validate the value of a field, when defined in a subclass.</p>
+
+<p>@discussion Use for one off validations in property overrides in <a href="#//api/name/form">form</a> subclass.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+						<div class="section-method">
+	<a name="//api/name/validationOptions" title="validationOptions"></a>
+	<h3 class="subsubtitle method-title">validationOptions</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Array of strings that define what validation to use on the field&rsquo;s value.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>@property (strong, nonatomic) NSArray *validationOptions</code></div>
+
+    
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Array of strings that define what validation to use on the field&rsquo;s value.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+					
+					
+					
+					<div class="section section-methods">
+						<a title="Instance Methods" name="instance_methods"></a>
+						<h2 class="subtitle subtitle-methods">Instance Methods</h2>
+						
+						<div class="section-method">
+	<a name="//api/name/isValid" title="isValid"></a>
+	<h3 class="subsubtitle method-title">isValid</h3>
+	
+	
+	
+	<div class="method-subsection brief-description">
+		<p>Checks and returns if the field&rsquo;s value passes it&rsquo;s provided validation types.</p>
+	</div>		
+	
+    
+
+	<div class="method-subsection method-declaration"><code>- (BOOL)isValid</code></div>
+
+    
+	
+	
+	
+	<div class="method-subsection return">
+		<h4 class="method-subtitle parameter-title">Return Value</h4>
+		<p>YES/NO if the field&rsquo;s value is valid.</p>
+	</div>
+	
+	
+	
+	
+	
+	<div class="method-subsection discussion-section">
+		<h4 class="method-subtitle">Discussion</h4>
+		<p>Checks and returns if the field&rsquo;s value passes it&rsquo;s provided validation types.</p>
+	</div>
+	
+	
+	
+	
+	
+	
+	
+	<div class="method-subsection declared-in-section">
+		<h4 class="method-subtitle">Declared In</h4>
+		<code class="declared-in-ref">SurveyTextView.h</code><br />
+	</div>				
+	
+	
+</div>
+						
+					</div>
+					
+					
+				</div>
+				<div class="main-navigation navigation-bottom">
+					<ul>
+	<li><a href="../index.html">Index</a></li>
+	<li><a href="../hierarchy.html">Hierarchy</a></li>
+</ul>
+				</div>
+				<div id="footer">
+					<hr />
+					<div class="footer-copyright">
+						<p><span class="copyright">&copy; 2013 Wess Cope. All rights reserved. (Last updated: 2013-02-27)</span><br />
+						
+						<span class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.1 (build 840)</a>.</span></p>
+						
+					</div>
+				</div>
+			</div>
+		</article>
+		<script type="text/javascript">
+			function jumpToChange()
+			{
+				window.location.hash = this.options[this.selectedIndex].value;
+			}
+			
+			function toggleTOC()
+			{
+				var contents = document.getElementById('contents');
+				var tocContainer = document.getElementById('tocContainer');
+				
+				if (this.getAttribute('class') == 'open')
+				{
+					this.setAttribute('class', '');
+					contents.setAttribute('class', '');
+					tocContainer.setAttribute('class', '');
+					
+					window.name = "hideTOC";
+				}
+				else
+				{
+					this.setAttribute('class', 'open');
+					contents.setAttribute('class', 'isShowingTOC');
+					tocContainer.setAttribute('class', 'isShowingTOC');
+					
+					window.name = "";
+				}
+				return false;
+			}
+			
+			function toggleTOCEntryChildren(e)
+			{
+				e.stopPropagation();
+				var currentClass = this.getAttribute('class');
+				if (currentClass == 'children') {
+					this.setAttribute('class', 'children open');
+				}
+				else if (currentClass == 'children open') {
+					this.setAttribute('class', 'children');
+				}
+				return false;
+			}
+			
+			function tocEntryClick(e)
+			{
+				e.stopPropagation();
+				return true;
+			}
+			
+			function init()
+			{
+				var selectElement = document.getElementById('jumpTo');
+				selectElement.addEventListener('change', jumpToChange, false);
+				
+				var tocButton = document.getElementById('table_of_contents');
+				tocButton.addEventListener('click', toggleTOC, false);
+				
+				var taskTreeItem = document.getElementById('task_treeitem');
+				if (taskTreeItem.getElementsByTagName('li').length > 0)
+				{
+					taskTreeItem.setAttribute('class', 'children');
+					taskTreeItem.firstChild.setAttribute('class', 'disclosure');
+				}
+				
+				var tocList = document.getElementById('toc');
+				
+				var tocEntries = tocList.getElementsByTagName('li');
+				for (var i = 0; i < tocEntries.length; i++) {
+					tocEntries[i].addEventListener('click', toggleTOCEntryChildren, false);
+				}
+				
+				var tocLinks = tocList.getElementsByTagName('a');
+				for (var i = 0; i < tocLinks.length; i++) {
+					tocLinks[i].addEventListener('click', tocEntryClick, false);
+				}
+				
+				if (window.name == "hideTOC") {
+					toggleTOC.call(tocButton);
+				}
+			}
+			
+			window.onload = init;
+			
+			// If showing in Xcode, hide the TOC and Header
+			if (navigator.userAgent.match(/xcode/i)) {
+				document.getElementById("contents").className = "hideInXcode"
+				document.getElementById("tocContainer").className = "hideInXcode"
+				document.getElementById("top_header").className = "hideInXcode"
+			}
+			
+		</script>
+	</body>
+</html>
