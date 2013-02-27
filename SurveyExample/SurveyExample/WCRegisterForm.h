@@ -15,5 +15,5 @@
 @property (strong, nonatomic) SurveyTextField *email;
 @property (strong, nonatomic) SurveyTextField *city;
 @property (strong, nonatomic) SurveyTextField *state;
-@property (strong, nonatomic) SurveyTextField *zipcode;
+@property (strong, nonatomic) SurveyTextView *zipcode;
 @end

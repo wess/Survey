@@ -42,6 +42,14 @@
     return self;
 }
 
+- (void)setTitle:(NSString *)title
+{
+    if(!self.placeholder)
+        self.placeholder = [title capitalizedString];
+    
+    _title = title;
+}
+
 - (BOOL)isValid
 {
     __weak typeof(self) weakSelf                = self;
@@ -64,59 +72,5 @@
     
     return isValid;
 }
-
-//#pragma mark - Delegates -
-//
-//- (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
-//{
-//    if(self.shouldBeginEditing != nil)
-//        return self.shouldBeginEditing(self);
-//
-//    return YES;
-//}
-//
-//- (void)textFieldDidBeginEditing:(UITextField *)textField
-//{
-//    if(self.didBeginEditing != nil)
-//        self.didBeginEditing(self);
-//}
-//
-//- (BOOL)textFieldShouldEndEditing:(UITextField *)textField
-//{
-//    if(self.shouldEndEditing != nil)
-//        return self.shouldEndEditing(self);
-//
-//    return YES;
-//}
-//
-//- (void)textFieldDidEndEditing:(UITextField *)textField
-//{
-//    if(self.didEndEditing != nil)
-//        self.didEndEditing(self);
-//}
-//
-//- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
-//{
-//    if(self.shouldChangeCharactersInRange != nil)
-//        return self.shouldChangeCharactersInRange(self, range, string);
-//
-//    return YES;
-//}
-//
-//- (BOOL)textFieldShouldClear:(UITextField *)textField
-//{
-//    if(self.shouldClear != nil)
-//        return self.shouldClear(self);
-//
-//    return YES;
-//}
-//
-//- (BOOL)textFieldShouldReturn:(UITextField *)textField
-//{
-//    if(self.shouldReturn != nil)
-//        return self.shouldReturn(self);
-//
-//    return NO;
-//}
 
 @end

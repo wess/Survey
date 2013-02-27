@@ -120,14 +120,17 @@ NSDictionary *propertiesForClass(Class klass)
         }
         else
         {
+            
             [fieldList enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
                 id fieldObject = [self valueForKey:name];
+
                 if(!fieldObject)
                 {
-                    NSString *propType = [selfProperties objectForKey:name];
-                    fieldObject = [[NSClassFromString(propType) alloc] init];
+                    NSString *propType  = [selfProperties objectForKey:name];
+                    Class propClass     = NSClassFromString(propType);
+                    fieldObject         = [[propClass alloc] initWithFrame:CGRectZero];
                 }
-                
+
                 if(![fieldObject valueForKey:@"title"])
                     [fieldObject setValue:name forKey:@"title"];
                 

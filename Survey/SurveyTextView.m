@@ -10,7 +10,9 @@
 #import "SurveyValidator.h"
 #import "SurveyForm.h"
 
-@interface SurveyTextView()<UITextViewDelegate>
+@interface SurveyTextView()
+@property (strong, nonatomic) UILabel *placeholderLabel;
+- (void)textChanged:(NSNotification *)notification;
 @end
 
 @implementation SurveyTextView
@@ -19,6 +21,8 @@
 {
     self.validationOptions  = @[SurveyValidationRequired];
     self.errorMessages      = [SurveyDefaultErrorMessages mutableCopy];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textChanged:) name:UITextViewTextDidChangeNotification object:nil];
 }
 
 - (id)initWithFrame:(CGRect)frame
@@ -41,6 +45,11 @@
     return self;
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (BOOL)isValid
 {
     __weak typeof(self) weakSelf                = self;
@@ -48,7 +57,6 @@
     __block NSMutableDictionary *currentErrors  = [NSMutableDictionary new];
     
     [self.validationOptions enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
-        NSLog(@"OPTION: %@", option);
         if(![[SurveyValidator instance] validateString:weakSelf.text withValidator:option])
         {
             currentErrors[option] = self.errorMessages[option];
@@ -64,53 +72,53 @@
     return isValid;
 }
 
-//#pragma mark - TextView Delegates -
-//- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
-//{
-//    if(self.shouldChangeCharactersInRange)
-//        return self.shouldChangeCharactersInRange(self, range, text);
-//    
-//    return NO;
-//}
-//
-//- (void)textViewDidBeginEditing:(UITextView *)textView
-//{
-//    if(self.didBeginEditing)
-//        self.didBeginEditing(self);
-//}
-//
-//- (void)textViewDidChange:(UITextView *)textView
-//{
-//    if(self.didChange)
-//        self.didChange(self);
-//}
-//
-//- (void)textViewDidChangeSelection:(UITextView *)textView
-//{
-//    if(self.didChangeSelection)
-//        self.didChangeSelection(self);
-//}
-//
-//- (void)textViewDidEndEditing:(UITextView *)textView
-//{
-//    if(self.didEndEditing)
-//        self.didEndEditing(self);
-//}
-//
-//- (BOOL)textViewShouldBeginEditing:(UITextView *)textView
-//{
-//    if(self.shouldBeginEditing)
-//        self.shouldBeginEditing(self);
-//    
-//    return YES;
-//}
-//
-//- (BOOL)textViewShouldEndEditing:(UITextView *)textView
-//{
-//    if(self.shouldEndEditing)
-//        return self.shouldEndEditing(self);
-//    
-//    return YES;
-//}
-//
+- (void)textChanged:(NSNotification *)notification
+{
+    if(self.placeholder.length == 0)
+        return;
+    
+    self.placeholderLabel.alpha = ((self.text.length == 0)? 1 : 0);
+}
+
+- (void)setText:(NSString *)text
+{
+    [super setText:text];
+    [self textChanged:nil];
+}
+
+- (void)setTitle:(NSString *)title
+{
+    if(!self.placeholder)
+        self.placeholder = [title capitalizedString];
+    
+    _title = title;
+}
+
+- (void)drawRect:(CGRect)rect
+{
+    if(self.placeholder.length > 0)
+    {
+        if(self.placeholderLabel == nil)
+        {
+            self.placeholderLabel                   = [[UILabel alloc] initWithFrame:CGRectMake(8,8,self.bounds.size.width - 16,0)];
+            self.placeholderLabel.lineBreakMode     = NSLineBreakByWordWrapping;
+            self.placeholderLabel.numberOfLines     = 0;
+            self.placeholderLabel.font              = self.font;
+            self.placeholderLabel.backgroundColor   = [UIColor clearColor];
+            self.placeholderLabel.textColor         = [UIColor colorWithWhite:0.7f alpha:1.0f];
+            self.placeholderLabel.alpha             = 0;
+            
+            [self addSubview:self.placeholderLabel];
+        }
+        
+        self.placeholderLabel.text = self.placeholder;
+        [self.placeholderLabel sizeToFit];
+        [self sendSubviewToBack:self.placeholderLabel];
+    }
+    
+    self.placeholderLabel.alpha = (self.text.length == 0 && self.placeholder.length > 0)? 1 : 0;
+    
+    [super drawRect:rect];
+}
+
 @end

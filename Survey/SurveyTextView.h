@@ -24,6 +24,7 @@
 @property (copy, nonatomic) SurveyTextFieldDidBlock     didChangeSelection;
 @property  (copy, nonatomic) SurveyOnFieldErrorBlock    onError;
 @property (strong, nonatomic) SurveyForm                *form;
+@property (copy, nonatomic) NSString                    *placeholder;
 @property (copy, nonatomic) NSString                    *title;
 @property (strong, nonatomic) NSArray                   *validationOptions;
 @property (strong, nonatomic) NSMutableDictionary       *errorMessages;

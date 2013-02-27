@@ -79,12 +79,24 @@
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         
     }
-    
-//    UITextField *field              = [_registerForm.fields objectAtIndex:indexPath.row];
-//    field.frame                     = CGRectInset(cell.bounds, 30.0f, 5.0f);
-//    field.contentVerticalAlignment  = UIControlContentVerticalAlignmentCenter;
-//
-//    [cell addSubview:field];
+
+    if([[_registerForm.fields objectAtIndex:indexPath.row] isKindOfClass:[SurveyTextView class]])
+    {
+        SurveyTextView *field   = [_registerForm.fields objectAtIndex:indexPath.row];
+        field.frame             = CGRectInset(cell.bounds, 30.0f, 5.0f);
+        field.backgroundColor   = [UIColor clearColor];
+
+        [cell addSubview:field];
+
+    }
+    else
+    {
+        SurveyTextField *field  = [_registerForm.fields objectAtIndex:indexPath.row];
+        field.frame             = CGRectInset(cell.bounds, 30.0f, 5.0f);
+        field.backgroundColor   = [UIColor clearColor];
+        
+        [cell addSubview:field];        
+    }
     
     return cell;
 }

@@ -337,6 +337,7 @@
 				GCC_PREFIX_HEADER = "SurveyExample/SurveyExample-Prefix.pch";
 				INFOPLIST_FILE = "SurveyExample/SurveyExample-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -349,6 +350,7 @@
 				GCC_PREFIX_HEADER = "SurveyExample/SurveyExample-Prefix.pch";
 				INFOPLIST_FILE = "SurveyExample/SurveyExample-Info.plist";
 				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
