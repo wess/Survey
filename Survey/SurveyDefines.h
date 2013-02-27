@@ -11,18 +11,6 @@
 
 #import <objc/runtime.h>
 
-#define SYNTHESIZE_PROPERTY(setter, type, propertyName) \
-- (void)setter:(type)propertyName \
-{ \
-objc_setAssociatedObject(self, "survey_"#propertyName, propertyName, OBJC_ASSOCIATION_COPY_NONATOMIC); \
-} \
-\
-- (type)propertyName \
-{ \
-return (type)objc_getAssociatedObject(self, "survey_"#propertyName); \
-}
-
-
 typedef BOOL(^SurveyValidateFieldBlock)(id this, id value);
 typedef BOOL(^SurveyTextFieldShouldBlock)(id this);
 typedef void(^SurveyTextFieldDidBlock)(id this);

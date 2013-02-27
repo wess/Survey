@@ -11,24 +11,126 @@
 
 @class SurveyForm;
 
-@interface SurveyTextView : UITextView
-@property (copy, nonatomic) SurveyValidateFieldBlock    validationBlock;
-@property (copy, nonatomic) SurveyTextFieldDidBlock     didBeginEditing;
-@property (copy, nonatomic) SurveyTextFieldDidBlock     didEndEditing;
-@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldBeginEditing;
-@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldEndEditing;
-@property (copy, nonatomic) SurveyShouldChangeBlock     shouldChangeCharactersInRange;
-@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldClear;
-@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldReturn;
-@property (copy, nonatomic) SurveyTextFieldDidBlock     didChange;
-@property (copy, nonatomic) SurveyTextFieldDidBlock     didChangeSelection;
-@property  (copy, nonatomic) SurveyOnFieldErrorBlock    onError;
-@property (strong, nonatomic) SurveyForm                *form;
-@property (copy, nonatomic) NSString                    *placeholder;
-@property (copy, nonatomic) NSString                    *title;
-@property (strong, nonatomic) NSArray                   *validationOptions;
-@property (strong, nonatomic) NSMutableDictionary       *errorMessages;
-@property (strong, nonatomic) NSDictionary              *errors;
+/**
+ `SurveyTextView` is a subclass of `UITextView`, designed to work with SurveyForms and provide block based delegate methods.
+ */
 
-- (BOOL)isValid;
+@interface SurveyTextView : UITextView
+/// ---------------------------------------------
+/// @name TextField for use with Survey forms.
+/// ---------------------------------------------
+
+/**
+ The block used to validate the value of a field, when defined in a subclass.
+ 
+ @discussion Use for one off validations in property overrides in form subclass.
+ */
+@property (copy, nonatomic) SurveyValidateFieldBlock    validationBlock;
+
+/**
+ Callback when a fields `begin editing` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldDidBlock     didBeginEditing;
+
+/**
+ Callback when a fields `end editing` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldDidBlock     didEndEditing;
+
+/**
+ Callback when a fields `should begin editing` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldBeginEditing;
+
+/**
+ Callback when a fields `should end editing` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldEndEditing;
+
+/**
+ Callback when a fields `should change characters in range` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyShouldChangeBlock     shouldChangeCharactersInRange;
+
+/**
+ Callback when a fields `should clear` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldClear;
+
+/**
+ Callback when a fields `should return` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  shouldReturn;
+
+/**
+ Callback that is triggered when the field fails validation.
+ */
+@property  (copy, nonatomic) SurveyOnFieldErrorBlock    onError;
+
+/**
+ Callback when a fields `did change` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldDidBlock     didChange;
+
+/**
+ Callback when a fields `did change selection` delegate is triggered.
+ 
+ @discussion Block based version of the delegate with the same name.
+ */
+@property (copy, nonatomic) SurveyTextFieldDidBlock     didChangeSelection;
+
+/**
+ Access to the fields parent form.
+ */
+@property (strong, nonatomic) SurveyForm                *form;
+
+/**
+ The placeholder value used when the TextView is empty.
+ */
+@property (copy, nonatomic) NSString                    *placeholder;
+
+/**
+ Field title
+ */
+@property (copy, nonatomic) NSString                    *title;
+
+/**
+ Array of strings that define what validation to use on the field's value.
+ */
+@property (strong, nonatomic) NSArray                   *validationOptions;
+
+/**
+ Dictionary of messages to use with specific validation types.
+ 
+ @discussion Uses the format: @{SurveyValidationRequired : @"Oh, this field is required"}
+ */
+@property (strong, nonatomic) NSMutableDictionary       *errorMessages;
+
+/**
+ A list of errors the field has.
+ */
+@property (readonly, nonatomic) NSDictionary            *errors;
+
+/**
+ Checks and returns if the field's value passes it's provided validation types.
+ 
+ @return YES/NO if the field's value is valid.
+ */
+- (BOOL) isValid;
 @end
