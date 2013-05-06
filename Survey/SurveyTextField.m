@@ -55,16 +55,24 @@
     __weak typeof(self) weakSelf                = self;
     __block BOOL isValid                        = YES;
     __block NSMutableDictionary *currentErrors  = [NSMutableDictionary new];
-    
-    [self.validationOptions enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
-        
-        if(![SurveyValidator validateString:weakSelf.text withValidator:option])
-        {
-            currentErrors[option] = self.errorMessages[option];
-            isValid = NO;
-        }
-    }];
-    
+
+    if([self.validationOptions containsObject:SurveyValidationRequired] && !self.text)
+    {
+        currentErrors[SurveyValidationRequired] = self.errorMessages[SurveyValidationRequired];
+        isValid = NO;
+    }
+    else
+    {
+        [self.validationOptions enumerateObjectsUsingBlock:^(NSString *option, NSUInteger idx, BOOL *stop) {
+            NSString *value = weakSelf.text;
+            if(value && ![SurveyValidator validateString:value withValidator:option])
+            {
+                currentErrors[option] = self.errorMessages[option];
+                isValid = NO;
+            }
+        }];
+    }
+
     _errors = [currentErrors copy];
     
     if(self.onError != nil)
