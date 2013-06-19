@@ -86,7 +86,7 @@
 
     _errors = [currentErrors copy];
     
-    if(self.onError != nil)
+    if(self.onError && !isValid)
         self.onError(self, _errors);
     
     return isValid;
