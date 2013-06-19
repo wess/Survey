@@ -14,7 +14,8 @@
 @end
 
 @implementation SurveyTextField
-@synthesize errors = _errors;
+@synthesize errors              = _errors;
+@synthesize placeholderColor    = _placeholderColor;
 
 - (void)setup
 {
@@ -50,6 +51,16 @@
     _title = title;
 }
 
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = [placeholderColor copy];
+    
+    NSString *placeholder   = [self.placeholder copy];
+    self.placeholder        = @"";
+    self.placeholder        = placeholder;
+    
+}
+
 - (BOOL)isValid
 {
     __weak typeof(self) weakSelf                = self;
@@ -83,9 +94,9 @@
 
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
-    self.placeholderColor = self.placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
+    _placeholderColor = _placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
     
-    [self.placeholderColor setFill];
+    [_placeholderColor setFill];
     [self.placeholder drawInRect:rect withFont:self.font];
 }
 

@@ -16,6 +16,7 @@
 @end
 
 @implementation SurveyTextView
+@synthesize placeholderColor = _placeholderColor;
 
 - (void)setup
 {
@@ -48,6 +49,12 @@
 - (void)dealloc
 {
     [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
+- (void)setPlaceholderColor:(UIColor *)placeholderColor
+{
+    _placeholderColor = [placeholderColor copy];
+    [self setNeedsDisplay];
 }
 
 - (BOOL)isValid
@@ -106,13 +113,14 @@
             self.placeholderLabel.numberOfLines     = 0;
             self.placeholderLabel.font              = self.font;
             self.placeholderLabel.backgroundColor   = [UIColor clearColor];
-            self.placeholderLabel.textColor         = self.placeholderColor;
             self.placeholderLabel.alpha             = 0;
-            
+    
             [self addSubview:self.placeholderLabel];
         }
+
+        self.placeholderLabel.textColor         = self.placeholderColor;
+        self.placeholderLabel.text              = self.placeholder;
         
-        self.placeholderLabel.text = self.placeholder;
         [self.placeholderLabel sizeToFit];
         [self sendSubviewToBack:self.placeholderLabel];
     }
