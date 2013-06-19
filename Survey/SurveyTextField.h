@@ -115,9 +115,35 @@
 @property (copy, nonatomic) UIColor                     *placeholderColor;
 
 /**
+ The next field in the form's list of fields
+ 
+ @discussion If used outside of a SurveyForm subclass, will be nil.
+ */
+@property (readonly, nonatomic) id                      nextField;
+
+/**
+ The previous field in the form's list of fields
+ 
+ @discussion If used outside of a SurveyForm subclass, will be nil.
+ */
+@property (readonly, nonatomic) id                      previousField;
+
+/**
  Checks and returns if the field's value passes it's provided validation types.
  
  @return YES/NO if the field's value is valid.
  */
 - (BOOL) isValid;
+
+
+/**
+ Removes focus from current field and sets focus to previous field
+ **/
+- (void)moveToPreviousField;
+
+/**
+ Removes focus from current field and sets focus to next field
+ **/
+- (void)moveToNextField;
+
 @end

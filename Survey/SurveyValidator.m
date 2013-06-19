@@ -80,7 +80,6 @@
 
 
 #pragma mark - Default Validation Blocks -
-//typedef BOOL(^SurveyValidationBlock)(NSString *value);
 
 - (SurveyValidationBlock)requiredBlock
 {

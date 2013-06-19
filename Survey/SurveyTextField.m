@@ -27,9 +27,8 @@
 {
     self = [super initWithFrame:frame];
     if (self)
-    {
         [self setup];
-    }
+
     return self;
 }
 
@@ -37,10 +36,27 @@
 {
     self = [super initWithCoder:aDecoder];
     if (self)
-    {
         [self setup];
-    }
+
     return self;
+}
+
+-(id)nextField
+{
+    NSUInteger index        = [self.form.fields indexOfObject:self];
+    if(self.form.fields.count == (index + 1))
+        return nil;
+    
+    return self.form.fields[(index + 1)];
+}
+
+- (id)previousField
+{
+    NSUInteger index = [self.form.fields indexOfObject:self];
+    if(index < 1)
+        return nil;
+    
+    return self.form.fields[(index - 1)];
 }
 
 - (void)setTitle:(NSString *)title
@@ -91,6 +107,26 @@
     
     return isValid;
 }
+
+- (void)moveToPreviousField
+{
+    if(self.previousField)
+    {
+        [self resignFirstResponder];
+        [self.previousField becomeFirstResponder];
+    }
+}
+
+- (void)moveToNextField
+{
+    if(self.nextField)
+    {
+        [self resignFirstResponder];
+        [self.nextField becomeFirstResponder];
+    }
+}
+
+#pragma mark - Root selectors -
 
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
