@@ -53,7 +53,7 @@
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor
 {
-    _placeholderColor = [placeholderColor copy];
+    _placeholderColor = placeholderColor == nil? [UIColor colorWithWhite:0.7f alpha:1.0f] : [placeholderColor copy];
     [self setNeedsDisplay];
 }
 
