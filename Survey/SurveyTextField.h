@@ -110,6 +110,11 @@
 @property (readonly, nonatomic) NSDictionary            *errors;
 
 /**
+ Allows for changing color of placeholder text.
+ */
+@property (copy, nonatomic) UIColor                     *placeholderColor;
+
+/**
  Checks and returns if the field's value passes it's provided validation types.
  
  @return YES/NO if the field's value is valid.

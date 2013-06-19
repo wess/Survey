@@ -106,6 +106,11 @@
 @property (copy, nonatomic) NSString                    *placeholder;
 
 /**
+ Color for placeholder text.
+ */
+@property (copy, nonatomic) UIColor                     *placeholderColor;
+
+/**
  Field title
  */
 @property (copy, nonatomic) NSString                    *title;

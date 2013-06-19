@@ -81,4 +81,12 @@
     return isValid;
 }
 
+- (void)drawPlaceholderInRect:(CGRect)rect
+{
+    self.placeholderColor = self.placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
+    
+    [self.placeholderColor setFill];
+    [self.placeholder drawInRect:rect withFont:self.font];
+}
+
 @end

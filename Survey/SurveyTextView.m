@@ -100,12 +100,13 @@
     {
         if(self.placeholderLabel == nil)
         {
+            self.placeholderColor                   = self.placeholderColor?: [UIColor colorWithWhite:0.7f alpha:1.0f];
             self.placeholderLabel                   = [[UILabel alloc] initWithFrame:CGRectMake(8,8,self.bounds.size.width - 16,0)];
             self.placeholderLabel.lineBreakMode     = NSLineBreakByWordWrapping;
             self.placeholderLabel.numberOfLines     = 0;
             self.placeholderLabel.font              = self.font;
             self.placeholderLabel.backgroundColor   = [UIColor clearColor];
-            self.placeholderLabel.textColor         = [UIColor colorWithWhite:0.7f alpha:1.0f];
+            self.placeholderLabel.textColor         = self.placeholderColor;
             self.placeholderLabel.alpha             = 0;
             
             [self addSubview:self.placeholderLabel];
