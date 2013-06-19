@@ -69,7 +69,7 @@
 
 - (void)setPlaceholderColor:(UIColor *)placeholderColor
 {
-    _placeholderColor = [placeholderColor copy];
+    _placeholderColor = placeholderColor == nil? [UIColor colorWithWhite:0.7f alpha:1.0f] : [placeholderColor copy];
     
     NSString *placeholder   = [self.placeholder copy];
     self.placeholder        = @"";
@@ -102,7 +102,7 @@
 
     _errors = [currentErrors copy];
     
-    if(self.onError != nil)
+    if(self.onError && !isValid)
         self.onError(self, _errors);
     
     return isValid;
