@@ -1,11 +1,29 @@
+## Please note that Survey version 1 End Of Life July 15th.
+Survey version 1 will be moving off the master branch and on to a 1.0 branch, so please be sure to update any submodules
+or checkouts you have using Survey.  Version 1 will no longer be maintained in favor of version 2, which will move to the master
+branch.  I encourage anyone using version 1 to make the transition to 2 even though it is not backwards compatible.
+
+On the release of version 2, July 15th, A guide will also be provided to help make the migration from version 1 easier.
+
+Version 2 Updates:
+* Smaller framework
+* Better performance
+* Better documentation
+* Improved validation handling
+* Custom fields with block based callbacks that inherit from UIKit fields (No proxy object)
+* Full documented
+* Improved integration with CoreData and form generation
+* and more...
+
+Visit: http://wess.github.io/Survey for a preview of 2.0, documentation and downloads.
+
+---
+
+
+
 # Survey
 
 Survey is a library to simplify the process of creating and validating forms.  This library is loosely based on CoreData and Django forms.
-
-## TODO: (Just starting development, much more to come)
-* More Validators
-* Create save/update methods on forms generated from managedObjectModels
-* Create ability to attach UIView to a field to show error messages.
 
 ## Setting up
 To set up, place the Survey project file into your project, add it as a target dependency, link to the libSurvey.a framework, then just #import <Survey/Survey.h> and go to town!
