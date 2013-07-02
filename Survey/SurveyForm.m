@@ -78,11 +78,13 @@ NSDictionary *propertiesForClass(Class klass)
     return self;
 }
 
-- (void)dealloc {
-  for (NSDictionary *fieldObject in self.fieldReferenceTable) {
-    id field = fieldObject[@"field"];
-    [field setDelegate:nil];
-  }
+- (void)dealloc
+{
+    for (NSDictionary *fieldObject in self.fieldReferenceTable)
+    {
+        id field = fieldObject[@"field"];
+        [field setDelegate:nil];
+    }
 }
 
 - (NSUInteger)indexOfField:(id)field
