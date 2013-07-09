@@ -114,6 +114,7 @@ NSDictionary *propertiesForClass(Class klass)
                         [fieldObject setValue:key forKey:@"title"];
 
                     [fieldObject setDelegate:self.fieldDelegate];
+                    [fieldObject setForm:self];
                     [instanceFields addObject:@{@"name": key, @"field": fieldObject}];
                 }
             }];
@@ -135,6 +136,7 @@ NSDictionary *propertiesForClass(Class klass)
                     [fieldObject setValue:name forKey:@"title"];
                 
                 [fieldObject setDelegate:self.fieldDelegate];
+                [fieldObject setForm:self];
                 [instanceFields addObject:@{@"name": name, @"field": fieldObject}];
             }];
         }
