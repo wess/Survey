@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.author       = { "Wess Cope" => "wcope@me.com" }
   s.ios.deployment_target = '5.0'
   s.source       = { :git => "https://github.com/wess/Survey.git", :tag => "0.1.0" }
-  s.source_files = 'Survey/Classes/*.{h,m}'
+  s.source_files = 'Survey/*.{h,m}'
   s.requires_arc = true
   s.framework = 'UIKit'
   s.platform = :ios
