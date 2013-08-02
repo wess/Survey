@@ -73,7 +73,6 @@ NSDictionary *propertiesForClass(Class klass)
     if (self)
     {
         self.fieldDelegate          = [[SurveyFieldDelegate alloc] init];
-        self.fieldReferenceTable    = [NSArray new];
     }
     return self;
 }
