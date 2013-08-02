@@ -91,8 +91,7 @@ NSDictionary *propertiesForClass(Class klass)
     return ([self.fields objectAtIndex:index]?: nil);
 }
 
-- (NSArray *)fields
-{
+- (NSArray *)fieldReferenceTable {
     if(!_fieldReferenceTable || _fieldReferenceTable.count < 1)
     {
         NSDictionary *selfProperties    = propertiesForClass([self class]);
@@ -143,8 +142,13 @@ NSDictionary *propertiesForClass(Class klass)
         
         _fieldReferenceTable = [instanceFields copy];
     }
-    
-    return [_fieldReferenceTable valueForKeyPath:@"field"];
+
+    return _fieldReferenceTable;
+}
+
+- (NSArray *)fields
+{
+    return [self.fieldReferenceTable valueForKeyPath:@"field"];
 }
 
 - (NSDictionary *)values
