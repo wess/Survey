@@ -73,7 +73,6 @@ NSDictionary *propertiesForClass(Class klass)
     if (self)
     {
         self.fieldDelegate          = [[SurveyFieldDelegate alloc] init];
-        self.fieldReferenceTable    = [NSArray new];
     }
     return self;
 }
@@ -91,8 +90,7 @@ NSDictionary *propertiesForClass(Class klass)
     return ([self.fields objectAtIndex:index]?: nil);
 }
 
-- (NSArray *)fields
-{
+- (NSArray *)fieldReferenceTable {
     if(!_fieldReferenceTable || _fieldReferenceTable.count < 1)
     {
         NSDictionary *selfProperties    = propertiesForClass([self class]);
@@ -114,6 +112,7 @@ NSDictionary *propertiesForClass(Class klass)
                         [fieldObject setValue:key forKey:@"title"];
 
                     [fieldObject setDelegate:self.fieldDelegate];
+                    [fieldObject setForm:self];
                     [instanceFields addObject:@{@"name": key, @"field": fieldObject}];
                 }
             }];
@@ -135,14 +134,20 @@ NSDictionary *propertiesForClass(Class klass)
                     [fieldObject setValue:name forKey:@"title"];
                 
                 [fieldObject setDelegate:self.fieldDelegate];
+                [fieldObject setForm:self];
                 [instanceFields addObject:@{@"name": name, @"field": fieldObject}];
             }];
         }
         
         _fieldReferenceTable = [instanceFields copy];
     }
-    
-    return [_fieldReferenceTable valueForKeyPath:@"field"];
+
+    return _fieldReferenceTable;
+}
+
+- (NSArray *)fields
+{
+    return [self.fieldReferenceTable valueForKeyPath:@"field"];
 }
 
 - (NSDictionary *)values
