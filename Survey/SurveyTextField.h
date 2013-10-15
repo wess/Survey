@@ -23,7 +23,7 @@
 
 /**
  Restricts amount of characters allowed to be entered into a text field.
- */
+*/
 @property (nonatomic) NSInteger maxLength;
 
 /**

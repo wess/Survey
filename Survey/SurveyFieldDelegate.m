@@ -45,7 +45,7 @@
 {
     SurveyTextField *field = (SurveyTextField *)textField;
     
-    if(field.maxLength > 0 && field.text.length => field.maxLength)
+    if(field.maxLength > 0 && field.text.length >= field.maxLength)
         return NO;
     
     if(field.shouldChangeCharactersInRange != nil)
@@ -74,8 +74,13 @@
 #pragma mark - TextView Delegates -
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text
 {
-    if(((SurveyTextView *)textView).shouldChangeCharactersInRange)
-        return ((SurveyTextView *)textView).shouldChangeCharactersInRange(((SurveyTextView *)textView), range, text);
+    SurveyTextView *field = (SurveyTextView *)textView;
+    
+    if(field.maxLength > 0 && field.text.length >= field.maxLength)
+        return NO;
+
+    if(field.shouldChangeCharactersInRange)
+        return field.shouldChangeCharactersInRange(field, range, text);
     
     return YES;
 }

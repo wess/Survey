@@ -20,6 +20,12 @@
 /// @name TextField for use with Survey forms.
 /// ---------------------------------------------
 
+
+/**
+ Restricts amount of characters allowed to be entered into a text field.
+*/
+@property (nonatomic) NSInteger maxLength;
+
 /**
  The block used to validate the value of a field, when defined in a subclass.
  
