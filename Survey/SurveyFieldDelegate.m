@@ -12,6 +12,7 @@
 @implementation SurveyFieldDelegate
 
 #pragma mark - TextField Delegates -
+
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
     if(((SurveyTextField *)textField).shouldBeginEditing != nil)
@@ -42,7 +43,12 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if(((SurveyTextField *)textField).shouldChangeCharactersInRange != nil)
+    SurveyTextField *field = (SurveyTextField *)textField;
+    
+    if(field.maxLength > 0 && field.text.length => field.maxLength)
+        return NO;
+    
+    if(field.shouldChangeCharactersInRange != nil)
         return ((SurveyTextField *)textField).shouldChangeCharactersInRange(((SurveyTextField *)textField), range, string);
     
     return YES;
