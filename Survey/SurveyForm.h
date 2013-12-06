@@ -10,7 +10,6 @@
 #import <objc/runtime.h>
 #import "SurveyFieldDelegate.h"
 
-static const char *getPropertyType(objc_property_t property);
 NSDictionary *propertiesForClass(Class klass);
 
 /**
