@@ -138,9 +138,12 @@
 		
 		[self.placeholder drawInRect:rect withAttributes:attributes];
 	} else {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Wdeprecated-declarations"
 		// iOS 6
 		[_placeholderColor setFill];
 		[self.placeholder drawInRect:rect withFont:self.font lineBreakMode:NSLineBreakByTruncatingTail];
+#pragma clang diagnostic pop
 	}
 }
 
