@@ -89,8 +89,8 @@
 		082D394B162C82C200973067 /* ErrorMessages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorMessages.plist; sourceTree = "<group>"; };
 		082D3954162C835300973067 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SurveyExample.xcodeproj; path = SurveyExample/SurveyExample.xcodeproj; sourceTree = "<group>"; };
-		0D8E205F187E410200DAA08D /* SurveyTextFieldWithLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyTextFieldWithLabelCell.h; sourceTree = SOURCE_ROOT; };
-		0D8E2060187E410200DAA08D /* SurveyTextFieldWithLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyTextFieldWithLabelCell.m; sourceTree = SOURCE_ROOT; };
+		0D8E205F187E410200DAA08D /* SurveyTextFieldWithLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SurveyTextFieldWithLabelCell.h; path = Survey/SurveyTextFieldWithLabelCell.h; sourceTree = SOURCE_ROOT; };
+		0D8E2060187E410200DAA08D /* SurveyTextFieldWithLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SurveyTextFieldWithLabelCell.m; path = Survey/SurveyTextFieldWithLabelCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
