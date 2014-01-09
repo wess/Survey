@@ -28,6 +28,7 @@
 		082D3939162C825A00973067 /* Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D3938162C825A00973067 /* Survey.h */; };
 		082D3955162C835300973067 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 082D3954162C835300973067 /* UIKit.framework */; };
 		082D3956162C838800973067 /* ErrorMessages.plist in CopyFiles */ = {isa = PBXBuildFile; fileRef = 082D394B162C82C200973067 /* ErrorMessages.plist */; };
+		0D8E2061187E410200DAA08D /* SurveyTextFieldWithLabelCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8E2060187E410200DAA08D /* SurveyTextFieldWithLabelCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +89,8 @@
 		082D394B162C82C200973067 /* ErrorMessages.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = ErrorMessages.plist; sourceTree = "<group>"; };
 		082D3954162C835300973067 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		08C867F8162CE99200B98C14 /* SurveyExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SurveyExample.xcodeproj; path = SurveyExample/SurveyExample.xcodeproj; sourceTree = "<group>"; };
+		0D8E205F187E410200DAA08D /* SurveyTextFieldWithLabelCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyTextFieldWithLabelCell.h; sourceTree = SOURCE_ROOT; };
+		0D8E2060187E410200DAA08D /* SurveyTextFieldWithLabelCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyTextFieldWithLabelCell.m; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -242,6 +245,7 @@
 				080C7A6316D81C050066D01B /* Forms */,
 				080C7A6216D81C010066D01B /* Fields */,
 				080C7A6116D81BFD0066D01B /* FieldDelegate */,
+				0D8E205E187E40E800DAA08D /* Cells */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -260,6 +264,15 @@
 				08C867FD162CE99300B98C14 /* SurveyExample.app */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		0D8E205E187E40E800DAA08D /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0D8E205F187E410200DAA08D /* SurveyTextFieldWithLabelCell.h */,
+				0D8E2060187E410200DAA08D /* SurveyTextFieldWithLabelCell.m */,
+			);
+			name = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -333,6 +346,7 @@
 				080C7A5B16D81BF50066D01B /* SurveyForm.m in Sources */,
 				080C7A5C16D81BF50066D01B /* SurveyManagedModelForm.m in Sources */,
 				080C7A5D16D81BF50066D01B /* SurveyModelForm.m in Sources */,
+				0D8E2061187E410200DAA08D /* SurveyTextFieldWithLabelCell.m in Sources */,
 				080C7A5E16D81BF50066D01B /* SurveyTextField.m in Sources */,
 				080C7A5F16D81BF50066D01B /* SurveyTextView.m in Sources */,
 				080C7A6016D81BF50066D01B /* SurveyValidator.m in Sources */,

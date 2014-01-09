@@ -131,9 +131,17 @@
 - (void)drawPlaceholderInRect:(CGRect)rect
 {
     _placeholderColor = _placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
-    
-    [_placeholderColor setFill];
-    [self.placeholder drawInRect:rect withAttributes:@{NSFontAttributeName: self.font}];
+	
+	if ([self.placeholder respondsToSelector:@selector(drawInRect:withAttributes:)]) {
+		// iOS 7 and later
+		NSDictionary *attributes = @{NSForegroundColorAttributeName: _placeholderColor, NSFontAttributeName: self.font};
+		
+		[self.placeholder drawInRect:rect withAttributes:attributes];
+	} else {
+		// iOS 6
+		[_placeholderColor setFill];
+		[self.placeholder drawInRect:rect withFont:self.font lineBreakMode:NSLineBreakByTruncatingTail];
+	}
 }
 
 @end
