@@ -85,7 +85,7 @@ NSDictionary *propertiesForClass(Class klass)
 		if (obj.isFirstResponder) {
 			activeField = obj;
 			
-			stop = YES;
+			*stop = YES;
 		}
 	}];
 	
