@@ -77,6 +77,21 @@ NSDictionary *propertiesForClass(Class klass)
     return self;
 }
 
+- (id)activeField
+{
+	__block id activeField;
+	
+	[self.fields enumerateObjectsUsingBlock:^(UIResponder *obj, NSUInteger idx, BOOL *stop) {
+		if (obj.isFirstResponder) {
+			activeField = obj;
+			
+			stop = YES;
+		}
+	}];
+	
+	return activeField;
+}
+
 - (NSUInteger)indexOfField:(id)field
 {
     return [self.fields indexOfObject:field];

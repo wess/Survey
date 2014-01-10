@@ -72,6 +72,13 @@ NSDictionary *propertiesForClass(Class klass);
 @property (readonly, nonatomic) BOOL            isValid;
 
 /**
+ Returns the field that is currently active
+ 
+ @return field field that is currenctly the first responder
+ **/
+- (id)activeField;
+
+/**
  Returns the index of passed field.
  
  @param field field to find index of.
@@ -81,7 +88,7 @@ NSDictionary *propertiesForClass(Class klass);
 - (NSUInteger)indexOfField:(id)field;
 
 /**
- Returns the index of a field.
+ Returns the field at index.
  
  @param index tab location for desired field.
  
