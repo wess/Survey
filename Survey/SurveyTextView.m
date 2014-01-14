@@ -147,7 +147,7 @@
             self.placeholderLabel                   = [[UILabel alloc] initWithFrame:CGRectMake(8,8,self.bounds.size.width - 16,0)];
             self.placeholderLabel.lineBreakMode     = NSLineBreakByWordWrapping;
             self.placeholderLabel.numberOfLines     = 0;
-            self.placeholderLabel.font              = self.font;
+            self.placeholderLabel.font              = self.placeholderFont?: self.font;
             self.placeholderLabel.backgroundColor   = [UIColor clearColor];
             self.placeholderLabel.alpha             = 0;
     
