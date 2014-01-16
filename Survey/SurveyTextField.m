@@ -132,19 +132,23 @@
 {
     _placeholderColor = _placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
 	_placeholderFont = _placeholderFont?:self.font;
+	
+	CGRect placeholderRect = rect;
+	placeholderRect.origin.y = roundf((rect.size.height - _placeholderFont.lineHeight)/2);
+	placeholderRect.size.height = roundf(_placeholderFont.lineHeight);
     
 	if ([self.placeholder respondsToSelector:@selector(drawInRect:withAttributes:)]) {
 		// iOS 7 and later
 		NSDictionary *attributes = @{NSForegroundColorAttributeName: _placeholderColor, NSFontAttributeName: _placeholderFont};
 		
-		[self.placeholder drawInRect:rect withAttributes:attributes];
+		[self.placeholder drawInRect:placeholderRect withAttributes:attributes];
 	} else {
 #pragma clang diagnostic push
 #pragma clang diagnostic ignored "-Wdeprecated-declarations"
 		// iOS 6
 		[_placeholderColor setFill];
         
-		[self.placeholder drawInRect:rect withFont:_placeholderFont lineBreakMode:NSLineBreakByTruncatingTail];
+		[self.placeholder drawInRect:placeholderRect withFont:_placeholderFont lineBreakMode:NSLineBreakByTruncatingTail];
 #pragma clang diagnostic pop
 	}
 }
