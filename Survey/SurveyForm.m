@@ -105,6 +105,24 @@ NSDictionary *propertiesForClass(Class klass)
     return ([self.fields objectAtIndex:index]?: nil);
 }
 
+- (id)getFieldWithName:(NSString *)name
+{
+    __block id result;
+    
+    [self.fieldReferenceTable enumerateObjectsUsingBlock:^(NSDictionary *fieldObject, NSUInteger idx, BOOL *stop) {
+        id field            = fieldObject[@"field"];
+        NSString *fieldName = fieldObject[@"name"];
+        
+        if ([name isEqualToString:fieldName]) {
+            result = field;
+            
+            *stop = YES;
+        }
+    }];
+    
+    return result;
+}
+
 - (NSArray *)fieldReferenceTable {
     if(!_fieldReferenceTable || _fieldReferenceTable.count < 1)
     {

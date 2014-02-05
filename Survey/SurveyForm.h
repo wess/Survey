@@ -92,9 +92,18 @@ NSDictionary *propertiesForClass(Class klass);
  
  @param index tab location for desired field.
  
- @return the index of a field.
+ @return the field.
  **/
 - (id)getFieldAtTabIndex:(NSUInteger)index;
+
+/**
+ Returns the field with a given name.
+ 
+ @param name name of the field inquiring for.
+ 
+ @return the field.
+ **/
+- (id)getFieldWithName:(NSString *)name;
 
 /**
  A class method to determine the desired order of fields defined in the form subclass
