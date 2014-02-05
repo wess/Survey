@@ -8,6 +8,7 @@
 
 #import "SurveyFieldDelegate.h"
 #import "SurveyFields.h"
+#import "SurveyForm.h"
 
 @implementation SurveyFieldDelegate
 
@@ -23,8 +24,11 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).didBeginEditing != nil)
-        ((SurveyTextField *)textField).didBeginEditing(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+    field.form.currentField = field;
+    
+    if(field.didBeginEditing != nil)
+        field.didBeginEditing(field);
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
@@ -87,8 +91,11 @@
 
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).didBeginEditing)
-        ((SurveyTextView *)textView).didBeginEditing(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+    field.form.currentField = field;
+    
+    if(field.didBeginEditing)
+        field.didBeginEditing(field);
 }
 
 - (void)textViewDidChange:(UITextView *)textView

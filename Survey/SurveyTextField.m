@@ -41,15 +41,6 @@
     return self;
 }
 
-- (BOOL)becomeFirstResponder
-{
-    BOOL returnValue = [super becomeFirstResponder];
-    if(returnValue)
-        self.form.currentField = self;
-    
-    return returnValue;
-}
-
 - (id)nextField
 {
     NSUInteger index        = [self.form.fields indexOfObject:self];
