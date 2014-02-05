@@ -41,7 +41,14 @@
     return self;
 }
 
--(id)nextField
+- (BOOL)becomeFirstResponder
+{
+    self.form.currentField = self;
+    
+    return YES;
+}
+
+- (id)nextField
 {
     NSUInteger index        = [self.form.fields indexOfObject:self];
     if(self.form.fields.count == (index + 1))

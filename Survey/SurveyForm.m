@@ -123,7 +123,8 @@ NSDictionary *propertiesForClass(Class klass)
     return result;
 }
 
-- (NSArray *)fieldReferenceTable {
+- (NSArray *)fieldReferenceTable
+{
     if(!_fieldReferenceTable || _fieldReferenceTable.count < 1)
     {
         NSDictionary *selfProperties    = propertiesForClass([self class]);
