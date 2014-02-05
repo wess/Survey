@@ -51,13 +51,6 @@
     [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-- (BOOL)becomeFirstResponder
-{
-    self.form.currentField = self;
-    
-    return YES;
-}
-
 -(id)nextField
 {
     NSUInteger index        = [self.form.fields indexOfObject:self];
