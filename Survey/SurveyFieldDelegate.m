@@ -25,7 +25,6 @@
 - (void)textFieldDidBeginEditing:(UITextField *)textField
 {
     SurveyTextField *field = (SurveyTextField *)textField;
-    field.form.currentField = field;
     
     if(field.didBeginEditing != nil)
         field.didBeginEditing(field);
@@ -92,8 +91,7 @@
 - (void)textViewDidBeginEditing:(UITextView *)textView
 {
     SurveyTextView *field = (SurveyTextView *)textView;
-    field.form.currentField = field;
-    
+
     if(field.didBeginEditing)
         field.didBeginEditing(field);
 }

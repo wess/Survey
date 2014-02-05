@@ -50,11 +50,6 @@ NSDictionary *propertiesForClass(Class klass);
 @property (strong, nonatomic) SurveyFieldDelegate *fieldDelegate;
 
 /**
- The field that is the current responder.
- */
-@property (strong, nonatomic) id currentField;
-
-/**
  The collection of fields created from the subclass defined field properties.
  **/
 @property (readonly, nonatomic) NSArray         *fields;
