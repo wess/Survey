@@ -77,6 +77,21 @@ NSDictionary *propertiesForClass(Class klass)
     return self;
 }
 
+- (id)activeField
+{
+	__block id activeField;
+	
+	[self.fields enumerateObjectsUsingBlock:^(UIResponder *obj, NSUInteger idx, BOOL *stop) {
+		if (obj.isFirstResponder) {
+			activeField = obj;
+			
+			*stop = YES;
+		}
+	}];
+	
+	return activeField;
+}
+
 - (NSUInteger)indexOfField:(id)field
 {
     return [self.fields indexOfObject:field];
@@ -90,7 +105,26 @@ NSDictionary *propertiesForClass(Class klass)
     return ([self.fields objectAtIndex:index]?: nil);
 }
 
-- (NSArray *)fieldReferenceTable {
+- (id)getFieldWithName:(NSString *)name
+{
+    __block id result;
+    
+    [self.fieldReferenceTable enumerateObjectsUsingBlock:^(NSDictionary *fieldObject, NSUInteger idx, BOOL *stop) {
+        id field            = fieldObject[@"field"];
+        NSString *fieldName = fieldObject[@"name"];
+        
+        if ([name isEqualToString:fieldName]) {
+            result = field;
+            
+            *stop = YES;
+        }
+    }];
+    
+    return result;
+}
+
+- (NSArray *)fieldReferenceTable
+{
     if(!_fieldReferenceTable || _fieldReferenceTable.count < 1)
     {
         NSDictionary *selfProperties    = propertiesForClass([self class]);

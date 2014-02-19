@@ -120,6 +120,11 @@
 @property (copy, nonatomic) UIColor                     *placeholderColor;
 
 /**
+ Allows for changing font of placeholder text.
+ */
+@property (copy, nonatomic) UIFont                      *placeholderFont;
+
+/**
  The next field in the form's list of fields
  
  @discussion If used outside of a SurveyForm subclass, will be nil.
@@ -138,7 +143,7 @@
  
  @return YES/NO if the field's value is valid.
  */
-- (BOOL) isValid;
+- (BOOL)isValid;
 
 
 /**

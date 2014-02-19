@@ -72,6 +72,13 @@ NSDictionary *propertiesForClass(Class klass);
 @property (readonly, nonatomic) BOOL            isValid;
 
 /**
+ Returns the field that is currently active
+ 
+ @return field field that is currenctly the first responder
+ **/
+- (id)activeField;
+
+/**
  Returns the index of passed field.
  
  @param field field to find index of.
@@ -81,13 +88,22 @@ NSDictionary *propertiesForClass(Class klass);
 - (NSUInteger)indexOfField:(id)field;
 
 /**
- Returns the index of a field.
+ Returns the field at index.
  
  @param index tab location for desired field.
  
- @return the index of a field.
+ @return the field.
  **/
 - (id)getFieldAtTabIndex:(NSUInteger)index;
+
+/**
+ Returns the field with a given name.
+ 
+ @param name name of the field inquiring for.
+ 
+ @return the field.
+ **/
+- (id)getFieldWithName:(NSString *)name;
 
 /**
  A class method to determine the desired order of fields defined in the form subclass

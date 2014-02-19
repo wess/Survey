@@ -117,6 +117,11 @@
 @property (copy, nonatomic) UIColor                     *placeholderColor;
 
 /**
+ Font for placeholder text.
+ */
+@property (copy, nonatomic) UIFont                      *placeholderFont;
+
+/**
  The next field in the form's list of fields
  
  @discussion If used outside of a SurveyForm subclass, will be nil.
