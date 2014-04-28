@@ -2,16 +2,17 @@
 //  main.m
 //  SurveyExample
 //
-//  Created by Wess Cope on 10/15/12.
-//  Copyright (c) 2012 Wess Cope. All rights reserved.
+//  Created by Wess Cope on 4/24/14.
+//  Copyright (c) 2014 Wess Cope. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "WCAppDelegate.h"
 
-int main(int argc, char *argv[])
+#import "SEAppDelegate.h"
+
+int main(int argc, char * argv[])
 {
     @autoreleasepool {
-        return UIApplicationMain(argc, argv, nil, NSStringFromClass([WCAppDelegate class]));
+        return UIApplicationMain(argc, argv, nil, NSStringFromClass([SEAppDelegate class]));
     }
 }

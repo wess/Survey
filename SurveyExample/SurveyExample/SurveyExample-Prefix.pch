@@ -1,5 +1,7 @@
 //
-// Prefix header for all source files of the 'SurveyExample' target in the 'SurveyExample' project
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
 //
 
 #import <Availability.h>
@@ -11,6 +13,4 @@
 #ifdef __OBJC__
     #import <UIKit/UIKit.h>
     #import <Foundation/Foundation.h>
-    #import <QuartzCore/QuartzCore.h>
-    #import <CoreData/CoreData.h>
 #endif

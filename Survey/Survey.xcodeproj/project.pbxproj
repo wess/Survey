@@ -1,0 +1,550 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		08638F8419099678006CB54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F8319099678006CB54E /* Foundation.framework */; };
+		08638F8919099678006CB54E /* Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08638F8819099678006CB54E /* Survey.h */; };
+		08638F9219099678006CB54E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F9119099678006CB54E /* XCTest.framework */; };
+		08638F9319099678006CB54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F8319099678006CB54E /* Foundation.framework */; };
+		08638F9519099678006CB54E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F9419099678006CB54E /* UIKit.framework */; };
+		08638F9819099678006CB54E /* libSurvey.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F8019099678006CB54E /* libSurvey.a */; };
+		08638F9E19099678006CB54E /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 08638F9C19099678006CB54E /* InfoPlist.strings */; };
+		08638FA019099678006CB54E /* SurveyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 08638F9F19099678006CB54E /* SurveyTests.m */; };
+		08638FEA190997FF006CB54E /* SurveyConstants.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08638FE7190996B7006CB54E /* SurveyConstants.h */; };
+		08638FF0190999C1006CB54E /* NSObject+Survey.m in Sources */ = {isa = PBXBuildFile; fileRef = 08638FEF190999C1006CB54E /* NSObject+Survey.m */; };
+		08D301C71909A1BB0031EBCF /* SurveyValidator.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301C61909A1BB0031EBCF /* SurveyValidator.m */; };
+		08D301CB1909AEE00031EBCF /* SurveyForm.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301CA1909AEE00031EBCF /* SurveyForm.m */; };
+		08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301D61909BDB40031EBCF /* SurveyTextView.m */; };
+		08D301DB1909BDC30031EBCF /* SurveyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301DA1909BDC30031EBCF /* SurveyTextField.m */; };
+		08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */; };
+		08D301E11909D18D0031EBCF /* SurveyFieldProtocol.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */; };
+		08D301E21909D18D0031EBCF /* SurveyFieldDelegate.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301DC1909BDCC0031EBCF /* SurveyFieldDelegate.h */; };
+		08D301E31909D18D0031EBCF /* SurveyTextField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301D91909BDC30031EBCF /* SurveyTextField.h */; };
+		08D301E41909D18D0031EBCF /* SurveyTextView.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301D51909BDB40031EBCF /* SurveyTextView.h */; };
+		08D301E51909D18D0031EBCF /* SurveyFields.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301D11909BD840031EBCF /* SurveyFields.h */; };
+		08D301E61909D18D0031EBCF /* SurveyForm.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301C91909AEE00031EBCF /* SurveyForm.h */; };
+		08D301E71909D18D0031EBCF /* SurveyValidator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08D301C51909A1BB0031EBCF /* SurveyValidator.h */; };
+		08D301E81909D18D0031EBCF /* NSObject+Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08638FEE190999C1006CB54E /* NSObject+Survey.h */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		08638F9619099678006CB54E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 08638F7819099678006CB54E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 08638F7F19099678006CB54E;
+			remoteInfo = Survey;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		08638F7E19099678006CB54E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				08D301E11909D18D0031EBCF /* SurveyFieldProtocol.h in CopyFiles */,
+				08D301E21909D18D0031EBCF /* SurveyFieldDelegate.h in CopyFiles */,
+				08D301E31909D18D0031EBCF /* SurveyTextField.h in CopyFiles */,
+				08D301E41909D18D0031EBCF /* SurveyTextView.h in CopyFiles */,
+				08D301E51909D18D0031EBCF /* SurveyFields.h in CopyFiles */,
+				08D301E61909D18D0031EBCF /* SurveyForm.h in CopyFiles */,
+				08D301E71909D18D0031EBCF /* SurveyValidator.h in CopyFiles */,
+				08D301E81909D18D0031EBCF /* NSObject+Survey.h in CopyFiles */,
+				08638FEA190997FF006CB54E /* SurveyConstants.h in CopyFiles */,
+				08638F8919099678006CB54E /* Survey.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08638F8019099678006CB54E /* libSurvey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSurvey.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		08638F8319099678006CB54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		08638F8719099678006CB54E /* Survey-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Survey-Prefix.pch"; sourceTree = "<group>"; };
+		08638F8819099678006CB54E /* Survey.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Survey.h; sourceTree = "<group>"; };
+		08638F9019099678006CB54E /* SurveyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SurveyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		08638F9119099678006CB54E /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		08638F9419099678006CB54E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		08638F9B19099678006CB54E /* SurveyTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SurveyTests-Info.plist"; sourceTree = "<group>"; };
+		08638F9D19099678006CB54E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		08638F9F19099678006CB54E /* SurveyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SurveyTests.m; sourceTree = "<group>"; };
+		08638FE7190996B7006CB54E /* SurveyConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyConstants.h; sourceTree = "<group>"; };
+		08638FEE190999C1006CB54E /* NSObject+Survey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+Survey.h"; sourceTree = "<group>"; };
+		08638FEF190999C1006CB54E /* NSObject+Survey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+Survey.m"; sourceTree = "<group>"; };
+		08D301C51909A1BB0031EBCF /* SurveyValidator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyValidator.h; sourceTree = "<group>"; };
+		08D301C61909A1BB0031EBCF /* SurveyValidator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyValidator.m; sourceTree = "<group>"; };
+		08D301C91909AEE00031EBCF /* SurveyForm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyForm.h; sourceTree = "<group>"; };
+		08D301CA1909AEE00031EBCF /* SurveyForm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyForm.m; sourceTree = "<group>"; };
+		08D301D11909BD840031EBCF /* SurveyFields.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFields.h; sourceTree = "<group>"; };
+		08D301D51909BDB40031EBCF /* SurveyTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyTextView.h; sourceTree = "<group>"; };
+		08D301D61909BDB40031EBCF /* SurveyTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyTextView.m; sourceTree = "<group>"; };
+		08D301D91909BDC30031EBCF /* SurveyTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyTextField.h; sourceTree = "<group>"; };
+		08D301DA1909BDC30031EBCF /* SurveyTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyTextField.m; sourceTree = "<group>"; };
+		08D301DC1909BDCC0031EBCF /* SurveyFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldDelegate.h; sourceTree = "<group>"; };
+		08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyFieldDelegate.m; sourceTree = "<group>"; };
+		08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldProtocol.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		08638F7D19099678006CB54E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08638F8419099678006CB54E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08638F8D19099678006CB54E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08638F9219099678006CB54E /* XCTest.framework in Frameworks */,
+				08638F9519099678006CB54E /* UIKit.framework in Frameworks */,
+				08638F9319099678006CB54E /* Foundation.framework in Frameworks */,
+				08638F9819099678006CB54E /* libSurvey.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08638F7719099678006CB54E = {
+			isa = PBXGroup;
+			children = (
+				08638F8519099678006CB54E /* Survey */,
+				08638F9919099678006CB54E /* SurveyTests */,
+				08638F8219099678006CB54E /* Frameworks */,
+				08638F8119099678006CB54E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		08638F8119099678006CB54E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				08638F8019099678006CB54E /* libSurvey.a */,
+				08638F9019099678006CB54E /* SurveyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		08638F8219099678006CB54E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				08638F8319099678006CB54E /* Foundation.framework */,
+				08638F9119099678006CB54E /* XCTest.framework */,
+				08638F9419099678006CB54E /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		08638F8519099678006CB54E /* Survey */ = {
+			isa = PBXGroup;
+			children = (
+				08D301D01909BD6D0031EBCF /* Fields */,
+				08D301C81909AED80031EBCF /* Form */,
+				08D301C41909A1A50031EBCF /* Validator */,
+				08638FEC19099937006CB54E /* Categories */,
+				08638F8819099678006CB54E /* Survey.h */,
+				08638F8619099678006CB54E /* Supporting Files */,
+			);
+			path = Survey;
+			sourceTree = "<group>";
+		};
+		08638F8619099678006CB54E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08638F8719099678006CB54E /* Survey-Prefix.pch */,
+				08638FE7190996B7006CB54E /* SurveyConstants.h */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08638F9919099678006CB54E /* SurveyTests */ = {
+			isa = PBXGroup;
+			children = (
+				08638F9F19099678006CB54E /* SurveyTests.m */,
+				08638F9A19099678006CB54E /* Supporting Files */,
+			);
+			path = SurveyTests;
+			sourceTree = "<group>";
+		};
+		08638F9A19099678006CB54E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				08638F9B19099678006CB54E /* SurveyTests-Info.plist */,
+				08638F9C19099678006CB54E /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		08638FEC19099937006CB54E /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				08638FED1909993F006CB54E /* NSObject */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		08638FED1909993F006CB54E /* NSObject */ = {
+			isa = PBXGroup;
+			children = (
+				08638FEE190999C1006CB54E /* NSObject+Survey.h */,
+				08638FEF190999C1006CB54E /* NSObject+Survey.m */,
+			);
+			name = NSObject;
+			sourceTree = "<group>";
+		};
+		08D301C41909A1A50031EBCF /* Validator */ = {
+			isa = PBXGroup;
+			children = (
+				08D301C51909A1BB0031EBCF /* SurveyValidator.h */,
+				08D301C61909A1BB0031EBCF /* SurveyValidator.m */,
+			);
+			name = Validator;
+			sourceTree = "<group>";
+		};
+		08D301C81909AED80031EBCF /* Form */ = {
+			isa = PBXGroup;
+			children = (
+				08D301C91909AEE00031EBCF /* SurveyForm.h */,
+				08D301CA1909AEE00031EBCF /* SurveyForm.m */,
+			);
+			name = Form;
+			sourceTree = "<group>";
+		};
+		08D301D01909BD6D0031EBCF /* Fields */ = {
+			isa = PBXGroup;
+			children = (
+				08D301DF1909C8160031EBCF /* Protocol */,
+				08D301D41909BD9E0031EBCF /* Delegate */,
+				08D301D31909BD9B0031EBCF /* TextField */,
+				08D301D21909BD860031EBCF /* TextView */,
+				08D301D11909BD840031EBCF /* SurveyFields.h */,
+			);
+			name = Fields;
+			sourceTree = "<group>";
+		};
+		08D301D21909BD860031EBCF /* TextView */ = {
+			isa = PBXGroup;
+			children = (
+				08D301D51909BDB40031EBCF /* SurveyTextView.h */,
+				08D301D61909BDB40031EBCF /* SurveyTextView.m */,
+			);
+			name = TextView;
+			sourceTree = "<group>";
+		};
+		08D301D31909BD9B0031EBCF /* TextField */ = {
+			isa = PBXGroup;
+			children = (
+				08D301D91909BDC30031EBCF /* SurveyTextField.h */,
+				08D301DA1909BDC30031EBCF /* SurveyTextField.m */,
+			);
+			name = TextField;
+			sourceTree = "<group>";
+		};
+		08D301D41909BD9E0031EBCF /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				08D301DC1909BDCC0031EBCF /* SurveyFieldDelegate.h */,
+				08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */,
+			);
+			name = Delegate;
+			sourceTree = "<group>";
+		};
+		08D301DF1909C8160031EBCF /* Protocol */ = {
+			isa = PBXGroup;
+			children = (
+				08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */,
+			);
+			name = Protocol;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		08638F7F19099678006CB54E /* Survey */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08638FA319099678006CB54E /* Build configuration list for PBXNativeTarget "Survey" */;
+			buildPhases = (
+				08638F7C19099678006CB54E /* Sources */,
+				08638F7D19099678006CB54E /* Frameworks */,
+				08638F7E19099678006CB54E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Survey;
+			productName = Survey;
+			productReference = 08638F8019099678006CB54E /* libSurvey.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		08638F8F19099678006CB54E /* SurveyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 08638FA619099678006CB54E /* Build configuration list for PBXNativeTarget "SurveyTests" */;
+			buildPhases = (
+				08638F8C19099678006CB54E /* Sources */,
+				08638F8D19099678006CB54E /* Frameworks */,
+				08638F8E19099678006CB54E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				08638F9719099678006CB54E /* PBXTargetDependency */,
+			);
+			name = SurveyTests;
+			productName = SurveyTests;
+			productReference = 08638F9019099678006CB54E /* SurveyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08638F7819099678006CB54E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Wess Cope";
+			};
+			buildConfigurationList = 08638F7B19099678006CB54E /* Build configuration list for PBXProject "Survey" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 08638F7719099678006CB54E;
+			productRefGroup = 08638F8119099678006CB54E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				08638F7F19099678006CB54E /* Survey */,
+				08638F8F19099678006CB54E /* SurveyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		08638F8E19099678006CB54E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08638F9E19099678006CB54E /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		08638F7C19099678006CB54E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08D301CB1909AEE00031EBCF /* SurveyForm.m in Sources */,
+				08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */,
+				08D301C71909A1BB0031EBCF /* SurveyValidator.m in Sources */,
+				08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */,
+				08638FF0190999C1006CB54E /* NSObject+Survey.m in Sources */,
+				08D301DB1909BDC30031EBCF /* SurveyTextField.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		08638F8C19099678006CB54E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				08638FA019099678006CB54E /* SurveyTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		08638F9719099678006CB54E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 08638F7F19099678006CB54E /* Survey */;
+			targetProxy = 08638F9619099678006CB54E /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		08638F9C19099678006CB54E /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				08638F9D19099678006CB54E /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		08638FA119099678006CB54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		08638FA219099678006CB54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		08638FA419099678006CB54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Survey.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Survey/Survey-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		08638FA519099678006CB54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Survey.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Survey/Survey-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		08638FA719099678006CB54E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Survey/Survey-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SurveyTests/SurveyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		08638FA819099678006CB54E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Survey/Survey-Prefix.pch";
+				INFOPLIST_FILE = "SurveyTests/SurveyTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		08638F7B19099678006CB54E /* Build configuration list for PBXProject "Survey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08638FA119099678006CB54E /* Debug */,
+				08638FA219099678006CB54E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08638FA319099678006CB54E /* Build configuration list for PBXNativeTarget "Survey" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08638FA419099678006CB54E /* Debug */,
+				08638FA519099678006CB54E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		08638FA619099678006CB54E /* Build configuration list for PBXNativeTarget "SurveyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				08638FA719099678006CB54E /* Debug */,
+				08638FA819099678006CB54E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08638F7819099678006CB54E /* Project object */;
+}
