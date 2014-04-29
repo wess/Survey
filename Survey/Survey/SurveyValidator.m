@@ -17,11 +17,12 @@ NSString *const SurveyValidationEmailAddress        = @"SurveyValidationEmailAdd
 static NSMutableDictionary *_SurveyValidationBlocks = nil;
 
 @interface SurveyValidator()
-@property (readonly, nonatomic) SurveyValidationBlock requiredBlock;
-@property (readonly, nonatomic) SurveyValidationBlock alphaNumericBlock;
-@property (readonly, nonatomic) SurveyValidationBlock alphaOnlyBlock;
-@property (readonly, nonatomic) SurveyValidationBlock numericOnlyBlock;
-@property (readonly, nonatomic) SurveyValidationBlock emailAddressBlock;
+@property (readonly, nonatomic) SurveyValidationBlock   requiredBlock;
+@property (readonly, nonatomic) SurveyValidationBlock   alphaNumericBlock;
+@property (readonly, nonatomic) SurveyValidationBlock   alphaOnlyBlock;
+@property (readonly, nonatomic) SurveyValidationBlock   numericOnlyBlock;
+@property (readonly, nonatomic) SurveyValidationBlock   emailAddressBlock;
+@property (strong, nonatomic) NSDictionary              *validators;
 @end
 
 @implementation SurveyValidator
@@ -49,32 +50,51 @@ static NSMutableDictionary *_SurveyValidationBlocks = nil;
     return self;
 }
 
+- (void)registerValidation:(NSString *)validationName handler:(SurveyValidationBlock)block
+{
+    NSMutableDictionary *validators = [self.validators mutableCopy];
+    validators[validationName]      = [block copy];
+    
+    self.validators = [validators copy];
+}
+
 - (BOOL)validateString:(NSString *)string usingValidator:(NSString *)validator
 {
-    SurveyValidationBlock block = _SurveyValidationBlocks[validator];
+    SurveyValidationBlock block = self.validators[validator];
     return block(string);
 }
 
 - (void)resetValidationsToDefault
 {
-    SurveyRegisterValidator(SurveyValidationRequired, self.requiredBlock);
-    SurveyRegisterValidator(SurveyValidationRequired, self.requiredBlock);
-    SurveyRegisterValidator(SurveyValidationAlphaNumericOnly, self.alphaNumericBlock);
-    SurveyRegisterValidator(SurveyValidationAlphaOnly, self.alphaOnlyBlock);
-    SurveyRegisterValidator(SurveyValidationNumericOnly, self.numericOnlyBlock);
-    SurveyRegisterValidator(SurveyValidationEmailAddress, self.emailAddressBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationRequired, self.requiredBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationRequired, self.requiredBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationAlphaNumericOnly, self.alphaNumericBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationAlphaOnly, self.alphaOnlyBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationNumericOnly, self.numericOnlyBlock);
+    SurveyRegisterGlobalValidator(SurveyValidationEmailAddress, self.emailAddressBlock);
+}
+
+#pragma mark - Getters
+- (NSDictionary *)validators
+{
+    if(_validators)
+        return _validators;
+    
+    _validators = [_SurveyValidationBlocks copy];
+    
+    return _validators;
 }
 
 #pragma mark - Default Validation Blocks -
 
 - (SurveyValidationBlock)requiredBlock
 {
-    if(!_requiredBlock)
-    {
-        _requiredBlock = ^BOOL(NSString *value) {
-            return (![value isEqualToString:@""] && value.length > 0);
-        };
-    }
+    if(_requiredBlock)
+        return _requiredBlock;
+
+    _requiredBlock = ^BOOL(NSString *value) {
+        return (![value isEqualToString:@""] && value.length > 0);
+    };
     
     return _requiredBlock;
 }

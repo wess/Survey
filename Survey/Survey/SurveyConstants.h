@@ -37,14 +37,14 @@ static NSString *const SurveyValidationErrorMessageEmailAddress     = @"Invalid 
 
 #ifndef weakify
 #define weakify(context) try {} @finally {} \
-__weak typeof(context) nf_weak_ ## context = context
+__weak typeof(context) survey_weak_ ## context = context
 #endif
 
 #ifndef strongify
 #define strongify(o) try {} @finally {} \
 _Pragma("clang diagnostic push") \
 _Pragma("clang diagnostic ignored \"-Wshadow\"") \
-typeof(nf_weak_ ## o) o = nf_weak_ ## o \
+typeof(survey_weak_ ## o) o = survey_weak_ ## o \
 _Pragma("clang diagnostic pop")
 #endif
 

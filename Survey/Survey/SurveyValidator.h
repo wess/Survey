@@ -20,7 +20,7 @@ extern NSString *const SurveyValidationNumericOnly;
 extern NSString *const SurveyValidationEmailAddress;
 
 // Shortcut for registering new validations.
-#define SurveyRegisterValidator(name, block) [SurveyValidator registerValidation:name handler:block]
+#define SurveyRegisterGlobalValidator(name, block) [SurveyValidator registerValidation:name handler:block]
 
 
 @interface SurveyValidator : NSObject
@@ -29,12 +29,20 @@ extern NSString *const SurveyValidationEmailAddress;
  */
 
 /**
- Class method to register a new validation to use with field values.
+ Class method to register a new global validation to use with field values.
  
  @param validationName Name of validation that will be used when assigning to a form field.
  @param block          Block for testing the fields value and returns BOOL based on result.
  */
 + (void)registerValidation:(NSString *)validationName handler:(SurveyValidationBlock)block;
+
+/**
+ Instance method to register a validation to use with a form instance's field values.
+ 
+ @param validationName Name of validation that will be used when assigning to a form field.
+ @param block          Block for testing the fields value and returns BOOL based on result.
+ */
+- (void)registerValidation:(NSString *)validationName handler:(SurveyValidationBlock)block;
 
 /**
  Executes validation block assigned to the validator.
