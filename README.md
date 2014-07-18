@@ -1,9 +1,5 @@
-# Survey 2.0
-Survey is a library to simplify the process of creating and validating forms.  This library is loosely based on CoreData and Django forms.
-
-## Coming.
-A more full featured README with some amazing examples and super uses of Survey. But for now you can venture over to
-[Survey page](http://wess.github.io/Survey/) where you view the docs for Survey.
+# Survey 3.0
+The 3rd major release of this little form library for iOS. Survey is a library to simplify the process of creating and validating forms.  This library is loosely based on CoreData and Django forms.
 
 
 ## If you need me
