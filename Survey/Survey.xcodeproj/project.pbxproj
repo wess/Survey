@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0826708719C9D5620003C804 /* SurveyFieldProtocol.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708819C9D5620003C804 /* SurveyFieldDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301DC1909BDCC0031EBCF /* SurveyFieldDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708919C9D5620003C804 /* SurveyTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301D91909BDC30031EBCF /* SurveyTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708A19C9D5620003C804 /* SurveyPasswordField.h in Headers */ = {isa = PBXBuildFile; fileRef = 084EA5461979556A00CF1FC8 /* SurveyPasswordField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708B19C9D5620003C804 /* SurveyTextView.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301D51909BDB40031EBCF /* SurveyTextView.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708C19C9D5620003C804 /* SurveyForm.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301C91909AEE00031EBCF /* SurveyForm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708D19C9D5620003C804 /* SurveyValidator.h in Headers */ = {isa = PBXBuildFile; fileRef = 08D301C51909A1BB0031EBCF /* SurveyValidator.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708E19C9D5620003C804 /* NSObject+Survey.h in Headers */ = {isa = PBXBuildFile; fileRef = 08638FEE190999C1006CB54E /* NSObject+Survey.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0826708F19C9D5620003C804 /* SurveyConstants.h in Headers */ = {isa = PBXBuildFile; fileRef = 08638FE7190996B7006CB54E /* SurveyConstants.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		084EA5481979556A00CF1FC8 /* SurveyPasswordField.m in Sources */ = {isa = PBXBuildFile; fileRef = 084EA5471979556A00CF1FC8 /* SurveyPasswordField.m */; };
 		084EA5491979598B00CF1FC8 /* SurveyPasswordField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 084EA5461979556A00CF1FC8 /* SurveyPasswordField.h */; };
 		08638F8419099678006CB54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F8319099678006CB54E /* Foundation.framework */; };
@@ -291,6 +300,25 @@
 		};
 /* End PBXGroup section */
 
+/* Begin PBXHeadersBuildPhase section */
+		0826708619C9D5380003C804 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0826708719C9D5620003C804 /* SurveyFieldProtocol.h in Headers */,
+				0826708819C9D5620003C804 /* SurveyFieldDelegate.h in Headers */,
+				0826708919C9D5620003C804 /* SurveyTextField.h in Headers */,
+				0826708A19C9D5620003C804 /* SurveyPasswordField.h in Headers */,
+				0826708B19C9D5620003C804 /* SurveyTextView.h in Headers */,
+				0826708C19C9D5620003C804 /* SurveyForm.h in Headers */,
+				0826708D19C9D5620003C804 /* SurveyValidator.h in Headers */,
+				0826708E19C9D5620003C804 /* NSObject+Survey.h in Headers */,
+				0826708F19C9D5620003C804 /* SurveyConstants.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
 /* Begin PBXNativeTarget section */
 		08638F7F19099678006CB54E /* Survey */ = {
 			isa = PBXNativeTarget;
@@ -299,6 +327,7 @@
 				08638F7C19099678006CB54E /* Sources */,
 				08638F7D19099678006CB54E /* Frameworks */,
 				08638F7E19099678006CB54E /* CopyFiles */,
+				0826708619C9D5380003C804 /* Headers */,
 			);
 			buildRules = (
 			);
