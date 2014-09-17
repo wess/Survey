@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SurveyConstants.h"
 #pragma once
 
 /**

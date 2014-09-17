@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import "SurveyValidator.h"
 #import "SurveyFieldProtocol.h"
+#import "SurveyConstants.h"
 #pragma once
 
 @class SurveyForm;

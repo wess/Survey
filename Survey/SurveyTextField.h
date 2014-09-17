@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SurveyFieldProtocol.h"
+#import "SurveyConstants.h"
 #pragma once
 
 @class SurveyForm;

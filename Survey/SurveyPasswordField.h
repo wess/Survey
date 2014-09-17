@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "SurveyTextField.h"
 #import "SurveyFieldProtocol.h"
+#import "SurveyConstants.h"
 #pragma once
 
 @interface SurveyPasswordField : SurveyTextField

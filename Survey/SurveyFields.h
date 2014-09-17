@@ -8,6 +8,7 @@
 
 #ifndef Survey_SurveyFields_h
 #define Survey_SurveyFields_h
+#import "SurveyConstants.h"
 #import "SurveyFieldProtocol.h"
 #import "SurveyTextField.h"
 #import "SurveyTextView.h"
