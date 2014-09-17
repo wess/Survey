@@ -10,6 +10,7 @@
 #import "SurveyFieldDelegate.h"
 #import <objc/runtime.h>
 #import "SurveyTextField.h"
+#import "NSObject+Survey.h"
 
 @interface SurveyForm()
 @property (strong, nonatomic) SurveyFieldDelegate   *fieldDelegate;
