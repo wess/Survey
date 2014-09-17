@@ -32,15 +32,101 @@
 @property (readonly, nonatomic) BOOL            isValid;
 
 // Field defaults
-@property (assign, nonatomic) UIFont                  *defaultFieldFont;
-@property (assign, nonatomic) UIColor                 *defaultFieldTextColor;
-@property (assign, nonatomic) UIFont                  *defaultPlaceholderFont;
-@property (assign, nonatomic) UIColor                 *defaultPlaceholderColor;
-@property (assign, nonatomic) NSArray                 *defaultValidationOptions;
-@property (assign, nonatomic) NSDictionary            *defaultErrorMessages;
-@property (assign, nonatomic) SurveyOnFieldErrorBlock defaultOnError;
+/**
+ Default keyboard type for all fields in the form.
+ */
+@property (assign, nonatomic) UIKeyboardType            keyboardType;
 
+/**
+ Default return key used for field keyboards.
+ */
+@property (assign, nonatomic) UIReturnKeyType           returnKeyType;
+
+/**
+ Default font to use for form fields
+ */
+@property (assign, nonatomic) UIFont                    *defaultFieldFont;
+
+/**
+ Default text color to use for field s in the form.
+ */
+@property (assign, nonatomic) UIColor                   *defaultFieldTextColor;
+
+/**
+ Default placeholder font to use with all fields.
+ */
+@property (assign, nonatomic) UIFont                    *defaultPlaceholderFont;
+
+/**
+ Default placeholder color to use with all fields.
+ */
+@property (assign, nonatomic) UIColor                   *defaultPlaceholderColor;
+
+/** 
+ Default validation options for all fields.
+ */
+@property (assign, nonatomic) NSArray                   *defaultValidationOptions;
+
+/**
+ Default error messages to use with all fields.
+ */
+@property (assign, nonatomic) NSDictionary              *defaultErrorMessages;
+
+/**
+ Default error handler block for all fields.
+ */
+@property (assign, nonatomic) SurveyOnFieldErrorBlock   defaultOnError;
+
+/**
+ Default validation block to use for all fields.
+ */
+@property (copy, nonatomic) SurveyValidateFieldBlock    defaultValidationBlock;
+
+/**
+ Default `Did Begin Editing` block for all fields.
+ */
+
+@property (copy, nonatomic) SurveyTextFieldDidBlock     defaultDidBeginEditing;
+
+/**
+ Default `Did End Editing` block for all fields.
+ */
+@property (copy, nonatomic) SurveyTextFieldDidBlock     defaultDidEndEditing;
+
+/**
+ Default `Should Begin Editing` for all fields.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  defaultShouldBeginEditing;
+
+/**
+ Default `Should End Editing` block for all fields.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  defaultShouldEndEditing;
+
+/**
+ Default `Should Change Characters In range` block for all fields.
+ */
+@property (copy, nonatomic) SurveyShouldChangeBlock     defaultShouldChangeCharactersInRange;
+
+/**
+ Default `Should Clear` block for all fields.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  defaultShouldClear;
+
+/**
+ Default `Should Return` block for all fields.
+ */
+@property (copy, nonatomic) SurveyTextFieldShouldBlock  defaultShouldReturn;
+
+
+/**
+ Initialize a new Survey form populating fields with default values.
+ */
 - (instancetype)initWithDefaultValues:(NSDictionary *)defaults;
+
+/**
+ Specify the order of the fields.
+ */
 + (NSArray *)fields;
 @end
 

@@ -92,13 +92,33 @@
 }
 
 #pragma mark - Setters
-static NSString *const defaultFieldFontKey         = @"font";
-static NSString *const defaultFieldTextColorKey    = @"textColor";
-static NSString *const defaultPlaceholderFontKey   = @"placeholderFont";
-static NSString *const defaultPlaceholderColorKey  = @"placeholderColor";
-static NSString *const defaultValidationOptionsKey = @"validationOptions";
-static NSString *const defaultErrorMessagesKey     = @"errorMessages";
-static NSString *const defaultOnErrorKey           = @"onError";
+static NSString *const defaultKeyboardTypeKey                   = @"keyboardType";
+static NSString *const defaultReturnKeyTypeKey                  = @"returnKeyType";
+static NSString *const defaultFieldFontKey                      = @"font";
+static NSString *const defaultFieldTextColorKey                 = @"textColor";
+static NSString *const defaultPlaceholderFontKey                = @"placeholderFont";
+static NSString *const defaultPlaceholderColorKey               = @"placeholderColor";
+static NSString *const defaultValidationOptionsKey              = @"validationOptions";
+static NSString *const defaultErrorMessagesKey                  = @"errorMessages";
+static NSString *const defaultOnErrorKey                        = @"onError";
+static NSString *const defaultValidationBlockKey                = @"validationBlock";
+static NSString *const defaultDidBeginEditingKey                = @"didBeginEditing";
+static NSString *const defaultDidEndEditingKey                  = @"didEndEditing";
+static NSString *const defaultShouldBeginEditingKey             = @"shouldBeginEditing";
+static NSString *const defaultShouldEndEditingKey               = @"shouldEndEditing";
+static NSString *const defaultShouldChangeCharactersInRangeKey  = @"shouldChangeCharactersInRange";
+static NSString *const defaultShouldClearKey                    = @"shouldClear";
+static NSString *const defaultShouldReturnKey                   = @"shouldReturn";
+
+- (void)setDefaultKeyboardType:(UIKeyboardType)type
+{
+    [self addDefault:defaultKeyboardTypeKey withObject:@(type)];
+}
+
+- (void)setDefaultReturnKeyType:(UIReturnKeyType)type
+{
+    [self addDefault:defaultReturnKeyTypeKey withObject:@(type)];
+}
 
 - (void)setDefaultFieldFont:(UIFont *)font
 {
@@ -114,7 +134,7 @@ static NSString *const defaultOnErrorKey           = @"onError";
 {
     [self addDefault:defaultPlaceholderFontKey withObject:font];
 }
-
+//
 - (void)setDefaultPlaceholderColor:(UIColor *)color
 {
     [self addDefault:defaultPlaceholderColorKey withObject:color];
@@ -134,6 +154,47 @@ static NSString *const defaultOnErrorKey           = @"onError";
 {
     [self addDefault:defaultOnErrorKey withObject:block];
 }
+
+- (void)setDefaultValidationBlock:(SurveyValidateFieldBlock)block
+{
+    [self addDefault:defaultValidationBlockKey withObject:block];
+}
+
+- (void)setDefaultDidBeginEditing:(SurveyTextFieldDidBlock)block
+{
+    [self addDefault:defaultDidBeginEditingKey withObject:block];
+}
+
+- (void)setDefaultDidEndEditing:(SurveyTextFieldDidBlock)block
+{
+    [self addDefault:defaultDidEndEditingKey withObject:block];
+}
+
+- (void)setDefaultShouldBeginEditing:(SurveyTextFieldShouldBlock)block
+{
+    [self addDefault:defaultShouldBeginEditingKey withObject:block];
+}
+
+- (void)setDefaultShouldEndEditing:(SurveyTextFieldShouldBlock)block
+{
+    [self addDefault:defaultShouldEndEditingKey withObject:block];
+}
+
+- (void)setDefaultShouldChangeCharactersInRange:(SurveyShouldChangeBlock)block
+{
+    [self addDefault:defaultShouldChangeCharactersInRangeKey withObject:block];
+}
+
+- (void)setDefaultShouldClear:(SurveyTextFieldShouldBlock)block
+{
+    [self addDefault:defaultShouldClearKey withObject:block];
+}
+
+- (void)setDefaultShouldReturn:(SurveyTextFieldShouldBlock)block
+{
+    [self addDefault:defaultShouldReturnKey withObject:block];
+}
+
 
 
 #pragma mark - Getters

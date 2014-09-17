@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		084EA5481979556A00CF1FC8 /* SurveyPasswordField.m in Sources */ = {isa = PBXBuildFile; fileRef = 084EA5471979556A00CF1FC8 /* SurveyPasswordField.m */; };
+		084EA5491979598B00CF1FC8 /* SurveyPasswordField.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 084EA5461979556A00CF1FC8 /* SurveyPasswordField.h */; };
 		08638F8419099678006CB54E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F8319099678006CB54E /* Foundation.framework */; };
 		08638F8919099678006CB54E /* Survey.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08638F8819099678006CB54E /* Survey.h */; };
 		08638F9219099678006CB54E /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08638F9119099678006CB54E /* XCTest.framework */; };
@@ -47,8 +49,9 @@
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "include/$(PRODUCT_NAME)";
-			dstSubfolderSpec = 16;
+			dstSubfolderSpec = 10;
 			files = (
+				084EA5491979598B00CF1FC8 /* SurveyPasswordField.h in CopyFiles */,
 				08D301E11909D18D0031EBCF /* SurveyFieldProtocol.h in CopyFiles */,
 				08D301E21909D18D0031EBCF /* SurveyFieldDelegate.h in CopyFiles */,
 				08D301E31909D18D0031EBCF /* SurveyTextField.h in CopyFiles */,
@@ -65,6 +68,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		084EA5461979556A00CF1FC8 /* SurveyPasswordField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyPasswordField.h; sourceTree = "<group>"; };
+		084EA5471979556A00CF1FC8 /* SurveyPasswordField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyPasswordField.m; sourceTree = "<group>"; };
 		08638F8019099678006CB54E /* libSurvey.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSurvey.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		08638F8319099678006CB54E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		08638F8719099678006CB54E /* Survey-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Survey-Prefix.pch"; sourceTree = "<group>"; };
@@ -115,6 +120,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		080FD4A119795549007647DB /* Password */ = {
+			isa = PBXGroup;
+			children = (
+				084EA5461979556A00CF1FC8 /* SurveyPasswordField.h */,
+				084EA5471979556A00CF1FC8 /* SurveyPasswordField.m */,
+			);
+			name = Password;
+			sourceTree = "<group>";
+		};
+		084EA54A19795DC400CF1FC8 /* Text */ = {
+			isa = PBXGroup;
+			children = (
+				08D301D91909BDC30031EBCF /* SurveyTextField.h */,
+				08D301DA1909BDC30031EBCF /* SurveyTextField.m */,
+			);
+			name = Text;
+			sourceTree = "<group>";
+		};
 		08638F7719099678006CB54E = {
 			isa = PBXGroup;
 			children = (
@@ -243,8 +266,8 @@
 		08D301D31909BD9B0031EBCF /* TextField */ = {
 			isa = PBXGroup;
 			children = (
-				08D301D91909BDC30031EBCF /* SurveyTextField.h */,
-				08D301DA1909BDC30031EBCF /* SurveyTextField.m */,
+				084EA54A19795DC400CF1FC8 /* Text */,
+				080FD4A119795549007647DB /* Password */,
 			);
 			name = TextField;
 			sourceTree = "<group>";
@@ -349,6 +372,7 @@
 			files = (
 				08D301CB1909AEE00031EBCF /* SurveyForm.m in Sources */,
 				08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */,
+				084EA5481979556A00CF1FC8 /* SurveyPasswordField.m in Sources */,
 				08D301C71909A1BB0031EBCF /* SurveyValidator.m in Sources */,
 				08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */,
 				08638FF0190999C1006CB54E /* NSObject+Survey.m in Sources */,

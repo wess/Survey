@@ -10,6 +10,6 @@
 #import <Survey/Survey.h>
 
 @interface SEUserForm : SurveyForm
-@property (strong, nonatomic) SurveyTextField *username;
-@property (strong, nonatomic) SurveyTextField *password;
+@property (strong, nonatomic) SurveyTextField       *username;
+@property (strong, nonatomic) SurveyPasswordField   *password;
 @end

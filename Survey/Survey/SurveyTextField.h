@@ -156,3 +156,7 @@
 - (void)moveToNextField;
 
 @end
+
+@interface SurveyTextField(Private)
+- (void)setup;
+@end
