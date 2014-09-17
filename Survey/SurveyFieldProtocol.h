@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma once
 
 @class SurveyForm;
-
 @protocol SurveyFieldProtocol <NSObject>
 
 /**

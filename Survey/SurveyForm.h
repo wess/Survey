@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SurveyValidator.h"
+#pragma once
 
 /**
  `SurveyForm` is responsible for creating and managing form fields. To create a form, you must subclass SurveyForm using 

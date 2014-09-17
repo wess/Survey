@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma once
 
 /**
  `SurveyFieldDelegate` is a class that handles all delegate operations for Survey fields, to allow for block based delegate callbacks.

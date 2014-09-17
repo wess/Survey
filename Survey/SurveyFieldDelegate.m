@@ -7,6 +7,7 @@
 //
 
 #import "SurveyFieldDelegate.h"
+#import "SurveyFieldProtocol.h"
 #import "SurveyFields.h"
 #import "SurveyForm.h"
 

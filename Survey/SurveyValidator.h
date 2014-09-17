@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma once
 
 /**
  `SurveyValdiator handles validation for field values for a given form.

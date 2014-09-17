@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#pragma once
 
 @interface NSObject (Survey)
 + (NSDictionary *)survey_classProperties;

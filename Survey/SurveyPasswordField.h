@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "SurveyTextField.h"
+#import "SurveyFieldProtocol.h"
+#pragma once
 
 @interface SurveyPasswordField : SurveyTextField
 
