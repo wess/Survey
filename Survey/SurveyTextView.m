@@ -99,7 +99,7 @@
     _errors = [currentErrors copy];
     
     if(self.onError && !isValid)
-        self.onError(self, _errors);
+        self.onError(self.form, self, _errors);
     
     return isValid;
 }

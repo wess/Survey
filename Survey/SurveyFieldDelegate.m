@@ -16,8 +16,9 @@
 
 - (BOOL)textFieldShouldBeginEditing:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).shouldBeginEditing != nil)
-        return ((SurveyTextField *)textField).shouldBeginEditing(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+    if(field.shouldBeginEditing != nil)
+        return field.shouldBeginEditing(field.form, field);
     
     return YES;
 }
@@ -27,21 +28,25 @@
     SurveyTextField *field = (SurveyTextField *)textField;
     
     if(field.didBeginEditing != nil)
-        field.didBeginEditing(field);
+        field.didBeginEditing(field.form, field);
 }
 
 - (BOOL)textFieldShouldEndEditing:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).shouldEndEditing != nil)
-        return ((SurveyTextField *)textField).shouldEndEditing(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+
+    if(field.shouldEndEditing != nil)
+        return field.shouldEndEditing(field.form, field);
     
     return YES;
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).didEndEditing != nil)
-        ((SurveyTextField *)textField).didEndEditing(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+
+    if(field.didEndEditing != nil)
+        field.didEndEditing(field.form, field);
 }
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
@@ -52,23 +57,28 @@
         return NO;
     
     if(field.shouldChangeCharactersInRange != nil)
-        return ((SurveyTextField *)textField).shouldChangeCharactersInRange(((SurveyTextField *)textField), range, string);
+        return field.shouldChangeCharactersInRange(field.form, field, range, string);
+        //return ((SurveyTextField *)textField).shouldChangeCharactersInRange(((SurveyTextField *)textField), range, string);
     
     return YES;
 }
 
 - (BOOL)textFieldShouldClear:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).shouldClear != nil)
-        return ((SurveyTextField *)textField).shouldClear(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+
+    if(field.shouldClear != nil)
+        return field.shouldClear(field.form, field);
     
     return YES;
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if(((SurveyTextField *)textField).shouldReturn != nil)
-        return ((SurveyTextField *)textField).shouldReturn(((SurveyTextField *)textField));
+    SurveyTextField *field = (SurveyTextField *)textField;
+
+    if(field.shouldReturn != nil)
+        return field.shouldReturn(field.form, field);
     
     return NO;
 }
@@ -83,7 +93,7 @@
         return NO;
     
     if(field.shouldChangeCharactersInRange)
-        return field.shouldChangeCharactersInRange(field, range, text);
+        return field.shouldChangeCharactersInRange(field.form, field, range, text);
     
     return YES;
 }
@@ -93,39 +103,49 @@
     SurveyTextView *field = (SurveyTextView *)textView;
     
     if(field.didBeginEditing)
-        field.didBeginEditing(field);
+        field.didBeginEditing(field.form, field);
 }
 
 - (void)textViewDidChange:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).didChange)
-        ((SurveyTextView *)textView).didChange(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+
+    if(field.didChange)
+        field.didChange(field.form, field);
 }
 
 - (void)textViewDidChangeSelection:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).didChangeSelection)
-        ((SurveyTextView *)textView).didChangeSelection(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+
+    if(field.didChangeSelection)
+        field.didChangeSelection(field.form, field);
 }
 
 - (void)textViewDidEndEditing:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).didEndEditing)
-        ((SurveyTextView *)textView).didEndEditing(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+
+    if(field.didEndEditing)
+        field.didEndEditing(field.form, field);
 }
 
 - (BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).shouldBeginEditing)
-        ((SurveyTextView *)textView).shouldBeginEditing(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+    
+    if(field.shouldBeginEditing)
+        field.shouldBeginEditing(field.form, field);
     
     return YES;
 }
 
 - (BOOL)textViewShouldEndEditing:(UITextView *)textView
 {
-    if(((SurveyTextView *)textView).shouldEndEditing)
-        return ((SurveyTextView *)textView).shouldEndEditing(((SurveyTextView *)textView));
+    SurveyTextView *field = (SurveyTextView *)textView;
+
+    if(field.shouldEndEditing)
+        return field.shouldEndEditing(field.form, field);
     
     return YES;
 }
