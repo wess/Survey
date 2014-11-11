@@ -12,6 +12,7 @@
 #import "SurveyFieldProtocol.h"
 #import "SurveyTextField.h"
 #import "SurveyTextView.h"
+#import "SurveyDateField.h"
 #import "SurveyPasswordField.h"
 #import "SurveyDateField.h"
 #endif

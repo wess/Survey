@@ -10,6 +10,8 @@
 #import "SurveyFieldDelegate.h"
 #import <objc/runtime.h>
 #import "SurveyTextField.h"
+#import "SurveyTextView.h"
+#import "SurveyDateField.h"
 #import "NSObject+Survey.h"
 
 @interface SurveyForm()
@@ -75,18 +77,18 @@
 
 - (id<SurveyFieldProtocol>)defaultFieldWithName:(NSString *)name
 {
-    NSString *type                  = [self.classProperties objectForKey:name];
-    Class class                     = NSClassFromString(type);
-    id<SurveyFieldProtocol> field   = [[class alloc] initWithFrame:CGRectZero];
+    NSString *type                          = [self.classProperties objectForKey:name];
+    Class class                             = NSClassFromString(type);
+    NSObject<SurveyFieldProtocol> *field    = [[class alloc] initWithFrame:CGRectZero];
 
-    [((NSObject *)field) setValue:self forKeyPath:@"form"];
-    [((NSObject *)field) setValue:self.fieldDelegate forKeyPath:@"delegate"];
+    [field setValue:self forKeyPath:@"form"];
+    [field setValue:self.fieldDelegate forKeyPath:@"delegate"];
     
     if(self.fieldDefaults && [self.fieldValueDefaults objectForKey:name])
-        [((NSObject *)field) setValue:self.fieldValueDefaults[name] forKeyPath:@"text"];
+        [field setValue:self.fieldValueDefaults[name] forKeyPath:@"text"];
 
     [self.fieldDefaults enumerateKeysAndObjectsUsingBlock:^(NSString *key, id obj, BOOL *stop) {
-       [((NSObject *)field) setValue:obj forKeyPath:key];
+        [field setValue:obj forKeyPath:key];
     }];
     
     return (id<SurveyFieldProtocol>)field;
@@ -226,28 +228,32 @@ static NSString *const defaultShouldReturnKey                   = @"shouldReturn
     NSMutableOrderedSet *fieldSet   = [[NSMutableOrderedSet alloc] init];
     
     [fieldOrder enumerateObjectsUsingBlock:^(NSString *name, NSUInteger idx, BOOL *stop) {
-        id<SurveyFieldProtocol> field   = [self defaultFieldWithName:name];
-        
-        if(self.fieldDefaults && [self.fieldDefaults objectForKey:name])
-            [((NSObject *)field) setValue:self.fieldDefaults[name] forKeyPath:@"text"];
-        
-        NSString *setupName             = [name stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[name substringToIndex:1] capitalizedString]];
-        NSString *setupSelectorString   = [NSString stringWithFormat:@"setup%@:", setupName];
-        SEL setupSelector               = NSSelectorFromString(setupSelectorString);
-        
-        if([[self class] respondsToSelector:setupSelector])
+        if(name)
         {
-            NSInvocation *invocation    = [NSInvocation invocationWithMethodSignature:[[self class] methodSignatureForSelector:setupSelector]];
-            invocation.target           = [self class];
-            invocation.selector         = setupSelector;
+            id<SurveyFieldProtocol> field   = [self defaultFieldWithName:name];
             
-            [invocation setArgument:&field atIndex:2];
-            [invocation invoke];
+            if(self.fieldDefaults && [self.fieldDefaults objectForKey:name])
+                [((NSObject *)field) setValue:self.fieldDefaults[name] forKeyPath:@"text"];
+            
+            NSString *setupName             = [name stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[name substringToIndex:1] capitalizedString]];
+            NSString *setupSelectorString   = [NSString stringWithFormat:@"setup%@:", setupName];
+            SEL setupSelector               = NSSelectorFromString(setupSelectorString);
+            
+            if([[self class] respondsToSelector:setupSelector])
+            {
+                NSInvocation *invocation    = [NSInvocation invocationWithMethodSignature:[[self class] methodSignatureForSelector:setupSelector]];
+                invocation.target           = [self class];
+                invocation.selector         = setupSelector;
+                
+                [invocation setArgument:&field atIndex:2];
+                [invocation invoke];
+            }
+            
+            field.title = field.title?: name;
+            
+            if(field)
+                [fieldSet addObject:@{@"name": name.lowercaseString, @"field": field}];
         }
-        
-        field.title = field.title?: name;
-        
-        [fieldSet addObject:@{@"name": name.lowercaseString, @"field": field}];
     }];
     
     _fieldSet = [fieldSet copy];

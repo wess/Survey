@@ -49,6 +49,15 @@
     return self;
 }
 
+- (instancetype)initWithFrame:(CGRect)frame
+{
+    self = [super initWithFrame:frame];
+    if (self)
+        [self setup];
+    
+    return self;
+}
+
 - (instancetype)initWithDateComponents:(SurveyDateComponents)components
 {
     self = [super init];
@@ -73,15 +82,25 @@
     return YES;
 }
 
+- (BOOL)isValid
+{
+    return YES;
+}
+
 #pragma mark - Touch
 
 #pragma mark - Layout
-- (void)updateConstraints
+- (void)layoutSubviews
 {
-    [self.placeholderLabel removeConstraints:self.placeholderLabel.constraints];
-    [self.placeholderLabel  addConstraints:[NSLayoutConstraint constraintsToFillView:self withView:self.placeholderLabel edgeInsets:self.contentInsets]];
+    [super layoutSubviews];
     
-    [super updateConstraints];
+    CGRect labelFrame        = self.bounds;
+    labelFrame.size.width   -= self.contentInsets.right;
+    labelFrame.size.height  -= self.contentInsets.bottom;
+    labelFrame.origin.y     += self.contentInsets.top;
+    labelFrame.origin.x     += self.contentInsets.left;
+    
+    self.placeholderLabel.frame = labelFrame;
 }
 
 #pragma mark - Setters
@@ -138,6 +157,19 @@
     [self didChangeValueForKey:@"componets"];
 }
 
+#pragma mark - Setters
+- (void)setPlaceholder:(NSString *)placeholder
+{
+    [self willChangeValueForKey:@"placeholder"];
+    
+    _placeholder                    = [placeholder copy];
+    self.placeholderLabel.text      = _placeholder;
+    self.placeholderLabel.textColor = self.placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
+    self.placeholderLabel.font      = self.placeholderFont;
+    
+    [self willChangeValueForKey:@"placeholder"];
+}
+
 #pragma mark - Getters
 - (UILabel *)placeholderLabel
 {
@@ -146,7 +178,6 @@
     
     _placeholderLabel               = [[UILabel alloc] initWithFrame:CGRectZero];
     _placeholderLabel.font          = self.font?: [UIFont systemFontOfSize:12];
-    _placeholderLabel.textColor     = self.textColor?: [UIColor blackColor];
     _placeholderLabel.textAlignment = self.textAlignment?: NSTextAlignmentNatural;
     
     [self addSubview:_placeholderLabel];

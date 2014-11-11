@@ -25,6 +25,7 @@ typedef NS_OPTIONS(NSUInteger, SurveyDateComponents) {
 @property (weak, nonatomic)     id                      delegate;
 @property (copy, nonatomic)     NSString                *title;
 @property (copy, nonatomic)     NSString                *placeholder;
+@property (copy, nonatomic)     UIFont                  *placeholderFont;
 @property (copy, nonatomic)     UIColor                 *placeholderColor;
 @property (copy, nonatomic)     UIFont                  *font;
 @property (copy, nonatomic)     UIColor                 *textColor;
@@ -35,6 +36,7 @@ typedef NS_OPTIONS(NSUInteger, SurveyDateComponents) {
 @property (readonly, nonatomic) NSDictionary            *errors;
 @property (copy, nonatomic)     NSDate                  *date;
 @property (nonatomic)           SurveyDateComponents    components;
+@property (strong, nonatomic)   NSArray                 *validationOptions;
 
 - (instancetype)initWithDateComponents:(SurveyDateComponents)components;
 - (BOOL)isValid;

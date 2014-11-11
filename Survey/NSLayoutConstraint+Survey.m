@@ -220,7 +220,7 @@
     // Create developer friendly descriptions using accessibility labels.
     if (firstView)
     {
-        [extendedDescripton appendFormat:@"First view is %@ (0x%0x)", firstView.accessibilityLabel, (int)firstView];
+        [extendedDescripton appendFormat:@"First view is %@ (%p)", firstView.accessibilityLabel, firstView];
     }
     
     if (secondView)
@@ -230,7 +230,7 @@
             [extendedDescripton appendString:@", "];
         }
         
-        [extendedDescripton appendFormat:@"Second View is %@ (0x%0x)", secondView.accessibilityLabel, (int)secondView];
+        [extendedDescripton appendFormat:@"Second View is %@ (%p)", secondView.accessibilityLabel, secondView];
     }
     
     return extendedDescripton;
