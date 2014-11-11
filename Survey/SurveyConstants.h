@@ -13,10 +13,10 @@
 
 typedef BOOL(^SurveyValidationBlock)(NSString *string);
 typedef BOOL(^SurveyValidateFieldBlock)(id this, id value);
-typedef BOOL(^SurveyTextFieldShouldBlock)(SurveyForm *form, id this);
-typedef void(^SurveyTextFieldDidBlock)(SurveyForm *form, id this);
-typedef BOOL(^SurveyShouldChangeBlock)(SurveyForm *form, id this, NSRange range, NSString *string);
-typedef void(^SurveyOnFieldErrorBlock)(SurveyForm *form, id this, NSDictionary *errors);
+typedef BOOL(^SurveyTextFieldShouldBlock)(id form, id this);
+typedef void(^SurveyTextFieldDidBlock)(id form, id this);
+typedef BOOL(^SurveyShouldChangeBlock)(id form, id this, NSRange range, NSString *string);
+typedef void(^SurveyOnFieldErrorBlock)(id form, id this, NSDictionary *errors);
 
 
 static NSString *const SurveyValidationErrorMessageRequired         = @"Field is required";

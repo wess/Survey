@@ -32,6 +32,10 @@
 		08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */; };
 		D72AD8501A0D77DA00896C66 /* SurveyDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D72AD8511A0D77DA00896C66 /* SurveyDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */; };
+		D75E2D4F1A126E34003F9B22 /* NSLayoutConstraint+Survey.h in Headers */ = {isa = PBXBuildFile; fileRef = D75E2D4D1A126E34003F9B22 /* NSLayoutConstraint+Survey.h */; };
+		D75E2D501A126E34003F9B22 /* NSLayoutConstraint+Survey.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E2D4E1A126E34003F9B22 /* NSLayoutConstraint+Survey.m */; };
+		D75E2D541A127CC1003F9B22 /* SurveyDatePicker.h in Headers */ = {isa = PBXBuildFile; fileRef = D75E2D521A127CC1003F9B22 /* SurveyDatePicker.h */; };
+		D75E2D551A127CC1003F9B22 /* SurveyDatePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = D75E2D531A127CC1003F9B22 /* SurveyDatePicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +90,10 @@
 		08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldProtocol.h; sourceTree = "<group>"; };
 		D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDateField.h; sourceTree = "<group>"; };
 		D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDateField.m; sourceTree = "<group>"; };
+		D75E2D4D1A126E34003F9B22 /* NSLayoutConstraint+Survey.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSLayoutConstraint+Survey.h"; sourceTree = "<group>"; };
+		D75E2D4E1A126E34003F9B22 /* NSLayoutConstraint+Survey.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSLayoutConstraint+Survey.m"; sourceTree = "<group>"; };
+		D75E2D521A127CC1003F9B22 /* SurveyDatePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDatePicker.h; sourceTree = "<group>"; };
+		D75E2D531A127CC1003F9B22 /* SurveyDatePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDatePicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -201,6 +209,7 @@
 		08638FEC19099937006CB54E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D75E2D4C1A126E1E003F9B22 /* NSLayoutConstraint */,
 				08638FED1909993F006CB54E /* NSObject */,
 			);
 			name = Categories;
@@ -284,10 +293,29 @@
 		D72AD84D1A0D77CD00896C66 /* DateField */ = {
 			isa = PBXGroup;
 			children = (
+				D75E2D511A127CB0003F9B22 /* DatePicker */,
 				D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */,
 				D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */,
 			);
 			name = DateField;
+			sourceTree = "<group>";
+		};
+		D75E2D4C1A126E1E003F9B22 /* NSLayoutConstraint */ = {
+			isa = PBXGroup;
+			children = (
+				D75E2D4D1A126E34003F9B22 /* NSLayoutConstraint+Survey.h */,
+				D75E2D4E1A126E34003F9B22 /* NSLayoutConstraint+Survey.m */,
+			);
+			name = NSLayoutConstraint;
+			sourceTree = "<group>";
+		};
+		D75E2D511A127CB0003F9B22 /* DatePicker */ = {
+			isa = PBXGroup;
+			children = (
+				D75E2D521A127CC1003F9B22 /* SurveyDatePicker.h */,
+				D75E2D531A127CC1003F9B22 /* SurveyDatePicker.m */,
+			);
+			name = DatePicker;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,6 +327,7 @@
 			files = (
 				0826708719C9D5620003C804 /* SurveyFieldProtocol.h in Headers */,
 				0826708819C9D5620003C804 /* SurveyFieldDelegate.h in Headers */,
+				D75E2D541A127CC1003F9B22 /* SurveyDatePicker.h in Headers */,
 				0826708919C9D5620003C804 /* SurveyTextField.h in Headers */,
 				0826708A19C9D5620003C804 /* SurveyPasswordField.h in Headers */,
 				0826708B19C9D5620003C804 /* SurveyTextView.h in Headers */,
@@ -306,6 +335,7 @@
 				0826708D19C9D5620003C804 /* SurveyValidator.h in Headers */,
 				0826708E19C9D5620003C804 /* NSObject+Survey.h in Headers */,
 				D72AD8501A0D77DA00896C66 /* SurveyDateField.h in Headers */,
+				D75E2D4F1A126E34003F9B22 /* NSLayoutConstraint+Survey.h in Headers */,
 				0826708F19C9D5620003C804 /* SurveyConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -394,8 +424,10 @@
 			files = (
 				08D301CB1909AEE00031EBCF /* SurveyForm.m in Sources */,
 				08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */,
+				D75E2D501A126E34003F9B22 /* NSLayoutConstraint+Survey.m in Sources */,
 				084EA5481979556A00CF1FC8 /* SurveyPasswordField.m in Sources */,
 				08D301C71909A1BB0031EBCF /* SurveyValidator.m in Sources */,
+				D75E2D551A127CC1003F9B22 /* SurveyDatePicker.m in Sources */,
 				D72AD8511A0D77DA00896C66 /* SurveyDateField.m in Sources */,
 				08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */,
 				08638FF0190999C1006CB54E /* NSObject+Survey.m in Sources */,

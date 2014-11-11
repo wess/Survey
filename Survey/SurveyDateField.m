@@ -6,19 +6,38 @@
 //  Copyright (c) 2014 Wess Cope. All rights reserved.
 //
 
+@import UIKit;
+#import "NSLayoutConstraint+Survey.h"
 #import "SurveyDateField.h"
 #import "SurveyForm.h"
 #import "SurveyValidator.h"
+#import "SurveyDatePicker.h"
+
+@interface SurveyDateField()<UIPickerViewDataSource, UIPickerViewDelegate>
+@property (strong, nonatomic)   UILabel             *placeholderLabel;
+@property (strong, nonatomic)   SurveyDatePicker    *pickerView;
+@property (nonatomic)           NSUInteger          pickerCount;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentDay;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentHour;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentMinute;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentMonth;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentSecond;
+@property (nonatomic)           BOOL                wantsSurveyDateComponentYear;
+@property (strong, nonatomic)   NSArray             *days;
+@property (strong, nonatomic)   NSArray             *hours;
+@property (strong, nonatomic)   NSArray             *minutes;
+@property (strong, nonatomic)   NSArray             *months;
+@property (strong, nonatomic)   NSArray             *seconds;
+@property (strong, nonatomic)   NSArray             *years;
+
+@end
 
 @implementation SurveyDateField
-@synthesize date                = _date;
-@synthesize errors              = _errors;
-@synthesize placeholderColor    = _placeholderColor;
-
 - (void)setup
 {
-    self.validationOptions  = @[SurveyValidationRequired];
-    self.errorMessages      = [SurveyDefaultErrorMessages mutableCopy];
+    self.components     = SurveyDateComponentDay | SurveyDateComponentMonth;
+    self.date           = [NSDate date];
+    self.contentInsets  = (UIEdgeInsets){.top = 2, .right = 2, .bottom = 2, .left = 2};
 }
 
 - (instancetype)init
@@ -26,118 +45,148 @@
     self = [super init];
     if (self)
         [self setup];
-    
+
     return self;
 }
-- (instancetype)initWithFrame:(CGRect)frame
+
+- (instancetype)initWithDateComponents:(SurveyDateComponents)components
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self)
+    {
         [self setup];
-    
+
+        self.components = components;
+    }
     return self;
 }
 
-- (instancetype)initWithCoder:(NSCoder *)aDecoder
+- (BOOL)canBecomeFirstResponder
 {
-    self = [super initWithCoder:aDecoder];
-    if (self)
-        [self setup];
-    
-    return self;
+    NSLog(@"BECAME RESPONDER");
+    return YES;
 }
 
-- (id)nextField
+- (BOOL)canResignFirstResponder
 {
-    NSUInteger index = [self.form.fields indexOfObject:self];
-    if(self.form.fields.count == (index + 1))
-        return nil;
-    
-    return self.form.fields[(index + 1)];
+    NSLog(@"RESIGNED RESPONDER");
+    return YES;
 }
 
-- (id)previousField
+#pragma mark - Touch
+
+#pragma mark - Layout
+- (void)updateConstraints
 {
-    NSUInteger index = [self.form.fields indexOfObject:self];
-    if(index < 1)
-        return nil;
+    [self.placeholderLabel removeConstraints:self.placeholderLabel.constraints];
+    [self.placeholderLabel  addConstraints:[NSLayoutConstraint constraintsToFillView:self withView:self.placeholderLabel edgeInsets:self.contentInsets]];
     
-    return self.form.fields[(index - 1)];
+    [super updateConstraints];
 }
 
-- (void)setTitle:(NSString *)title
+#pragma mark - Setters
+- (void)setComponents:(SurveyDateComponents)components
 {
-    if(!self.placeholder)
-        self.placeholder = [title capitalizedString];
+    [self willChangeValueForKey:@"components"];
     
-    _title = title;
-}
+    _components         = components;
+    self.pickerCount    = 0;
+    
+    self.wantsSurveyDateComponentDay    = NO;
+    self.wantsSurveyDateComponentHour   = NO;
+    self.wantsSurveyDateComponentMinute = NO;
+    self.wantsSurveyDateComponentMonth  = NO;
+    self.wantsSurveyDateComponentSecond = NO;
+    self.wantsSurveyDateComponentYear   = NO;
 
-- (void)setPlaceholderColor:(UIColor *)placeholderColor
-{
-    _placeholderColor = placeholderColor == nil? [UIColor colorWithWhite:0.7f alpha:1.0f] : [placeholderColor copy];
-    
-    NSString *placeholder   = [self.placeholder copy];
-    self.placeholder        = @"";
-    self.placeholder        = placeholder;
-    
-}
-
-- (BOOL)isValid
-{
-    __block BOOL isValid                        = YES;
-    __block NSMutableDictionary *currentErrors  = [NSMutableDictionary new];
-    
-    _errors = [currentErrors copy];
-    
-    if(self.onError && !isValid)
-        self.onError(self.form, self, _errors);
-    
-    return isValid;
-}
-- (void)moveToPreviousField
-{
-    if(self.previousField)
+    if(_components & SurveyDateComponentDay)
     {
-        [self resignFirstResponder];
-        [self.previousField becomeFirstResponder];
+        self.pickerCount++;
+        self.wantsSurveyDateComponentDay = YES;
     }
-}
-
-- (void)moveToNextField
-{
-    if(self.nextField)
+    
+    if(_components & SurveyDateComponentHour)
     {
-        [self resignFirstResponder];
-        [self.nextField becomeFirstResponder];
+        self.pickerCount++;
+        self.wantsSurveyDateComponentHour = YES;
     }
+    
+    if(_components & SurveyDateComponentMinute)
+    {
+        self.pickerCount++;
+        self.wantsSurveyDateComponentMinute = YES;
+    }
+
+    if(_components & SurveyDateComponentMonth)
+    {
+        self.pickerCount++;
+        self.wantsSurveyDateComponentMonth = YES;
+    }
+
+    if(_components & SurveyDateComponentSecond)
+    {
+        self.pickerCount++;
+        self.wantsSurveyDateComponentSecond = YES;
+    }
+
+    if(_components & SurveyDateComponentYear)
+    {
+        self.pickerCount++;
+        self.wantsSurveyDateComponentYear = YES;
+    }
+    
+    [self didChangeValueForKey:@"componets"];
 }
 
-#pragma mark - Root selectors -
-
-- (void)drawPlaceholderInRect:(CGRect)rect
+#pragma mark - Getters
+- (UILabel *)placeholderLabel
 {
-    _placeholderColor = _placeholderColor?:[UIColor colorWithWhite:0.7f alpha:1.0f];
-    _placeholderFont = _placeholderFont?:self.font;
+    if(_placeholderLabel)
+        return _placeholderLabel;
     
-    CGRect placeholderRect = rect;
-    placeholderRect.origin.y = roundf((rect.size.height - _placeholderFont.lineHeight)/2);
-    placeholderRect.size.height = roundf(_placeholderFont.lineHeight);
+    _placeholderLabel               = [[UILabel alloc] initWithFrame:CGRectZero];
+    _placeholderLabel.font          = self.font?: [UIFont systemFontOfSize:12];
+    _placeholderLabel.textColor     = self.textColor?: [UIColor blackColor];
+    _placeholderLabel.textAlignment = self.textAlignment?: NSTextAlignmentNatural;
     
-    if ([self.placeholder respondsToSelector:@selector(drawInRect:withAttributes:)]) {
-        // iOS 7 and later
-        NSDictionary *attributes = @{NSForegroundColorAttributeName: _placeholderColor, NSFontAttributeName: _placeholderFont};
-        
-        [self.placeholder drawInRect:placeholderRect withAttributes:attributes];
-    } else {
-#pragma clang diagnostic push
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-        // iOS 6
-        [_placeholderColor setFill];
-        
-        [self.placeholder drawInRect:placeholderRect withFont:_placeholderFont lineBreakMode:NSLineBreakByTruncatingTail];
-#pragma clang diagnostic pop
-    }
+    [self addSubview:_placeholderLabel];
+    
+    return _placeholderLabel;
+}
+
+
+- (SurveyDatePicker *)pickerView
+{
+    if(_pickerView)
+        return _pickerView;
+    
+    _pickerView             = [[SurveyDatePicker alloc] initWithFrame:CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, ([UIScreen mainScreen].bounds.size.height / 2))];
+    _pickerView.dataSource  = self;
+    _pickerView.delegate    = self;
+    
+    return _pickerView;
+}
+
+#pragma mark - UIPickerViewDataSource
+- (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView
+{
+    return self.pickerCount;
+}
+
+- (NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component
+{
+    return 3;
+}
+
+#pragma mark - UIPickerViewDelegate
+- (NSAttributedString *)pickerView:(UIPickerView *)pickerView attributedTitleForRow:(NSInteger)row forComponent:(NSInteger)component
+{
+    return [[NSAttributedString alloc] initWithString:@"Testing" attributes:@{NSFontAttributeName: self.font, NSForegroundColorAttributeName: self.textColor}];
+}
+
+- (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component
+{
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 @end
