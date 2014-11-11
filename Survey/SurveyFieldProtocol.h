@@ -16,7 +16,7 @@
 /**
  Just a protocal property to ensure a protocol is available.
  */
-@property (nonatomic) id delegate;
+@property (weak, nonatomic) id delegate;
 
 /**
  Callback that is triggered when the field fails validation.

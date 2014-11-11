@@ -29,9 +29,17 @@
 @synthesize fields          = _fields;
 @synthesize classProperties = _classProperties;
 
+- (void)setup
+{
+    [self loadDefaultsForFormFields];
+}
+
 - (instancetype)init
 {
     self = [super init];
+    if(self)
+        [self setup];
+    
     return self;
 }
 
@@ -40,8 +48,8 @@
     self = [super init];
     if (self)
     {
-        self.fieldValueDefaults = defaults;
-        [self loadDefaultsForFormFields];
+        [self setup];
+        
     }
 
     return self;
@@ -70,7 +78,7 @@
     NSString *type                  = [self.classProperties objectForKey:name];
     Class class                     = NSClassFromString(type);
     id<SurveyFieldProtocol> field   = [[class alloc] initWithFrame:CGRectZero];
-    
+
     [((NSObject *)field) setValue:self forKeyPath:@"form"];
     [((NSObject *)field) setValue:self.fieldDelegate forKeyPath:@"delegate"];
     
@@ -223,7 +231,8 @@ static NSString *const defaultShouldReturnKey                   = @"shouldReturn
         if(self.fieldDefaults && [self.fieldDefaults objectForKey:name])
             [((NSObject *)field) setValue:self.fieldDefaults[name] forKeyPath:@"text"];
         
-        NSString *setupSelectorString   = [NSString stringWithFormat:@"setup%@:", name.capitalizedString];
+        NSString *setupName             = [name stringByReplacingCharactersInRange:NSMakeRange(0, 1) withString:[[name substringToIndex:1] capitalizedString]];
+        NSString *setupSelectorString   = [NSString stringWithFormat:@"setup%@:", setupName];
         SEL setupSelector               = NSSelectorFromString(setupSelectorString);
         
         if([[self class] respondsToSelector:setupSelector])

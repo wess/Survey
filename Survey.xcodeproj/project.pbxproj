@@ -30,6 +30,8 @@
 		08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301D61909BDB40031EBCF /* SurveyTextView.m */; };
 		08D301DB1909BDC30031EBCF /* SurveyTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301DA1909BDC30031EBCF /* SurveyTextField.m */; };
 		08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */; };
+		D72AD8501A0D77DA00896C66 /* SurveyDateField.h in Headers */ = {isa = PBXBuildFile; fileRef = D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D72AD8511A0D77DA00896C66 /* SurveyDateField.m in Sources */ = {isa = PBXBuildFile; fileRef = D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		08D301DC1909BDCC0031EBCF /* SurveyFieldDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldDelegate.h; sourceTree = "<group>"; };
 		08D301DD1909BDCC0031EBCF /* SurveyFieldDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyFieldDelegate.m; sourceTree = "<group>"; };
 		08D301E01909C8260031EBCF /* SurveyFieldProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyFieldProtocol.h; sourceTree = "<group>"; };
+		D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SurveyDateField.h; sourceTree = "<group>"; };
+		D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SurveyDateField.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -232,10 +236,11 @@
 		08D301D01909BD6D0031EBCF /* Fields */ = {
 			isa = PBXGroup;
 			children = (
-				08D301DF1909C8160031EBCF /* Protocol */,
-				08D301D41909BD9E0031EBCF /* Delegate */,
+				D72AD84D1A0D77CD00896C66 /* DateField */,
 				08D301D31909BD9B0031EBCF /* TextField */,
 				08D301D21909BD860031EBCF /* TextView */,
+				08D301DF1909C8160031EBCF /* Protocol */,
+				08D301D41909BD9E0031EBCF /* Delegate */,
 				08D301D11909BD840031EBCF /* SurveyFields.h */,
 			);
 			name = Fields;
@@ -276,6 +281,15 @@
 			name = Protocol;
 			sourceTree = "<group>";
 		};
+		D72AD84D1A0D77CD00896C66 /* DateField */ = {
+			isa = PBXGroup;
+			children = (
+				D72AD84E1A0D77DA00896C66 /* SurveyDateField.h */,
+				D72AD84F1A0D77DA00896C66 /* SurveyDateField.m */,
+			);
+			name = DateField;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -291,6 +305,7 @@
 				0826708C19C9D5620003C804 /* SurveyForm.h in Headers */,
 				0826708D19C9D5620003C804 /* SurveyValidator.h in Headers */,
 				0826708E19C9D5620003C804 /* NSObject+Survey.h in Headers */,
+				D72AD8501A0D77DA00896C66 /* SurveyDateField.h in Headers */,
 				0826708F19C9D5620003C804 /* SurveyConstants.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -381,6 +396,7 @@
 				08D301DE1909BDCC0031EBCF /* SurveyFieldDelegate.m in Sources */,
 				084EA5481979556A00CF1FC8 /* SurveyPasswordField.m in Sources */,
 				08D301C71909A1BB0031EBCF /* SurveyValidator.m in Sources */,
+				D72AD8511A0D77DA00896C66 /* SurveyDateField.m in Sources */,
 				08D301D71909BDB40031EBCF /* SurveyTextView.m in Sources */,
 				08638FF0190999C1006CB54E /* NSObject+Survey.m in Sources */,
 				08D301DB1909BDC30031EBCF /* SurveyTextField.m in Sources */,
