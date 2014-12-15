@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Wess Cope. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 #import "SurveyValidator.h"
 #import "SurveyConstants.h"
 #pragma once
