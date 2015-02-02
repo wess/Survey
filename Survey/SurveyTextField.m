@@ -131,7 +131,7 @@
     placeholderRect.size.height = roundf(_placeholderFont.lineHeight);
     
     NSMutableParagraphStyle *paragraphStyle = [[NSMutableParagraphStyle alloc] init];
-    paragraphStyle.alignment                = NSTextAlignmentCenter;
+    paragraphStyle.alignment                = self.textAlignment;
     
     NSDictionary *attributes = @{NSForegroundColorAttributeName : _placeholderColor,
                                  NSParagraphStyleAttributeName  : paragraphStyle,
