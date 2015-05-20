@@ -49,7 +49,8 @@ static const char *getPropertyType(objc_property_t property)
             NSString *propertyName = [NSString stringWithUTF8String:name];
             NSString *propertyType = [NSString stringWithUTF8String:getPropertyType(property)];
             
-            results[propertyName] = [propertyType copy];
+            if(propertyName && propertyType)
+                results[propertyName] = [propertyType copy];
         }
     }
     
