@@ -53,12 +53,14 @@
 {
     SurveyTextField *field = (SurveyTextField *)textField;
     
+    if([string isEqualToString:@""])
+        return YES;
+    
     if(field.maxLength > 0 && field.text.length >= field.maxLength)
         return NO;
     
     if(field.shouldChangeCharactersInRange != nil)
         return field.shouldChangeCharactersInRange(field.form, field, range, string);
-        //return ((SurveyTextField *)textField).shouldChangeCharactersInRange(((SurveyTextField *)textField), range, string);
     
     return YES;
 }
@@ -89,6 +91,9 @@
 {
     SurveyTextView *field = (SurveyTextView *)textView;
     
+    if([text isEqualToString:@""])
+        return YES;
+
     if(field.maxLength > 0 && field.text.length >= field.maxLength)
         return NO;
     
